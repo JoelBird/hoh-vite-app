@@ -58,7 +58,7 @@ const Spells: React.FC<SpellsProps> = ({ user }) => {
     if (user && user.id) {
       try {
         // Fetch member's availableSpells
-        const response = await axios.get("http://localhost:3001/api/getRow", {
+        const response = await axios.get("http://localhost:3002/api/getRow", {
           params: {
             id: user.id,
             table: "members",

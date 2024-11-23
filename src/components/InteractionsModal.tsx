@@ -68,7 +68,7 @@ const InteractionsModal: React.FC<Props> = ({
   const fetchAndFilterInteractions = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3001/api/fetchPropertyInteractions"
+        "http://localhost:3002/api/fetchPropertyInteractions"
       );
       const interactions: Interaction[] = response.data;
 

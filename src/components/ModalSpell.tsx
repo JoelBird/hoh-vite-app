@@ -66,7 +66,7 @@ function ModalSpell({ openModal, isOpen, onClose }: Props) {
   useEffect(() => {
     if (isOpen && address) {
       axios
-        .get("http://localhost:3001/api/getRow", {
+        .get("http://localhost:3002/api/getRow", {
           params: {
             id: "null",
             table: "propertyValues",
@@ -87,7 +87,7 @@ function ModalSpell({ openModal, isOpen, onClose }: Props) {
   useEffect(() => {
     if (isOpen && address && propertyNumberNextToUse) {
       axios
-        .get("http://localhost:3001/api/getPropertyByNumber", {
+        .get("http://localhost:3002/api/getPropertyByNumber", {
           params: {
             propertyNumber: propertyNumberNextToUse,
             propertyType: "Retail",
@@ -173,7 +173,7 @@ function ModalSpell({ openModal, isOpen, onClose }: Props) {
 
       try {
         const response = await axios.post(
-          "http://localhost:3001/api/addSpell",
+          "http://localhost:3002/api/addSpell",
           {
             spellName: selectedSpell,
             walletAddress: address,
@@ -187,7 +187,7 @@ function ModalSpell({ openModal, isOpen, onClose }: Props) {
 
     try {
       const response = await axios.post(
-        "http://localhost:3001/addPropertyInteraction",
+        "http://localhost:3002/addPropertyInteraction",
         {
           propertyName,
           propertyTokenId,

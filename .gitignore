@@ -8,8 +8,7 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-memberDict
-members.db
+HOH.db
 *.local
 
 # Editor directories and files

@@ -44,7 +44,7 @@ const NFTDisplay: React.FC<NFTDisplayProps> = ({
   useEffect(() => {
     const getNFTs = async () => {
       setLoading(true);
-      const response = await fetch("http://localhost:3001/api/fetchNfts", {
+      const response = await fetch("http://localhost:3002/api/fetchNfts", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

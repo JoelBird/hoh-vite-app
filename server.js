@@ -21,7 +21,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 
 if (!process.env.REACT_APP_CLIENT_URL) {
   console.error("REACT_APP_CLIENT_URL is not defined in the environment variables.");
@@ -1292,8 +1292,8 @@ app.get('/api/fetchPropertyInteractions', (req, res) => {
 
 if (ENVIRONMENT === 'production') {
   const httpsOptions = {
-    key: fs.readFileSync('/etc/letsencrypt/live/prizm.zone/privkey.pem'),
-    cert: fs.readFileSync('/etc/letsencrypt/live/prizm.zone/fullchain.pem'),
+    key: fs.readFileSync('/etc/letsencrypt/live/www.heroesnft.app/privkey.pem'),
+    cert: fs.readFileSync('/etc/letsencrypt/live/www.heroesnft.app/fullchain.pem'),
   };
 
   https.createServer(httpsOptions, app).listen(PORT, () => {

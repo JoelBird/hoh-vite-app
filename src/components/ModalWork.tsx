@@ -69,7 +69,7 @@ function ModalWork({ openModal, isOpen, onClose }: Props) {
   useEffect(() => {
     if (isOpen && address) {
       axios
-        .get(`http://localhost:3001/api/alive-heroes/${address}`)
+        .get(`http://localhost:3002/api/alive-heroes/${address}`)
         .then((response) => {
           setAliveHeroes(response.data.aliveHeroes);
         })
@@ -83,7 +83,7 @@ function ModalWork({ openModal, isOpen, onClose }: Props) {
   useEffect(() => {
     if (isOpen && address) {
       axios
-        .get("http://localhost:3001/api/getRow", {
+        .get("http://localhost:3002/api/getRow", {
           params: {
             id: "null",
             table: "propertyValues",
@@ -109,7 +109,7 @@ function ModalWork({ openModal, isOpen, onClose }: Props) {
   useEffect(() => {
     if (isOpen && address && propertyNumberNextToUse) {
       axios
-        .get("http://localhost:3001/api/getPropertyByNumber", {
+        .get("http://localhost:3002/api/getPropertyByNumber", {
           params: {
             propertyNumber: propertyNumberNextToUse,
             propertyType: randomPropertyTypeUppercase,
@@ -132,7 +132,7 @@ function ModalWork({ openModal, isOpen, onClose }: Props) {
   useEffect(() => {
     if (isOpen && address && selectedHero) {
       axios
-        .get("http://localhost:3001/api/getRow", {
+        .get("http://localhost:3002/api/getRow", {
           params: {
             id: selectedHero,
             table: "heroes",
@@ -192,7 +192,7 @@ function ModalWork({ openModal, isOpen, onClose }: Props) {
 
     try {
       const response = await axios.post(
-        "http://localhost:3001/addPropertyInteraction",
+        "http://localhost:3002/addPropertyInteraction",
         {
           propertyName,
           propertyTokenId,

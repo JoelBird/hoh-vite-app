@@ -1,0 +1,13 @@
+.card {
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    margin: 0px;
+    transition: transform 0.3s ease; /* Add transition for smooth hover effect */
+  }
+  
+  .card:hover {
+    transform: translateY(-15px);
+  }
+  
+ 

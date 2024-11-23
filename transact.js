@@ -1,0 +1,63 @@
+import ethers from "ethers";
+import fs from 'fs';
+import axios from "axios";
+
+const jsonFile = "./abi.json";
+const abi = JSON.parse(fs.readFileSync(jsonFile));
+const tokenContract = "0x539025fc166d49e63E4C30De1205164D06157d2a";
+const toAddress = "0x63C18042Ff056493c62bc74d04A32F03a5813798";
+const infuraProjectId = "a31017990a434050ab5b5dad42ba299a";
+const signerPrivateKey = "0d246f5e20df3147e9fa17040148fa3c65c025bf457692ac7db8844ed5e189fa";
+const network = "matic";
+const polygonscanApiKey = "WZ1FEBAQFZ4S44E74JZ7PQSW1SARSH48KT";
+
+// Configuring the connection to the Polygon network via Infura
+const provider = new ethers.providers.InfuraProvider(
+  network,
+  infuraProjectId
+);
+
+const contract = new ethers.Contract(tokenContract, abi, provider);
+const signer = new ethers.Wallet(signerPrivateKey, provider);
+
+async function sendTransaction() {
+  try {
+
+    // Define the transaction data
+    const data = contract.interface.encodeFunctionData("transfer", [toAddress, ethers.utils.parseUnits("1.0", 18)]);
+
+    // Estimate the gas limit for the transaction
+    const gasLimit = await provider.estimateGas({
+      from: signer.address,
+      to: tokenContract,
+      data: data,
+    });
+
+    console.log("Estimated Gas Limit:", gasLimit.toString());
+
+    // Send the transaction
+    const tx = await signer.sendTransaction({
+      to: tokenContract,
+      data: data,
+      gasLimit: gasLimit,
+      maxPriorityFeePerGas: ethers.utils.parseUnits("50", "gwei"), // Increase if needed
+      maxFeePerGas: ethers.utils.parseUnits("50", "gwei"), // Increase if needed
+      nonce: await signer.getTransactionCount(),
+      chainId: 137, // Polygon mainnet
+    });
+
+    console.log("Mining transaction...");
+    console.log(`https://polygonscan.com/tx/${tx.hash}`);
+
+    // Waiting for the transaction to be mined
+    const receipt = await tx.wait();
+    console.log(`Mined in block ${receipt.blockNumber}`);
+  } catch (error) {
+    console.error("Error sending transaction:", error);
+  }
+}
+
+
+
+// Start the transaction
+sendTransaction();

@@ -1,0 +1,5761 @@
+{
+  "hasNextPage": false,
+  "totalCount": 137,
+  "data": [
+    {
+      "id": "034470e7-f2d8-407f-8c20-0e2a47a1aac3",
+      "tokenId": 1,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "City Well",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/03e1e23e-3c41-43ac-8530-edf8ca77e9ff",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Government",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 500,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x0847bda815625b1b54283a2547fe8230e8ed7226",
+      "ownerEmail": null,
+      "createdAt": "2024-05-03T20:49:21.665Z",
+      "updatedAt": "2024-10-27T22:58:40.828Z"
+    },
+    {
+      "id": "88e9a139-0b05-48fe-9131-e8007b8e9e24",
+      "tokenId": 2,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Pottery Store",
+        "image": "ipfs://bafybeidfkz2w6istco77c6xcwun3aqfker56fd2t6v6odos4ojiwkboyde/a32fc7b8-ddac-469e-997d-2d120ebd01e9",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Retail",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 2500,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0xa927a2f5c523de9306673508ae881036236523c0",
+      "ownerEmail": null,
+      "createdAt": "2024-05-03T20:49:21.665Z",
+      "updatedAt": "2024-10-27T22:58:40.829Z"
+    },
+    {
+      "id": "90b994c7-c1dc-4734-b7bf-d600b7242e6a",
+      "tokenId": 3,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Tannery",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/bf906a9e-f477-4355-9fd8-f773e0b8a945",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Retail",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 2500,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0xa1dde0abd3c1c14a39a1681d9122df31a2b93400",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.898Z"
+    },
+    {
+      "id": "875ec5ae-5c3a-4675-b03e-be6ab794e4b3",
+      "tokenId": 4,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Sanatorium",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/26349e9e-ecb0-40a0-aabe-18200bf2964c",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Government",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 3500,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x478ffba8ea4945fb9327812231dfb1c6cafd2c49",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.899Z"
+    },
+    {
+      "id": "e3b167de-a2cc-4304-bd15-1be510e33ed3",
+      "tokenId": 5,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Small House",
+        "image": "ipfs://bafybeiczgznrjns2cg44m2bc3lvzi34ughnq3jv65apq6t7tnvc3ur2x7i/cc106fa5-6e9d-4996-9def-3174dd91ce57",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Housing",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 1000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0xd434b922e30193f9181284382517884c94350f9e",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.899Z"
+    },
+    {
+      "id": "5889418f-fa79-40da-aebf-ba5e0e48e00b",
+      "tokenId": 6,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Guillotine",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/fa82b2ce-341b-47ac-b2ca-b5e1642beeb0",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Military",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 500,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0xdd5d6fa8b5eb8828cbadd7946a77feac2a8379b8",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.899Z"
+    },
+    {
+      "id": "9acd06a5-9499-4788-b7d7-27b5f6ed1840",
+      "tokenId": 7,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Wagon Repair Shop",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/df8eb3a6-1b3c-45d9-a385-21aa81a80031",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Retail",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 2500,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0xf8dde82f0875fcae2f71b9c2b8e94f8f68a765c1",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.899Z"
+    },
+    {
+      "id": "12cc152b-8c42-4256-a6e9-fc3b3052ead3",
+      "tokenId": 8,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Stone Masons",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/7d2a6311-96c5-47e4-8840-9e857c9eee05",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Retail",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 3000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x0993d6bd9b9a7c3d3117944cb464938f221cc4fa",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.899Z"
+    },
+    {
+      "id": "038ce76d-ea91-41c3-8ecf-e2cb0447854a",
+      "tokenId": 9,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Watch Tower",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/5ad15a10-e912-49b5-b4d3-9c9a516c41ff",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Military",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 750,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x681965edccfd20190974c619f2dc66174575f7c9",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.899Z"
+    },
+    {
+      "id": "9774e334-556f-4335-8b83-144dd1439279",
+      "tokenId": 10,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Small House",
+        "image": "ipfs://bafybeiczgznrjns2cg44m2bc3lvzi34ughnq3jv65apq6t7tnvc3ur2x7i/72d0f7ab-8d57-45fb-903c-ab5bcf978c73",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Housing",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 1000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x9b95d8f7c44efc92b03ae2f17e2344e67de04f96",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.900Z"
+    },
+    {
+      "id": "56a37955-8537-41e3-86b0-0efd9a12eabd",
+      "tokenId": 11,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Butchers",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/219aa216-4454-474e-b5bf-04310b95fe0f",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Retail",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 2500,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x478ffba8ea4945fb9327812231dfb1c6cafd2c49",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.901Z"
+    },
+    {
+      "id": "b36c8820-592f-4f85-ab03-86231ef391f8",
+      "tokenId": 12,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Armourer",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/f2084bdd-cf22-4dd4-8553-eb3beac242b2",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Military",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 3500,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x9066382dde4d35db1fb65724bbcede34743063a9",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.902Z"
+    },
+    {
+      "id": "84ddc22e-585a-47d5-a6b3-ad3e8fc04471",
+      "tokenId": 13,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Torchwood Inn",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/e2bc7344-3212-427a-b04f-c643bdd52cfe",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Hospitality",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 4000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x54819de751495dcc0450763f728ca9b2e85105a4",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.902Z"
+    },
+    {
+      "id": "748aa3b0-1b47-4f16-86e5-81bc938b6483",
+      "tokenId": 14,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Dragon Moon Tavern",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/bc3c0acb-15a4-4b96-8da1-bdeacf3d569c",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Hospitality",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 4000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0xa32e0f5aa39bc58a18158bb2e8e88ea95e19ce66",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.902Z"
+    },
+    {
+      "id": "50290fd0-8506-441e-9a83-dd3607808fc1",
+      "tokenId": 15,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Small House",
+        "image": "ipfs://bafybeiczgznrjns2cg44m2bc3lvzi34ughnq3jv65apq6t7tnvc3ur2x7i/927dc371-156e-4067-b7cc-b52b52d2264a",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Housing",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 1000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x381c0b4fb9504e2d61d62aa481608870bb0d0705",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.902Z"
+    },
+    {
+      "id": "1548325e-78ee-40c9-8734-1f9aae1f8f80",
+      "tokenId": 16,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Watch Tower",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/5ad15a10-e912-49b5-b4d3-9c9a516c41ff",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Military",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 750,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x2c077c051fdbadc8388427e3ad30059e050b5f8f",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.902Z"
+    },
+    {
+      "id": "8c97c107-5e69-4b5b-b227-af46a7bde948",
+      "tokenId": 17,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Tollhouse",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/fc8788e3-139d-43af-9925-56397bedf18e",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Government",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 1500,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0xaba4414cc3bc819268dfdd14a8e5da2300443aa1",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.902Z"
+    },
+    {
+      "id": "a9989888-1455-445f-97ba-a36f8c435c6c",
+      "tokenId": 18,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Wine Store ",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/342decae-048f-4e47-a5ad-81cff2890e63",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Retail",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 3000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0xaba4414cc3bc819268dfdd14a8e5da2300443aa1",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.902Z"
+    },
+    {
+      "id": "632ea9d3-85b5-4e8e-a7c0-9d4a47b5c20f",
+      "tokenId": 19,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "City Well",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/03e1e23e-3c41-43ac-8530-edf8ca77e9ff",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Government",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 500,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0xaba4414cc3bc819268dfdd14a8e5da2300443aa1",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.902Z"
+    },
+    {
+      "id": "27ff84c4-5470-462d-ace0-e25e436c5690",
+      "tokenId": 20,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Small House",
+        "image": "ipfs://bafybeiczgznrjns2cg44m2bc3lvzi34ughnq3jv65apq6t7tnvc3ur2x7i/927dc371-156e-4067-b7cc-b52b52d2264a",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Housing",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 1000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0xaba4414cc3bc819268dfdd14a8e5da2300443aa1",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.902Z"
+    },
+    {
+      "id": "089cd497-0441-4032-9dd4-7d73d0d963c8",
+      "tokenId": 21,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Small House",
+        "image": "ipfs://bafybeiczgznrjns2cg44m2bc3lvzi34ughnq3jv65apq6t7tnvc3ur2x7i/927dc371-156e-4067-b7cc-b52b52d2264a",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Housing",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 1000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0xaba4414cc3bc819268dfdd14a8e5da2300443aa1",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.903Z"
+    },
+    {
+      "id": "e296da96-7837-420c-b75c-2b7addb3b289",
+      "tokenId": 22,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Blacksmith",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/595e4504-546a-4906-a02f-a627be0a9d0d",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Retail",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 3000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x478ffba8ea4945fb9327812231dfb1c6cafd2c49",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.903Z"
+    },
+    {
+      "id": "e6c627a3-3ebe-44d3-a0a1-e6fca6b52458",
+      "tokenId": 23,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Gate",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/1382bfd3-4ce0-4338-9343-192e5cf4c410",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Government",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 500,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x478ffba8ea4945fb9327812231dfb1c6cafd2c49",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.903Z"
+    },
+    {
+      "id": "773020a3-5428-46b9-815d-9892e81e115a",
+      "tokenId": 24,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Bath House",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/a1ec064e-f98a-41fd-a24b-24f3f0ce310d",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Hospitality",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 3000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x478ffba8ea4945fb9327812231dfb1c6cafd2c49",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.903Z"
+    },
+    {
+      "id": "9fc6464e-6032-45a5-bc4e-c004ef755ad2",
+      "tokenId": 25,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Party Barn",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/6df7e735-2af8-4131-b55f-5d4dd980880f",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Hospitality",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 3000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x478ffba8ea4945fb9327812231dfb1c6cafd2c49",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.903Z"
+    },
+    {
+      "id": "0d368e94-8527-4f11-97e9-46ae69fbfc1a",
+      "tokenId": 26,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Vineyard",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/1430f38e-3f31-4d3f-9150-8f5cfa7e276a",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Agriculture",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 3000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x478ffba8ea4945fb9327812231dfb1c6cafd2c49",
+      "ownerEmail": null,
+      "createdAt": "2024-05-03T20:49:21.665Z",
+      "updatedAt": "2024-10-27T22:58:40.903Z"
+    },
+    {
+      "id": "97f1d625-748c-4b31-bcb1-00cdf1b2162b",
+      "tokenId": 27,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Coffee Shop",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/99d889b8-959c-4b09-a2dc-e9cdd3806c1f",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Retail",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "Hiraeth Coffee Beans",
+            "trait_type": "Product"
+          },
+          {
+            "value": 3000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0xb5105c731c5f3ec29ee4e84c7e0d45e8ef43b300",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.903Z"
+    },
+    {
+      "id": "de17d9f3-bfc5-4a23-af6c-6c179b864df0",
+      "tokenId": 28,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Coffee Shop",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/99d889b8-959c-4b09-a2dc-e9cdd3806c1f",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Retail",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "Hiraeth Coffee Beans",
+            "trait_type": "Product"
+          },
+          {
+            "value": 3000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0xb5105c731c5f3ec29ee4e84c7e0d45e8ef43b300",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.829Z"
+    },
+    {
+      "id": "02ca2611-a707-492c-b9f5-9f48dd2a2d47",
+      "tokenId": 29,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Expedition Store",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/8a3dfc60-7281-4f19-b15f-028f21b545a5",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Retail",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 3000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0xc55f0572178d6a6217be36d3f756ef7f5a7f396c",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.897Z"
+    },
+    {
+      "id": "1dc209af-01e8-4ac1-b3a1-5db30f533b0b",
+      "tokenId": 30,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Stables",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/111d9204-bd1f-4245-b027-589174a1dc2b",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Agriculture",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 2000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0xc55f0572178d6a6217be36d3f756ef7f5a7f396c",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.897Z"
+    },
+    {
+      "id": "5fa854c1-5a22-42fd-b742-c91273ee947d",
+      "tokenId": 31,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Slaughterhouse",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/c2698148-a42a-45f5-901b-4bc8331cd24b",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Production",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 2500,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x381c0b4fb9504e2d61d62aa481608870bb0d0705",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.898Z"
+    },
+    {
+      "id": "7d3e4735-7c5c-4dab-ba2d-61c51646dc01",
+      "tokenId": 32,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Market Stall",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/0d1dc940-d673-42c2-9d43-a41a137e4cc4",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Retail",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 1000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x381c0b4fb9504e2d61d62aa481608870bb0d0705",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.898Z"
+    },
+    {
+      "id": "61fffc01-0001-4a2a-964a-88ce9787e13e",
+      "tokenId": 33,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Small House",
+        "image": "ipfs://bafybeiczgznrjns2cg44m2bc3lvzi34ughnq3jv65apq6t7tnvc3ur2x7i/72d0f7ab-8d57-45fb-903c-ab5bcf978c73",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Housing",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 1000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x0847bda815625b1b54283a2547fe8230e8ed7226",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.898Z"
+    },
+    {
+      "id": "f2796f79-2ae4-47b7-a7a9-c3bdbfded43b",
+      "tokenId": 34,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Guillotine",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/fa82b2ce-341b-47ac-b2ca-b5e1642beeb0",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Military",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 500,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x0847bda815625b1b54283a2547fe8230e8ed7226",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.898Z"
+    },
+    {
+      "id": "b81436da-c64b-4887-808f-e8a84ae8b7f1",
+      "tokenId": 35,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Small House",
+        "image": "ipfs://bafybeiczgznrjns2cg44m2bc3lvzi34ughnq3jv65apq6t7tnvc3ur2x7i/72d0f7ab-8d57-45fb-903c-ab5bcf978c73",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Housing",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 1000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x79735e8dd7c153a5b918e756b3d1fe9a6ad4696f",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.898Z"
+    },
+    {
+      "id": "84a0d6ac-f5d4-4d16-a645-a810d17db26a",
+      "tokenId": 36,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Winery",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/7f17c4d9-4891-4b68-8945-f3d58fa17a2b",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Production",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 3500,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x79735e8dd7c153a5b918e756b3d1fe9a6ad4696f",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.899Z"
+    },
+    {
+      "id": "82d89f75-7eb5-4039-bd7e-c5c7c89c3809",
+      "tokenId": 37,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Small House",
+        "image": "ipfs://bafybeiczgznrjns2cg44m2bc3lvzi34ughnq3jv65apq6t7tnvc3ur2x7i/927dc371-156e-4067-b7cc-b52b52d2264a",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Housing",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 1000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x8ac65b1d807eb2c8bbb04b90c3aee2e49aacd6a7",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.899Z"
+    },
+    {
+      "id": "ad63643a-5b29-46b8-8621-f82253670354",
+      "tokenId": 38,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Torture Shop",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/b779a0bf-f316-4e09-95a1-758bcffd8a64",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Retail",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 2500,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x0351080f07e44efd7cbdadead9f430c33b4ea19d",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.899Z"
+    },
+    {
+      "id": "f6467b0a-42d1-4b51-a9f3-15ad76829355",
+      "tokenId": 39,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Olive Grove",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/61f4b8b7-c6cf-4530-8200-15dbe2ca864a",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Agriculture",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 2500,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x9066382dde4d35db1fb65724bbcede34743063a9",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.899Z"
+    },
+    {
+      "id": "2a3b463f-87ac-4e3a-841f-f213b2ce5eaa",
+      "tokenId": 40,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Antique Store",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/8ea8d56c-8d49-436c-8bae-b054279d7e13",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Retail",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 2500,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x1d41a6c875363e196905cbab649314b742e56b49",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.899Z"
+    },
+    {
+      "id": "256e4ef2-415d-4e26-871f-343fb76c8484",
+      "tokenId": 41,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "City Well",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/03e1e23e-3c41-43ac-8530-edf8ca77e9ff",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Government",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 500,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0xa77f04e4900dabe3ddc5c2ae23f17e84f9f18a08",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.904Z"
+    },
+    {
+      "id": "b411ff51-92e7-40cd-a883-cb8b120e7f1c",
+      "tokenId": 42,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Tea Greenhouse",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/25bd3d8b-2e14-4e13-93b8-07677847e696",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Production",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "Hiraeth Tea",
+            "trait_type": "Product"
+          },
+          {
+            "value": 3500,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x9b95d8f7c44efc92b03ae2f17e2344e67de04f96",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.904Z"
+    },
+    {
+      "id": "00c67487-8058-4680-aba2-e7bf18d9976f",
+      "tokenId": 43,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Bakery",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/1e6c0eac-3855-4c63-9041-b46b26b9dfb9",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Retail",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 3000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x9b95d8f7c44efc92b03ae2f17e2344e67de04f96",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.904Z"
+    },
+    {
+      "id": "06629d28-ed43-43dd-976d-70bb89080f89",
+      "tokenId": 44,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Bath House",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/a1ec064e-f98a-41fd-a24b-24f3f0ce310d",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Hospitality",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 3000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x9b95d8f7c44efc92b03ae2f17e2344e67de04f96",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.904Z"
+    },
+    {
+      "id": "e9b30d85-3e70-4fa6-9144-40b5c14a931d",
+      "tokenId": 45,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Heroes Statue",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/b6aa07fa-97b8-47c7-87a2-b3944a164a5a",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Military",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 5000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x9b95d8f7c44efc92b03ae2f17e2344e67de04f96",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.904Z"
+    },
+    {
+      "id": "8adf39c3-4a4c-46f5-83f1-8fac287711f1",
+      "tokenId": 46,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Pillary",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/03a2439c-40f3-416e-9026-7f2a9c7492aa",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Military",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 500,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x1863266f025ff1b5301462afb4ba3dc67c7b010e",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.904Z"
+    },
+    {
+      "id": "e94878dc-15b1-4b2f-966e-a8db1b311edf",
+      "tokenId": 47,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Mill",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/dd42e5f1-9598-461d-9809-2182c122e2ad",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Production",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 2500,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x478ffba8ea4945fb9327812231dfb1c6cafd2c49",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.904Z"
+    },
+    {
+      "id": "f462c550-f0cc-4bd6-8afc-a60f83d3cbd4",
+      "tokenId": 48,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Watch Tower",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/5ad15a10-e912-49b5-b4d3-9c9a516c41ff",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Military",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 750,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0xdd5d6fa8b5eb8828cbadd7946a77feac2a8379b8",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.904Z"
+    },
+    {
+      "id": "7f3caf64-5174-494b-ad66-b17315959bc6",
+      "tokenId": 49,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Lighthouse",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/725a6b70-4ebb-4868-98c7-d40a5548ac19",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Government",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 1500,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0xc55f0572178d6a6217be36d3f756ef7f5a7f396c",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.904Z"
+    },
+    {
+      "id": "d1554f8c-e972-4552-a33c-f595db384b8f",
+      "tokenId": 50,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Stables",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/111d9204-bd1f-4245-b027-589174a1dc2b",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Agriculture",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 2000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0xd434b922e30193f9181284382517884c94350f9e",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.904Z"
+    },
+    {
+      "id": "f40a2024-7351-46ca-b737-5580399d0a47",
+      "tokenId": 51,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Stone Masons",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/7d2a6311-96c5-47e4-8840-9e857c9eee05",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Retail",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 3000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0xaba4414cc3bc819268dfdd14a8e5da2300443aa1",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.904Z"
+    },
+    {
+      "id": "9618e39d-af3a-48c9-8271-9a1224113539",
+      "tokenId": 52,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Small House",
+        "image": "ipfs://bafybeiczgznrjns2cg44m2bc3lvzi34ughnq3jv65apq6t7tnvc3ur2x7i/cc106fa5-6e9d-4996-9def-3174dd91ce57",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Housing",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 1000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0xaba4414cc3bc819268dfdd14a8e5da2300443aa1",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.904Z"
+    },
+    {
+      "id": "27a3c083-b408-4210-a9c5-0ef7d4ac25ff",
+      "tokenId": 53,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Herbarium",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/c7d0698c-8c1c-4fa7-9551-0bbdea395535",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Retail",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "Hiraeth Herbal Tea",
+            "trait_type": "Product"
+          },
+          {
+            "value": 3000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0xaba4414cc3bc819268dfdd14a8e5da2300443aa1",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.904Z"
+    },
+    {
+      "id": "f8f9bb7f-3bc6-4976-b8bc-b8f292b42428",
+      "tokenId": 54,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Observatory",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/53b94623-801b-429f-b8b5-f344f4d8abb0",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Government",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 4000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0xaba4414cc3bc819268dfdd14a8e5da2300443aa1",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.904Z"
+    },
+    {
+      "id": "92049bfc-5523-422c-85e7-3898c36c62d3",
+      "tokenId": 55,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Military Barracks",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/5fea91df-7177-4d69-9e7a-86b771778a5b",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Military",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 3500,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0xaba4414cc3bc819268dfdd14a8e5da2300443aa1",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.904Z"
+    },
+    {
+      "id": "6e41d312-e8d2-4e22-84af-a4e627555976",
+      "tokenId": 56,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Coffee Shop",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/99d889b8-959c-4b09-a2dc-e9cdd3806c1f",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Retail",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "Hiraeth Coffee Beans",
+            "trait_type": "Product"
+          },
+          {
+            "value": 3000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0xaba4414cc3bc819268dfdd14a8e5da2300443aa1",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.905Z"
+    },
+    {
+      "id": "f5e75c4d-f2da-4548-b00b-773389cfd571",
+      "tokenId": 57,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Sword Arena",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/98ec5699-c336-4198-ba60-90b6703acc77",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Military",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 2000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0xaba4414cc3bc819268dfdd14a8e5da2300443aa1",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.905Z"
+    },
+    {
+      "id": "73b520cb-fdc8-4386-9be2-dd54cd7074ab",
+      "tokenId": 58,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Small House",
+        "image": "ipfs://bafybeiczgznrjns2cg44m2bc3lvzi34ughnq3jv65apq6t7tnvc3ur2x7i/cc106fa5-6e9d-4996-9def-3174dd91ce57",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Housing",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 1000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0xaba4414cc3bc819268dfdd14a8e5da2300443aa1",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.905Z"
+    },
+    {
+      "id": "c5a2be4e-f6c4-4aa0-b596-baae9d401d26",
+      "tokenId": 59,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Knights Training Acadamy",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/3b027a96-2563-49b7-880b-d6bd9d22555b",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Military",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 2000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0xaba4414cc3bc819268dfdd14a8e5da2300443aa1",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.904Z"
+    },
+    {
+      "id": "9ffbda8d-c900-498b-9ed8-4fe75927c9f9",
+      "tokenId": 60,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Tollhouse",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/fc8788e3-139d-43af-9925-56397bedf18e",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Government",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 1500,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0xaba4414cc3bc819268dfdd14a8e5da2300443aa1",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.905Z"
+    },
+    {
+      "id": "244c5529-1072-471c-9a50-34fc6def1cce",
+      "tokenId": 61,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Small House",
+        "image": "ipfs://bafybeiczgznrjns2cg44m2bc3lvzi34ughnq3jv65apq6t7tnvc3ur2x7i/72d0f7ab-8d57-45fb-903c-ab5bcf978c73",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Housing",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 1000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0xaba4414cc3bc819268dfdd14a8e5da2300443aa1",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.905Z"
+    },
+    {
+      "id": "eaf0c1f9-2a53-4cc7-932b-8293a670f5e0",
+      "tokenId": 62,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Temple",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/021250f8-b7ec-40c8-bbab-ca487cc67091",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Government",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 3500,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0xaba4414cc3bc819268dfdd14a8e5da2300443aa1",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.905Z"
+    },
+    {
+      "id": "288494f1-8178-4899-831b-94b30f0986cc",
+      "tokenId": 63,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Orphanage",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/7b094f4f-106b-4768-a925-4df6ead15b56",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Government",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 3000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x2febe8734fb2fb84227045a6a3436df72164118f",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.905Z"
+    },
+    {
+      "id": "bd54fb1c-0ec0-4bd3-a229-f053a94303e1",
+      "tokenId": 64,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Brothel",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/9f385e78-0b87-4299-aa42-228e3fd824d5",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Hospitality",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 4000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x9066382dde4d35db1fb65724bbcede34743063a9",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.905Z"
+    },
+    {
+      "id": "4894480b-49fb-4c73-b908-9fef395707e3",
+      "tokenId": 65,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Brewery",
+        "image": "ipfs://QmTyzXQN6QXWw7zPd6G1pqxaimzwPdsUEsgU8R6MRAZ7BG",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Production",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "Hiraeth Mead",
+            "trait_type": "Product"
+          },
+          {
+            "value": 3500,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x4d1cb1c6cd01b93735619fc1340e413659da1c44",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.905Z"
+    },
+    {
+      "id": "36ad599a-60d7-4716-8f26-523634efb71b",
+      "tokenId": 66,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Mill",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/dd42e5f1-9598-461d-9809-2182c122e2ad",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Production",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 2500,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0xd6e0f82a4bd119ee24b8708a880e6167ed5a7a7e",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.897Z"
+    },
+    {
+      "id": "6445962c-5bc9-438b-b39c-a1a9b00f6e65",
+      "tokenId": 67,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Small House",
+        "image": "ipfs://bafybeiczgznrjns2cg44m2bc3lvzi34ughnq3jv65apq6t7tnvc3ur2x7i/72d0f7ab-8d57-45fb-903c-ab5bcf978c73",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Housing",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 1000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0xb5105c731c5f3ec29ee4e84c7e0d45e8ef43b300",
+      "ownerEmail": null,
+      "createdAt": "2024-06-19T13:24:01.701Z",
+      "updatedAt": "2024-10-27T22:58:40.898Z"
+    },
+    {
+      "id": "e0e9eaf8-e60e-4741-b90f-0d1f942d2556",
+      "tokenId": 68,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Gate",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/1382bfd3-4ce0-4338-9343-192e5cf4c410",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Government",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 500,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x05b98dec0bf2d2d78997e07517693335ab8f99d3",
+      "ownerEmail": null,
+      "createdAt": "2024-06-19T13:24:01.701Z",
+      "updatedAt": "2024-10-27T22:58:40.898Z"
+    },
+    {
+      "id": "a679c8bc-3ba4-40f8-a386-9c281e3a8f7f",
+      "tokenId": 69,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Joust Arena",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/a430b9de-ae70-4889-bbd2-3e33952a1ccd",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Military",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 2000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x0993d6bd9b9a7c3d3117944cb464938f221cc4fa",
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T18:38:24.948Z",
+      "updatedAt": "2024-10-27T22:58:40.898Z"
+    },
+    {
+      "id": "617d90dd-30b8-4f8b-8335-3ffc65716f3b",
+      "tokenId": 70,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "City Well",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/03e1e23e-3c41-43ac-8530-edf8ca77e9ff",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Government",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 500,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x2c077c051fdbadc8388427e3ad30059e050b5f8f",
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T18:38:24.948Z",
+      "updatedAt": "2024-10-27T22:58:40.898Z"
+    },
+    {
+      "id": "37228642-8f64-49e7-b85b-705b9d5774cb",
+      "tokenId": 71,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Herbarium",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/c7d0698c-8c1c-4fa7-9551-0bbdea395535",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Retail",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "Hiraeth Herbal Tea",
+            "trait_type": "Product"
+          },
+          {
+            "value": 3000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x478ffba8ea4945fb9327812231dfb1c6cafd2c49",
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T18:38:24.948Z",
+      "updatedAt": "2024-10-27T22:58:40.898Z"
+    },
+    {
+      "id": "bcaaf7ed-2bce-4717-8dce-ef5ee4032791",
+      "tokenId": 72,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Rusty Anchor Tavern",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/9deba9ea-9f3f-4acf-a28a-5d235471ef83",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Hospitality",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 4000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x4d1cb1c6cd01b93735619fc1340e413659da1c44",
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T18:38:24.948Z",
+      "updatedAt": "2024-10-27T22:58:40.898Z"
+    },
+    {
+      "id": "fbe8b213-6b0b-402b-abb5-d96b410b4f67",
+      "tokenId": 73,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Training Grounds",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/80ae5af6-63b6-45ca-a815-c2ea7283d5e7",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Military",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 2000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x54819de751495dcc0450763f728ca9b2e85105a4",
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T18:38:24.948Z",
+      "updatedAt": "2024-10-27T22:58:40.898Z"
+    },
+    {
+      "id": "297d3077-1eb5-4a71-aa1f-cd576a84028f",
+      "tokenId": 74,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Dock Warehouse",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/f0864f51-f9cc-499f-9aa1-467e0d813542",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Government",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 2500,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x89b824ab6dc29db6366e590e08a1f224cc3f4b15",
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T18:38:24.948Z",
+      "updatedAt": "2024-10-27T22:58:40.899Z"
+    },
+    {
+      "id": "c8a63345-ec6d-464e-b630-db74f6e3fb3d",
+      "tokenId": 75,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Expedition Store",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/8a3dfc60-7281-4f19-b15f-028f21b545a5",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Retail",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 3000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x9b95d8f7c44efc92b03ae2f17e2344e67de04f96",
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T18:38:24.948Z",
+      "updatedAt": "2024-10-27T22:58:40.899Z"
+    },
+    {
+      "id": "c93d6da6-9c37-4dfa-b563-0a25506e2ac5",
+      "tokenId": 76,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Cattle Barn",
+        "image": "ipfs://bafybeidfkz2w6istco77c6xcwun3aqfker56fd2t6v6odos4ojiwkboyde/ea852093-5839-4b6c-aa37-da38c885e98d",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Agriculture",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 2000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0xd6e0f82a4bd119ee24b8708a880e6167ed5a7a7e",
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T18:38:24.948Z",
+      "updatedAt": "2024-10-27T22:58:40.899Z"
+    },
+    {
+      "id": "7637f775-b7c9-4289-b843-e08c4f6ece07",
+      "tokenId": 77,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Small House",
+        "image": "ipfs://bafybeiczgznrjns2cg44m2bc3lvzi34ughnq3jv65apq6t7tnvc3ur2x7i/927dc371-156e-4067-b7cc-b52b52d2264a",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Housing",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 1000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0xe27da31b0b45bec41e06d88e16421d606e60d12b",
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T18:38:24.948Z",
+      "updatedAt": "2024-10-27T22:58:40.899Z"
+    },
+    {
+      "id": "7bed6239-4cdb-414f-a9d9-b45d630144c9",
+      "tokenId": 78,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Coffee Shop",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/99d889b8-959c-4b09-a2dc-e9cdd3806c1f",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Retail",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "Hiraeth Coffee Beans",
+            "trait_type": "Product"
+          },
+          {
+            "value": 3000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x43c8bb58c29b30627a2991b25fb82467f88b4bed",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.899Z"
+    },
+    {
+      "id": "04c3b17c-dd09-4e1b-84c0-86e81006e135",
+      "tokenId": 79,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Small House",
+        "image": "ipfs://bafybeiczgznrjns2cg44m2bc3lvzi34ughnq3jv65apq6t7tnvc3ur2x7i/927dc371-156e-4067-b7cc-b52b52d2264a",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Housing",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 1000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x89b824ab6dc29db6366e590e08a1f224cc3f4b15",
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T18:38:24.948Z",
+      "updatedAt": "2024-10-27T22:58:40.899Z"
+    },
+    {
+      "id": "17178cd4-7e7c-40d2-b99b-73baf3b3b137",
+      "tokenId": 80,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Tollhouse",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/fc8788e3-139d-43af-9925-56397bedf18e",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Government",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 1500,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x7381070c14aed94e228adb66b733534ce55d8757",
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T18:38:24.948Z",
+      "updatedAt": "2024-10-27T22:58:40.899Z"
+    },
+    {
+      "id": "8e0fc833-b8f3-49cd-b37c-fadc0fb5d5c9",
+      "tokenId": 81,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Butchers",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/219aa216-4454-474e-b5bf-04310b95fe0f",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Retail",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 2500,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0xaba4414cc3bc819268dfdd14a8e5da2300443aa1",
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T18:38:24.948Z",
+      "updatedAt": "2024-10-27T22:58:40.899Z"
+    },
+    {
+      "id": "f2a87a05-74b5-41a1-93c5-5d35dc710213",
+      "tokenId": 82,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Mill",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/dd42e5f1-9598-461d-9809-2182c122e2ad",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Production",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 2500,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0xaba4414cc3bc819268dfdd14a8e5da2300443aa1",
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T18:38:24.948Z",
+      "updatedAt": "2024-10-27T22:58:40.899Z"
+    },
+    {
+      "id": "134490b2-68b7-4b27-a066-0a930e0fb8d5",
+      "tokenId": 83,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Blacksmith",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/595e4504-546a-4906-a02f-a627be0a9d0d",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Retail",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 3000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0xd6e0f82a4bd119ee24b8708a880e6167ed5a7a7e",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-10-27T22:58:40.905Z"
+    },
+    {
+      "id": "a355cabd-de00-4513-a0c1-6bff06966bc1",
+      "tokenId": 84,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Small House",
+        "image": "ipfs://bafybeiczgznrjns2cg44m2bc3lvzi34ughnq3jv65apq6t7tnvc3ur2x7i/cc106fa5-6e9d-4996-9def-3174dd91ce57",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Housing",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 1000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x478ffba8ea4945fb9327812231dfb1c6cafd2c49",
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T18:38:24.948Z",
+      "updatedAt": "2024-10-27T22:58:40.900Z"
+    },
+    {
+      "id": "1aced078-602d-495f-aeea-c2e251bc4ca1",
+      "tokenId": 85,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Mill",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/dd42e5f1-9598-461d-9809-2182c122e2ad",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Production",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 2500,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x8211fa3f39e555748bfbeaea383a4ead0c90c403",
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T18:38:24.948Z",
+      "updatedAt": "2024-10-27T22:58:40.901Z"
+    },
+    {
+      "id": "9cd6acae-23cf-4e57-9bb6-089f3c697d0f",
+      "tokenId": 86,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Pillary",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/03a2439c-40f3-416e-9026-7f2a9c7492aa",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Military",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 500,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x4d1cb1c6cd01b93735619fc1340e413659da1c44",
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T18:38:24.948Z",
+      "updatedAt": "2024-10-27T22:58:40.901Z"
+    },
+    {
+      "id": "21474203-54f0-426b-ac29-2089eadbe9d3",
+      "tokenId": 87,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Small House",
+        "image": "ipfs://bafybeiczgznrjns2cg44m2bc3lvzi34ughnq3jv65apq6t7tnvc3ur2x7i/72d0f7ab-8d57-45fb-903c-ab5bcf978c73",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Housing",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 1000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0xdfeba11ef6d8406b5cc770802c063e5efc5d118d",
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T18:38:24.948Z",
+      "updatedAt": "2024-10-27T22:58:40.902Z"
+    },
+    {
+      "id": "f2897e63-9ed1-4e63-a84e-9ea43febcf39",
+      "tokenId": 88,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Kings Chapel",
+        "image": "https://storage.niftykit.com/ipfs/QmZNGb9ZZSHBjKbc9tvc4ubKdoY9tCYULa9Yaf4t2f4tZ9",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Government",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 1500,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": "",
+        "external_url": "",
+        "animation_url": "",
+        "background_color": ""
+      },
+      "ownerAddress": "0x4d1cb1c6cd01b93735619fc1340e413659da1c44",
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T18:38:24.948Z",
+      "updatedAt": "2024-10-27T23:01:05.727Z"
+    },
+    {
+      "id": "e9ca0511-118e-4c60-bf2c-c48d2f615762",
+      "tokenId": 89,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Marts Chapel",
+        "image": "https://storage.niftykit.com/ipfs/QmZNGb9ZZSHBjKbc9tvc4ubKdoY9tCYULa9Yaf4t2f4tZ9",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Government",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 1500,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": "",
+        "external_url": "",
+        "animation_url": "",
+        "background_color": ""
+      },
+      "ownerAddress": "0x2c077c051fdbadc8388427e3ad30059e050b5f8f",
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T18:38:24.948Z",
+      "updatedAt": "2024-10-27T23:01:31.761Z"
+    },
+    {
+      "id": "f2750217-889a-4bb5-81e2-e8bc5ab9a0d8",
+      "tokenId": 90,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Bakery",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/1e6c0eac-3855-4c63-9041-b46b26b9dfb9",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Retail",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 3000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x4d1cb1c6cd01b93735619fc1340e413659da1c44",
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T18:38:24.948Z",
+      "updatedAt": "2024-11-02T23:35:06.000Z"
+    },
+    {
+      "id": "d8ed5d29-a9a1-4413-bff8-3ffac03b5dac",
+      "tokenId": 91,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Watch Tower",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/5ad15a10-e912-49b5-b4d3-9c9a516c41ff",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Military",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 750,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0xe40c3f76f8ef2891334c7de50e10dc63918ac9e0",
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T18:38:24.948Z",
+      "updatedAt": "2024-11-05T17:04:33.621Z"
+    },
+    {
+      "id": "f37a419e-2be7-4874-895a-b778944277dc",
+      "tokenId": 92,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Courthouse",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/74ef8ae4-6b60-4342-9eca-22a8352ba1c2",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Government",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 4000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x0d618ea9892c54f0c88a9ef2c6c423f406b38222",
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T18:38:24.948Z",
+      "updatedAt": "2024-11-08T00:39:11.508Z"
+    },
+    {
+      "id": "2ecdbe04-b138-4bfc-97d1-79e58818f479",
+      "tokenId": 93,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Guildhall",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/db4eac35-7f0e-459d-bf0f-88f954ba1ab6",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Military",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 4000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0xb531ccf78ad70a7709e42b67db402cc4e3f8442f",
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T18:38:24.948Z",
+      "updatedAt": "2024-11-08T00:39:10.157Z"
+    },
+    {
+      "id": "43f1e253-e294-47b9-a1f2-c85b64acd588",
+      "tokenId": 94,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Small House",
+        "image": "ipfs://bafybeiczgznrjns2cg44m2bc3lvzi34ughnq3jv65apq6t7tnvc3ur2x7i/72d0f7ab-8d57-45fb-903c-ab5bcf978c73",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Housing",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 1000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0xa9f620157214c1895c99d862d26f67fd761b98f1",
+      "ownerEmail": null,
+      "createdAt": "2024-06-18T23:17:30.635Z",
+      "updatedAt": "2024-11-08T17:25:31.116Z"
+    },
+    {
+      "id": "9d3c4e2c-84de-477e-b0c1-02a29b2ff06c",
+      "tokenId": 95,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Hospital",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/4180d960-b4ca-4986-8120-770ad880e3c6",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Government",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 4000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x478ffba8ea4945fb9327812231dfb1c6cafd2c49",
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T18:38:24.948Z",
+      "updatedAt": "2024-11-08T17:25:31.142Z"
+    },
+    {
+      "id": "bf18740e-3206-4619-bf60-2a4fda19bb1b",
+      "tokenId": 96,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Distillery",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/455a373b-7f72-4a89-bb9e-2e78cc593cba",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Production",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "Hiraeth Gin",
+            "trait_type": "Product"
+          },
+          {
+            "value": 3500,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x1798b317389d1caa1742809240d6f00b5d3af9aa",
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T18:38:24.948Z",
+      "updatedAt": "2024-11-08T17:28:19.170Z"
+    },
+    {
+      "id": "c879efbe-be2a-444e-97f5-b172a74bf5cf",
+      "tokenId": 97,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Armoury",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/77171af9-b018-4dbb-92c8-4cbf22c6367b",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Military",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 4000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x0847bda815625b1b54283a2547fe8230e8ed7226",
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T20:42:33.627Z",
+      "updatedAt": "2024-11-09T22:27:07.329Z"
+    },
+    {
+      "id": "799bc9cc-063e-4baf-b36e-b8503a68967e",
+      "tokenId": 98,
+      "status": "MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Castle",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/027676fe-c7ec-4a01-b253-0fad64e00ace",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Government",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 5000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": "0x3902619261273410cac049b44f656fa7598d987d",
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T18:38:24.948Z",
+      "updatedAt": "2024-11-10T05:50:09.731Z"
+    },
+    {
+      "id": "0679e7e5-7b5c-42a5-9edc-7598ce07c353",
+      "tokenId": 99,
+      "status": "NOT_MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "The Seren Inn",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/50f9c889-00ef-4278-b5bf-b6fedecfdd05",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Hospitality",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 3000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": null,
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T18:38:24.948Z",
+      "updatedAt": "2024-10-27T22:58:40.903Z"
+    },
+    {
+      "id": "78a75567-71c3-443e-8669-b2a3a3008e38",
+      "tokenId": 100,
+      "status": "NOT_MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Cattle Barn",
+        "image": "ipfs://bafybeidfkz2w6istco77c6xcwun3aqfker56fd2t6v6odos4ojiwkboyde/ea852093-5839-4b6c-aa37-da38c885e98d",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Agriculture",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 2000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": null,
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T20:42:33.627Z",
+      "updatedAt": "2024-10-27T22:58:40.903Z"
+    },
+    {
+      "id": "ea559068-5c9a-4e25-b376-cd284c0ceec7",
+      "tokenId": 101,
+      "status": "NOT_MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Small House",
+        "image": "ipfs://bafybeiczgznrjns2cg44m2bc3lvzi34ughnq3jv65apq6t7tnvc3ur2x7i/927dc371-156e-4067-b7cc-b52b52d2264a",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Housing",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 1000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": null,
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T20:42:33.627Z",
+      "updatedAt": "2024-10-27T22:58:41.388Z"
+    },
+    {
+      "id": "620c9df2-43e9-43ee-8456-8aa6c06fd181",
+      "tokenId": 102,
+      "status": "NOT_MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Keep",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/c78d5990-8d34-4af6-937d-422482d8029e",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Military",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 4000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": null,
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T20:42:33.627Z",
+      "updatedAt": "2024-10-27T22:58:41.388Z"
+    },
+    {
+      "id": "5b9848a0-501f-4ebc-afc6-e931ddc1555d",
+      "tokenId": 103,
+      "status": "NOT_MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Small House",
+        "image": "ipfs://bafybeiczgznrjns2cg44m2bc3lvzi34ughnq3jv65apq6t7tnvc3ur2x7i/cc106fa5-6e9d-4996-9def-3174dd91ce57",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Housing",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 1000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": null,
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T20:42:33.627Z",
+      "updatedAt": "2024-10-27T22:58:41.389Z"
+    },
+    {
+      "id": "cf4dd0f5-ceab-4e67-9468-a305628fcab7",
+      "tokenId": 104,
+      "status": "NOT_MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Tailor",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/2e16f1a5-a3dc-484d-b960-c8305ef0d104",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Retail",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "Hiraeth Hoodie",
+            "trait_type": "Product"
+          },
+          {
+            "value": 2500,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": null,
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T20:42:33.627Z",
+      "updatedAt": "2024-10-27T22:58:41.389Z"
+    },
+    {
+      "id": "2a1de754-c688-43c8-8854-d39f2f2e4565",
+      "tokenId": 105,
+      "status": "NOT_MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Small House",
+        "image": "ipfs://bafybeiczgznrjns2cg44m2bc3lvzi34ughnq3jv65apq6t7tnvc3ur2x7i/927dc371-156e-4067-b7cc-b52b52d2264a",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Housing",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 1000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": null,
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T20:42:33.627Z",
+      "updatedAt": "2024-10-27T22:58:41.389Z"
+    },
+    {
+      "id": "f6665097-5bc6-4158-b2e6-4fdc8a1815a9",
+      "tokenId": 106,
+      "status": "NOT_MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Town Hall",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/c2e420b5-e97b-4568-a96d-08147b32e894",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Government",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 4000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": null,
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T20:42:33.627Z",
+      "updatedAt": "2024-10-27T22:58:41.389Z"
+    },
+    {
+      "id": "683564f1-4065-4961-8865-770c52b199fe",
+      "tokenId": 107,
+      "status": "NOT_MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Small House",
+        "image": "ipfs://bafybeiczgznrjns2cg44m2bc3lvzi34ughnq3jv65apq6t7tnvc3ur2x7i/72d0f7ab-8d57-45fb-903c-ab5bcf978c73",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Housing",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 1000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": null,
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T20:42:33.627Z",
+      "updatedAt": "2024-10-27T22:58:41.389Z"
+    },
+    {
+      "id": "0f185e8d-1117-408b-b8b2-b9bcdf11acef",
+      "tokenId": 108,
+      "status": "NOT_MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Market Stall",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/0d1dc940-d673-42c2-9d43-a41a137e4cc4",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Retail",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 1000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": null,
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T20:42:33.627Z",
+      "updatedAt": "2024-10-27T22:58:41.390Z"
+    },
+    {
+      "id": "8e585e09-9985-4027-800d-0b3e178e68d7",
+      "tokenId": 109,
+      "status": "NOT_MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Small House",
+        "image": "ipfs://bafybeiczgznrjns2cg44m2bc3lvzi34ughnq3jv65apq6t7tnvc3ur2x7i/927dc371-156e-4067-b7cc-b52b52d2264a",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Housing",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 1000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": null,
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T20:42:33.627Z",
+      "updatedAt": "2024-10-27T22:58:41.390Z"
+    },
+    {
+      "id": "558e2c6f-939e-4e4f-a82c-dba7c5fc4022",
+      "tokenId": 110,
+      "status": "NOT_MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Sword Training Ground",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/ecb096f1-1942-4ca6-af06-e90c4ac9ea4e",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Military",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 2000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": null,
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T20:42:33.627Z",
+      "updatedAt": "2024-10-27T22:58:41.390Z"
+    },
+    {
+      "id": "fb8a9741-b28b-4b2c-ac5c-8891698a5600",
+      "tokenId": 111,
+      "status": "NOT_MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Small House",
+        "image": "ipfs://bafybeiczgznrjns2cg44m2bc3lvzi34ughnq3jv65apq6t7tnvc3ur2x7i/72d0f7ab-8d57-45fb-903c-ab5bcf978c73",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Housing",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 1000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": null,
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T20:42:33.627Z",
+      "updatedAt": "2024-10-27T22:58:41.390Z"
+    },
+    {
+      "id": "d64c6edd-08be-4e46-a464-4bc6233074ef",
+      "tokenId": 112,
+      "status": "NOT_MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Bakery",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/1e6c0eac-3855-4c63-9041-b46b26b9dfb9",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Retail",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 3000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": null,
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T20:42:33.627Z",
+      "updatedAt": "2024-10-27T22:58:41.390Z"
+    },
+    {
+      "id": "5aae77d4-1874-41bb-a11f-04715e433c2d",
+      "tokenId": 113,
+      "status": "NOT_MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Tailor",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/2e16f1a5-a3dc-484d-b960-c8305ef0d104",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Retail",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "Hiraeth Hoodie",
+            "trait_type": "Product"
+          },
+          {
+            "value": 2500,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": null,
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T20:42:33.627Z",
+      "updatedAt": "2024-10-27T22:58:41.390Z"
+    },
+    {
+      "id": "e0a5e74b-8efb-43e2-a554-03ee12e38ddd",
+      "tokenId": 114,
+      "status": "NOT_MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Small House",
+        "image": "ipfs://bafybeiczgznrjns2cg44m2bc3lvzi34ughnq3jv65apq6t7tnvc3ur2x7i/72d0f7ab-8d57-45fb-903c-ab5bcf978c73",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Housing",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 1000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": null,
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T20:42:33.627Z",
+      "updatedAt": "2024-10-27T22:58:41.390Z"
+    },
+    {
+      "id": "3e6b9671-8df7-4e41-a9d0-d47fdc4980f3",
+      "tokenId": 115,
+      "status": "NOT_MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Wagon Repair Shop",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/df8eb3a6-1b3c-45d9-a385-21aa81a80031",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Retail",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 2500,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": null,
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T20:42:33.627Z",
+      "updatedAt": "2024-10-27T22:58:41.391Z"
+    },
+    {
+      "id": "c19b9c54-8bdd-48c3-a389-5490049e95d3",
+      "tokenId": 116,
+      "status": "NOT_MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Bakery",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/1e6c0eac-3855-4c63-9041-b46b26b9dfb9",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Retail",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 3000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": null,
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T20:42:33.627Z",
+      "updatedAt": "2024-10-27T22:58:41.391Z"
+    },
+    {
+      "id": "fba7e544-7514-498f-8f3d-15609269a500",
+      "tokenId": 117,
+      "status": "NOT_MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Small House",
+        "image": "ipfs://bafybeiczgznrjns2cg44m2bc3lvzi34ughnq3jv65apq6t7tnvc3ur2x7i/cc106fa5-6e9d-4996-9def-3174dd91ce57",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Housing",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 1000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": null,
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T20:42:33.627Z",
+      "updatedAt": "2024-10-27T22:58:41.391Z"
+    },
+    {
+      "id": "fc69d72a-081f-4524-9188-4ee5f6de122a",
+      "tokenId": 118,
+      "status": "NOT_MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Brothel",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/9f385e78-0b87-4299-aa42-228e3fd824d5",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Hospitality",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 4000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": null,
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T20:42:33.627Z",
+      "updatedAt": "2024-10-27T22:58:41.391Z"
+    },
+    {
+      "id": "5efce895-97a2-4228-842a-92f1344f9155",
+      "tokenId": 119,
+      "status": "NOT_MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Wine Store ",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/342decae-048f-4e47-a5ad-81cff2890e63",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Retail",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 3000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": null,
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T20:42:33.627Z",
+      "updatedAt": "2024-10-27T22:58:41.389Z"
+    },
+    {
+      "id": "ddc75adb-01dc-440a-b506-bf0363247825",
+      "tokenId": 120,
+      "status": "NOT_MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Harbour Master",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/5426c758-8843-40fa-aba4-eee6771b92ce",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Government",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 2000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": null,
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T20:42:33.627Z",
+      "updatedAt": "2024-10-27T22:58:41.389Z"
+    },
+    {
+      "id": "79c9838b-1c9b-4bb3-84fb-33c4b48df872",
+      "tokenId": 121,
+      "status": "NOT_MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Small House",
+        "image": "ipfs://bafybeiczgznrjns2cg44m2bc3lvzi34ughnq3jv65apq6t7tnvc3ur2x7i/cc106fa5-6e9d-4996-9def-3174dd91ce57",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Housing",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 1000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": null,
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T20:42:33.627Z",
+      "updatedAt": "2024-10-27T22:58:41.390Z"
+    },
+    {
+      "id": "4dac46d0-d884-44e9-9ef3-bd24c5799b89",
+      "tokenId": 122,
+      "status": "NOT_MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Heroes Guild",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/18c6b031-159e-4acd-8df1-f6214d6b378f",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Military",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 5000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": null,
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T20:42:33.627Z",
+      "updatedAt": "2024-10-27T22:58:41.389Z"
+    },
+    {
+      "id": "7d0a1f66-f084-4f49-80f5-16c30ae41d88",
+      "tokenId": 123,
+      "status": "NOT_MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Gate",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/1382bfd3-4ce0-4338-9343-192e5cf4c410",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Government",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 500,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": null,
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T20:42:33.627Z",
+      "updatedAt": "2024-10-27T22:58:41.389Z"
+    },
+    {
+      "id": "ac180525-5f8c-418d-939e-48341b563aa6",
+      "tokenId": 124,
+      "status": "NOT_MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Boiled Toad Tavern",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/480c2dad-7e3e-404b-a90e-5d7b98be86e0",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Hospitality",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 4000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": null,
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T20:42:33.627Z",
+      "updatedAt": "2024-10-27T22:58:41.390Z"
+    },
+    {
+      "id": "3d194063-57c0-4826-844b-72930ebf002d",
+      "tokenId": 125,
+      "status": "NOT_MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Small House",
+        "image": "ipfs://bafybeiczgznrjns2cg44m2bc3lvzi34ughnq3jv65apq6t7tnvc3ur2x7i/cc106fa5-6e9d-4996-9def-3174dd91ce57",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Housing",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 1000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": null,
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T20:42:33.627Z",
+      "updatedAt": "2024-10-27T22:58:41.390Z"
+    },
+    {
+      "id": "d41ba659-a552-4ca7-abad-6700d0e959f6",
+      "tokenId": 126,
+      "status": "NOT_MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Battlegrounds",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/a794342a-a448-490d-8acf-8030e29bc95d",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Military",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 2000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": null,
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T20:42:33.627Z",
+      "updatedAt": "2024-10-27T22:58:41.390Z"
+    },
+    {
+      "id": "f8bed993-e4e8-4156-965d-b804b8e87d12",
+      "tokenId": 127,
+      "status": "NOT_MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Small House",
+        "image": "ipfs://bafybeiczgznrjns2cg44m2bc3lvzi34ughnq3jv65apq6t7tnvc3ur2x7i/cc106fa5-6e9d-4996-9def-3174dd91ce57",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Housing",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 1000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": null,
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T20:42:33.627Z",
+      "updatedAt": "2024-10-27T22:58:41.390Z"
+    },
+    {
+      "id": "b7dc7306-d6fd-4fa0-b48b-6dba1db14a82",
+      "tokenId": 128,
+      "status": "NOT_MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Hiraeth Studios",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/26f0363d-b804-4838-8ba0-2aaace40215c",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Production",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 5000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": null,
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T20:42:33.627Z",
+      "updatedAt": "2024-10-27T22:58:41.390Z"
+    },
+    {
+      "id": "33cef3d9-2ea8-419a-842e-50183c505fb2",
+      "tokenId": 129,
+      "status": "NOT_MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Small House",
+        "image": "ipfs://bafybeiczgznrjns2cg44m2bc3lvzi34ughnq3jv65apq6t7tnvc3ur2x7i/927dc371-156e-4067-b7cc-b52b52d2264a",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Housing",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 1000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": null,
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T20:42:33.627Z",
+      "updatedAt": "2024-10-27T22:58:41.390Z"
+    },
+    {
+      "id": "2477362a-9878-4a2d-9b1a-621d2413305f",
+      "tokenId": 130,
+      "status": "NOT_MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Tombstone Mason",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/65c0e589-064d-4a33-ab7f-c6cf8c986a5d",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Retail",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 2500,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": null,
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T20:42:33.627Z",
+      "updatedAt": "2024-10-27T22:58:41.390Z"
+    },
+    {
+      "id": "c26660c2-92d3-424c-aec4-58e84de574ca",
+      "tokenId": 131,
+      "status": "NOT_MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Castle Well",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/fce1b5f0-6197-4b14-a56a-d9f69f75db2a",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Government",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 750,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": null,
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T20:42:33.627Z",
+      "updatedAt": "2024-10-27T22:58:41.390Z"
+    },
+    {
+      "id": "ac7b9662-2be3-4d4a-baf9-d40abb09bc7f",
+      "tokenId": 132,
+      "status": "NOT_MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Shipbuilders",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/cc60313f-96ca-441d-a461-36f06d755671",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Production",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 4000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": null,
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T20:42:33.627Z",
+      "updatedAt": "2024-10-27T22:58:41.390Z"
+    },
+    {
+      "id": "583d2294-a577-41b3-83a8-cdd35c8b9ae8",
+      "tokenId": 133,
+      "status": "NOT_MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Tannery",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/bf906a9e-f477-4355-9fd8-f773e0b8a945",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Retail",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 2500,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": null,
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T20:42:33.627Z",
+      "updatedAt": "2024-10-27T22:58:41.390Z"
+    },
+    {
+      "id": "f8ce3095-11e4-46b9-8975-2230ffaeb3ba",
+      "tokenId": 134,
+      "status": "NOT_MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Small House",
+        "image": "ipfs://bafybeiczgznrjns2cg44m2bc3lvzi34ughnq3jv65apq6t7tnvc3ur2x7i/cc106fa5-6e9d-4996-9def-3174dd91ce57",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Housing",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 1000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": null,
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T20:42:33.627Z",
+      "updatedAt": "2024-10-27T22:58:41.390Z"
+    },
+    {
+      "id": "9aa64e61-c143-4090-a97a-ec2c02b37df0",
+      "tokenId": 135,
+      "status": "NOT_MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Archery Range",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/801419c4-f531-495b-a477-a6868f968aa8",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Military",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 2000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": null,
+      "ownerEmail": null,
+      "createdAt": "2024-06-21T20:42:33.627Z",
+      "updatedAt": "2024-10-27T22:58:41.390Z"
+    },
+    {
+      "id": "8943a7ce-a701-43e0-a654-9dca0533f550",
+      "tokenId": 136,
+      "status": "NOT_MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Olive Grove",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/61f4b8b7-c6cf-4530-8200-15dbe2ca864a",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Agriculture",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 2500,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": null,
+      "ownerEmail": null,
+      "createdAt": "2024-10-27T22:58:41.551Z",
+      "updatedAt": "2024-10-27T22:58:41.551Z"
+    },
+    {
+      "id": "b5585ada-d111-4f28-b0e5-9c51fe23cf99",
+      "tokenId": 137,
+      "status": "NOT_MINTED",
+      "collectionId": "clvql4yki0001ingfe0x3h995",
+      "mintLinkId": null,
+      "metadata": {
+        "name": "Heroes Statue",
+        "image": "ipfs://bafybeiezqxms5spvfvxzbflqs7avcejq5i5brzjhtinfh5bfjzmgje2dgy/b6aa07fa-97b8-47c7-87a2-b3944a164a5a",
+        "attributes": [
+          {
+            "value": "Gwahanlen",
+            "trait_type": "Location"
+          },
+          {
+            "value": "Military",
+            "trait_type": "Property Type"
+          },
+          {
+            "value": "None",
+            "trait_type": "Product"
+          },
+          {
+            "value": 5000,
+            "trait_type": "Rental Value"
+          },
+          {
+            "value": 1,
+            "trait_type": "Level"
+          }
+        ],
+        "description": "Own Property on Hiraeth - Earn Rent.",
+        "youtube_url": null,
+        "external_url": null,
+        "animation_url": null,
+        "background_color": null
+      },
+      "ownerAddress": null,
+      "ownerEmail": null,
+      "createdAt": "2024-10-27T22:58:41.551Z",
+      "updatedAt": "2024-10-27T22:58:41.551Z"
+    }
+  ],
+  "status": "success"
+}

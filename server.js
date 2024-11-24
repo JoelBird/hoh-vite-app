@@ -75,10 +75,6 @@ cron.schedule('*/15 * * * * *', () => {
     for (const row of rows) {
       const { heroTokenId, heroWillReceive, heroName, heroHolderWalletAddress, propertyHolderWalletAddress, interactionId } = row;
 
-      console.log(heroHolderWalletAddress)
-      console.log(propertyHolderWalletAddress)
-      console.log('______________')
-
       // Check heroWillReceive for specific actions
       if (heroWillReceive === 'Attack' || heroWillReceive === 'Defence') {
         if (!heroName || !heroWillReceive) {
@@ -831,7 +827,6 @@ app.get('/api/member/:id/:key', (req, res) => {
   });
 });
 
-
 // Update a specific key's value for a member
 app.put('/api/member/:id/:key', (req, res) => {
   const discordId = req.params.id;
@@ -839,12 +834,13 @@ app.put('/api/member/:id/:key', (req, res) => {
   const newValue = req.body.value;
 
   // First, check if the key exists in the table schema
-  db.get("PRAGMA table_info(members)", [], (err, columns) => {
+  db.all("PRAGMA table_info(members)", [], (err, columns) => {
     if (err) {
       console.error('Error reading table schema:', err);
       return res.status(500).send('Server error');
     }
 
+    // columns is now an array, so we can use map
     const columnNames = columns.map(col => col.name);
     if (!columnNames.includes(key)) {
       return res.status(400).send('Invalid key');
@@ -868,6 +864,7 @@ app.put('/api/member/:id/:key', (req, res) => {
     });
   });
 });
+
 
 //Get random member
 app.get('/api/member/random', (req, res) => {

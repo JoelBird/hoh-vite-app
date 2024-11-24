@@ -65,7 +65,7 @@ function ModalMilitary({ openModal, isOpen, onClose }: Props) {
   useEffect(() => {
     if (isOpen && address) {
       axios
-        .get(`http://localhost:3002/api/alive-heroes/${address}`)
+        .get(`${process.env.REACT_APP_API_URL}/api/alive-heroes/${address}`)
         .then((response) => {
           setAliveHeroes(response.data.aliveHeroes);
         })
@@ -79,7 +79,7 @@ function ModalMilitary({ openModal, isOpen, onClose }: Props) {
   useEffect(() => {
     if (isOpen && address) {
       axios
-        .get("http://localhost:3002/api/getRow", {
+        .get(`${process.env.REACT_APP_API_URL}/api/getRow`, {
           params: {
             id: "null",
             table: "propertyValues",
@@ -100,7 +100,7 @@ function ModalMilitary({ openModal, isOpen, onClose }: Props) {
   useEffect(() => {
     if (isOpen && address && propertyNumberNextToUse) {
       axios
-        .get("http://localhost:3002/api/getPropertyByNumber", {
+        .get(`${process.env.REACT_APP_API_URL}/api/getPropertyByNumber`, {
           params: {
             propertyNumber: propertyNumberNextToUse,
             propertyType: "Military",
@@ -123,7 +123,7 @@ function ModalMilitary({ openModal, isOpen, onClose }: Props) {
   useEffect(() => {
     if (isOpen && address && selectedHero) {
       axios
-        .get("http://localhost:3002/api/getRow", {
+        .get(`${process.env.REACT_APP_API_URL}/api/getRow`, {
           params: {
             id: selectedHero,
             table: "heroes",
@@ -220,7 +220,7 @@ function ModalMilitary({ openModal, isOpen, onClose }: Props) {
       if (result.title.includes("Successful")) {
         try {
           const response = await axios.post(
-            "http://localhost:3002/addPropertyInteraction",
+            `${process.env.REACT_APP_API_URL}/addPropertyInteraction`,
             {
               propertyName,
               propertyTokenId,

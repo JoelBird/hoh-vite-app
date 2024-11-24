@@ -69,7 +69,7 @@ function App() {
   useEffect(() => {
     if (user && address) {
       axios
-        .post("http://localhost:3002/api/add-member", {
+        .post(`${process.env.REACT_APP_API_URL}/api/add-member`, {
           id: user.id,
           username: user.username,
           address: address,

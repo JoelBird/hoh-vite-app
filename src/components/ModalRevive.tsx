@@ -62,7 +62,7 @@ function ModalRevive({ openModal, isOpen, onClose }: Props) {
   useEffect(() => {
     if (isOpen && address) {
       axios
-        .get(`http://localhost:3002/api/dead-heroes/${address}`)
+        .get(`${process.env.REACT_APP_API_URL}/api/dead-heroes/${address}`)
         .then((response) => {
           setDeadHeroes(response.data.deadHeroes);
         })
@@ -76,7 +76,7 @@ function ModalRevive({ openModal, isOpen, onClose }: Props) {
   useEffect(() => {
     if (isOpen && address) {
       axios
-        .get("http://localhost:3002/api/getRow", {
+        .get(`${process.env.REACT_APP_API_URL}/api/getRow`, {
           params: {
             id: "null",
             table: "propertyValues",
@@ -97,7 +97,7 @@ function ModalRevive({ openModal, isOpen, onClose }: Props) {
   useEffect(() => {
     if (isOpen && address && propertyNumberNextToUse) {
       axios
-        .get("http://localhost:3002/api/getPropertyByNumber", {
+        .get(`${process.env.REACT_APP_API_URL}/api/getPropertyByNumber`, {
           params: {
             propertyNumber: propertyNumberNextToUse,
             propertyType: "Housing",
@@ -120,7 +120,7 @@ function ModalRevive({ openModal, isOpen, onClose }: Props) {
   useEffect(() => {
     if (isOpen && address && selectedHero) {
       axios
-        .get("http://localhost:3002/api/getRow", {
+        .get(`${process.env.REACT_APP_API_URL}/api/getRow`, {
           params: {
             id: selectedHero,
             table: "heroes",
@@ -199,7 +199,7 @@ function ModalRevive({ openModal, isOpen, onClose }: Props) {
         console.log("In succesful revive");
         try {
           const response = await axios.post(
-            "http://localhost:3002/addPropertyInteraction",
+            `${process.env.REACT_APP_API_URL}/addPropertyInteraction`,
             {
               propertyName,
               propertyTokenId,

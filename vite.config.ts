@@ -34,8 +34,8 @@ export default defineConfig(({ mode }) => {
     server: {
       port: 3000,
       proxy: {
-        '/auth': 'http://localhost:3002',
-        '/callback': 'http://localhost:3002',
+        '/auth': `${process.env.REACT_APP_API_URL}`,
+        '/callback': `${process.env.REACT_APP_API_URL}`,
       },
     }
   };

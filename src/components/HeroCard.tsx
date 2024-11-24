@@ -39,7 +39,7 @@ const HeroCard = ({
   useEffect(() => {
     if (interactionStatus === "true" && interactionId) {
       axios
-        .get("http://localhost:3002/api/getRow", {
+        .get(`${process.env.REACT_APP_API_URL}/api/getRow`, {
           params: {
             id: interactionId,
             table: "propertyInteractions",

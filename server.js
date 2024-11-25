@@ -828,10 +828,8 @@ app.get('/api/member/:id/:key', (req, res) => {
 });
 
 // Update a specific key's value for a member
-app.put('/api/member/:id/:key', (req, res) => {
-  const discordId = req.params.id;
-  const key = req.params.key;
-  const newValue = req.body.value;
+app.put('/api/member/update', async (req, res) => {
+  const {discordId, key, newValue } = req.body; 
 
   // First, check if the key exists in the table schema
   db.all("PRAGMA table_info(members)", [], (err, columns) => {

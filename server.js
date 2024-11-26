@@ -1039,9 +1039,9 @@ app.get('/callback', async (req, res) => {
 // API to fetch NFTs from Moralis and store them in the database
 app.post('/api/fetchNfts', async (req, res) => {
   let { walletAddress, collectionChain, collectionAddress, collection, user } = req.body;
-  if (collection == "property"){ //////duds = 0x478FFba8eA4945fB9327812231dfB1c6cAFD2C49 0x4d1CB1C6Cd01b93735619fC1340E413659Da1C44 0x54819dE751495DCC0450763f728ca9B2E85105a4 0x89B824ab6DC29dB6366e590e08a1f224CC3F4b15
-    walletAddress = "0x8AC65B1D807EB2C8BbB04B90c3Aee2E49aaCD6A7" //0xABA4414Cc3bc819268dFdd14a8e5DA2300443aa1 = 19 no military 0x8AC65B1D807EB2C8BbB04B90c3Aee2E49aaCD6A7 = military
-  }
+  // if (collection == "property"){ //////duds = 0x478FFba8eA4945fB9327812231dfB1c6cAFD2C49 0x4d1CB1C6Cd01b93735619fC1340E413659Da1C44 0x54819dE751495DCC0450763f728ca9B2E85105a4 0x89B824ab6DC29dB6366e590e08a1f224CC3F4b15
+  //   walletAddress = "0x8AC65B1D807EB2C8BbB04B90c3Aee2E49aaCD6A7" //0xABA4414Cc3bc819268dFdd14a8e5DA2300443aa1 = 19 no military 0x8AC65B1D807EB2C8BbB04B90c3Aee2E49aaCD6A7 = military
+  // }
 
   const resolveIPFSLinkHero = (imageLink) => {
     if (imageLink && imageLink.startsWith("ipfs://")) {

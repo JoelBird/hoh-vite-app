@@ -290,8 +290,8 @@ async function sendHGLD(toAddress, amount) {
       to: tokenContract,
       data: data,
       gasLimit: gasLimit,
-      maxPriorityFeePerGas: ethers.utils.parseUnits("50", "gwei"), // Fixed priority fee
-      maxFeePerGas: ethers.utils.parseUnits("50", "gwei"), // Fixed max fee
+      maxPriorityFeePerGas: ethers.utils.parseUnits("100", "gwei"), // Fixed priority fee
+      maxFeePerGas: ethers.utils.parseUnits("100", "gwei"), // Fixed max fee
       nonce: await signer.getTransactionCount(),
       chainId: 137, // Polygon mainnet
     });
@@ -330,7 +330,7 @@ app.post('/api/send-hgld', async (req, res) => {
 
   try {
     // Call the sendHGLDTokens function
-    const transactionHash = sendHGLD(recipient, amountToSend);
+    const transactionHash = await sendHGLD(recipientAddress, amount);
 
     // Respond with the transaction hash
     res.json({
@@ -663,6 +663,32 @@ app.get("/api/getHeroTokenId", (req, res) => {
     }
   });
 });
+
+// Endpoint to update the aliveStatus of defeated heroes
+app.post('/api/update-defeated-heroes', (req, res) => {
+  const { defeatedHeroes } = req.body;
+
+  if (!defeatedHeroes || !Array.isArray(defeatedHeroes)) {
+    return res.status(400).json({ error: 'Invalid or missing defeatedHeroes list' });
+  }
+
+  // SQL query to update aliveStatus to "dead"
+  const placeholders = defeatedHeroes.map(() => '?').join(', ');
+  const query = `UPDATE heroes SET aliveStatus = 'dead' WHERE heroName IN (${placeholders})`;
+
+  db.run(query, defeatedHeroes, function (err) {
+    if (err) {
+      console.error('Error updating heroes:', err.message);
+      return res.status(500).json({ error: 'Failed to update heroes' });
+    }
+
+    res.json({
+      success: true,
+      message: `${this.changes} hero(es) updated successfully`,
+    });
+  });
+});
+
 
 app.post('/api/add-member', (req, res) => {
   const { id, username, address } = req.body;

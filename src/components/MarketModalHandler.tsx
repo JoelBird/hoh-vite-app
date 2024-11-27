@@ -31,13 +31,13 @@ function MarketModalHandler() {
       {activeModal === "revive" && (
         <ModalRevive openModal={openModal} isOpen={isOpen} onClose={onClose} />
       )}
-      {activeModal === "military" && (
+      {/* {activeModal === "military" && (
         <ModalMilitary
           openModal={openModal}
           isOpen={isOpen}
           onClose={onClose}
         />
-      )}
+      )} */}
       {activeModal === "work" && (
         <ModalWork openModal={openModal} isOpen={isOpen} onClose={onClose} />
       )}

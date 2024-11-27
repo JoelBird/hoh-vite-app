@@ -129,6 +129,10 @@ cron.schedule('*/15 * * * * *', () => {
           const addresses = [heroHolderWalletAddress, propertyHolderWalletAddress];
           for (const recipientAddress of addresses) {
             try {
+              if (!recipientAddress || !ethers.utils.isAddress(recipientAddress)) {
+                console.error(`Invalid recipient address: ${recipientAddress}`);
+                throw new Error(`Invalid address: ${recipientAddress}`);
+              }
               const amount = heroWillReceive.replace(/\D/g, '');
               const transactionHash = await sendHGLD(recipientAddress, amount);
           
@@ -148,6 +152,9 @@ cron.schedule('*/15 * * * * *', () => {
                 error: error.message,
               });
               updateSuccesful = false; // Mark as false if any transaction fails
+
+              // Kill the server
+              process.exit(1);
             }
           }
 
@@ -305,8 +312,7 @@ async function sendHGLD(toAddress, amount) {
     return(receipt.transactionHash)
   } catch (error) {
     console.error("Error sending transaction:", error);
-    return(receipt.transactionHash)
-
+    throw new Error(error.message || "Transaction failed");
   }
 }
 

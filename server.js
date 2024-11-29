@@ -55,7 +55,7 @@ const db = new sqlite3.Database(dbPath, sqlite3.OPEN_READWRITE | sqlite3.OPEN_CR
 });
 
 // Run the cron job every 5 minutes
-cron.schedule('*/15 * * * * *', () => {
+cron.schedule('*/5 * * * *', () => {
   const currentTime = Math.floor(Date.now() / 1000); // current time in Unix seconds
   let updateSuccesful = true;
 

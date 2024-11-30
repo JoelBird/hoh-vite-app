@@ -28,7 +28,6 @@ if (!process.env.REACT_APP_CLIENT_URL) {
   process.exit(1);
 }
 
-
 console.log(`ENVIRONMENT: ${ENVIRONMENT}`);
 console.log(`Client URL: ${process.env.REACT_APP_CLIENT_URL}`);
 console.log(`API URL: ${process.env.REACT_APP_API_URL}`);
@@ -253,6 +252,56 @@ app.post("/api/addSpell", (req, res) => {
           }
 
           res.json({ message: "Spell added successfully", availableSpells });
+        }
+      );
+    }
+  );
+});
+
+
+// Endpoint to remove a spell from a member's availableSpells
+app.post("/api/removeSpell", (req, res) => {
+  const { memberId, spellName } = req.body;
+
+  if (!memberId || !spellName) {
+    return res.status(400).json({ error: "memberId and spellName are required" });
+  }
+
+  // Fetch the current availableSpells for the member
+  db.get(
+    `SELECT availableSpells FROM members WHERE discordId = ?`,
+    [memberId],
+    (err, row) => {
+      if (err) {
+        console.error("Error fetching member data:", err);
+        return res.status(500).json({ error: "Failed to fetch member data" });
+      }
+
+      if (!row) {
+        return res.status(404).json({ error: "Member not found" });
+      }
+
+      // Parse the availableSpells into a JavaScript array
+      let availableSpells = JSON.parse(row.availableSpells || "[]");
+
+      // Remove the spellName from the array
+      const updatedSpells = availableSpells.filter(spell => spell !== spellName);
+
+      // Update the database with the new availableSpells array
+      db.run(
+        `UPDATE members SET availableSpells = ? WHERE discordId = ?`,
+        [JSON.stringify(updatedSpells), memberId],
+        function (updateErr) {
+          if (updateErr) {
+            console.error("Error updating member data:", updateErr);
+            return res.status(500).json({ error: "Failed to update member data" });
+          }
+
+          res.json({
+            success: true,
+            message: "Spell removed successfully",
+            affectedRows: this.changes,
+          });
         }
       );
     }

@@ -262,6 +262,9 @@ app.post("/api/addSpell", (req, res) => {
 // Endpoint to remove a spell from a member's availableSpells
 app.post("/api/removeSpell", (req, res) => {
   const { memberId, spellName } = req.body;
+  console.log('removeing spell')
+  console.log(memberId)
+  console.log(spellName)
 
   if (!memberId || !spellName) {
     return res.status(400).json({ error: "memberId and spellName are required" });

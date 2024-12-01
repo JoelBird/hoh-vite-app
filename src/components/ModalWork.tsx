@@ -28,6 +28,10 @@ interface Props {
   onClose: () => void;
 }
 
+interface Hero {
+  heroName: string;
+}
+
 function ModalWork({ openModal, isOpen, onClose }: Props) {
   const { updateTransactionData } = useTransaction();
   const activeAccount = useActiveAccount();
@@ -71,9 +75,14 @@ function ModalWork({ openModal, isOpen, onClose }: Props) {
   useEffect(() => {
     if (isOpen && address) {
       axios
-        .get(`${process.env.REACT_APP_API_URL}/api/alive-heroes/${user?.id}`)
+        .get<{ aliveHeroes: Hero[] }>(
+          `${process.env.REACT_APP_API_URL}/api/alive-heroes/${user?.id}`
+        )
         .then((response) => {
-          setAliveHeroes(response.data.aliveHeroes);
+          const heroNames = response.data.aliveHeroes.map(
+            (hero) => hero.heroName
+          );
+          setAliveHeroes(heroNames);
         })
         .catch((error) => {
           console.error("Error fetching alive heroes:", error);

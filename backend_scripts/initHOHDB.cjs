@@ -65,6 +65,8 @@ db.serialize(() => {
     contractAddress TEXT,
     heroName TEXT,
     heroClass TEXT,
+    heroAttack TEXT,
+    heroDefence TEXT,
     stakedStatus TEXT,
     aliveStatus TEXT,
     interactionStatus TEXT,

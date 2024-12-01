@@ -1116,7 +1116,7 @@ app.post('/api/fetchNfts', async (req, res) => {
         return `https://${ipfsHash}.ipfs.nftstorage.link/${filePath}`; // IPFS gateway URL transformation
     }
     return imageLink;
-};
+  };
 
 
 // NOTE: This function is asynchronous and uses 'await' to ensure sequential execution.
@@ -1213,7 +1213,6 @@ const storeProperty = async (tokenId, metadata, walletAddress, user) => {
 
 
 
-  // Function to store hero in the database
 const storeHero = async (tokenId, metadata, heroClass, walletAddress, user) => {
   return new Promise((resolve, reject) => {
     db.get(`SELECT * FROM heroes WHERE tokenId = ?`, [tokenId], async (err, row) => {
@@ -1222,56 +1221,67 @@ const storeHero = async (tokenId, metadata, heroClass, walletAddress, user) => {
         return reject(err);
       }
 
+      const attackAttribute = metadata.attributes.find(attr => attr.trait_type === "Attack")?.value;
+      const defenceAttribute = metadata.attributes.find(attr => attr.trait_type === "Defence")?.value;
+
       if (!row) {
-        // Insert the new hero
         db.run(
-          `INSERT INTO heroes (tokenId, contractAddress, heroName, heroClass, stakedStatus, aliveStatus, interactionStatus, interactionId, currentHolderWallet, currentHolderDiscordName, currentHolderDiscordId, imageLink, totalGoldEarned, holderTotalGoldEarned, totalWins, holderWins, totalLosses, holderLosses) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-          [tokenId, collectionAddress, metadata.name, heroClass, "unstaked", "alive", "false", "none", walletAddress, user.username, user.id, resolveIPFSLinkHero(metadata.image), "0", "0", "0", "0", "0", "0"],
+          `INSERT INTO heroes (tokenId, contractAddress, heroName, heroClass, heroAttack, heroDefence, stakedStatus, aliveStatus, interactionStatus, interactionId, currentHolderWallet, currentHolderDiscordName, currentHolderDiscordId, imageLink, totalGoldEarned, holderTotalGoldEarned, totalWins, holderWins, totalLosses, holderLosses) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+          [tokenId, collectionAddress, metadata.name, heroClass, attackAttribute, defenceAttribute, "unstaked", "alive", "false", "none", walletAddress, user.username, user.id, resolveIPFSLinkHero(metadata.image), "0", "0", "0", "0", "0", "0"],
           (err) => {
-            if (err) {
-              console.error("Error inserting hero:", err);
-              return reject(err);
-            } else {
-              console.log(`Hero ${metadata.name} added to the database.`);
-              // Fetch the newly inserted row
-              db.get(`SELECT * FROM heroes WHERE tokenId = ?`, [tokenId], (err, newRow) => {
-                if (err) {
-                  console.error("Error fetching new hero:", err);
-                  return reject(err);
-                } else {
-                  return resolve(newRow); // Resolve with the new row data
-                }
-              });
-            }
+            if (err) return reject(err);
+            db.get(`SELECT * FROM heroes WHERE tokenId = ?`, [tokenId], (err, newRow) => {
+              if (err) return reject(err);
+              return resolve(newRow);
+            });
           }
         );
       } else {
-        // If the hero already exists, check if the holder has changed
+        let updates = [];
+        let updateValues = [];
+
+        // Check and update heroAttack
+        if (row.heroAttack !== attackAttribute) {
+          updates.push("heroAttack = ?");
+          updateValues.push(attackAttribute);
+        }
+
+        // Check and update heroDefence
+        if (row.heroDefence !== defenceAttribute) {
+          updates.push("heroDefence = ?");
+          updateValues.push(defenceAttribute);
+        }
+
+        // Check and update current holder details
         if (row.currentHolderWallet !== walletAddress) {
-          // Update the current holder if it's different
+          updates.push(
+            "currentHolderWallet = ?",
+            "currentHolderDiscordName = ?",
+            "currentHolderDiscordId = ?"
+          );
+          updateValues.push(walletAddress, user.username, user.id);
+        }
+
+        if (updates.length > 0) {
           db.run(
-            `UPDATE heroes 
-            SET currentHolderWallet = ?, 
-                currentHolderDiscordName = ?, 
-                currentHolderDiscordId = ? 
-            WHERE tokenId = ?`, 
-            [walletAddress, user.username, user.id, tokenId],
+            `UPDATE heroes SET ${updates.join(", ")} WHERE tokenId = ?`,
+            [...updateValues, tokenId],
             (err) => {
-              if (err) {
-                console.error("Error updating hero holder:", err);
-                return reject(err);
-              } else {
-                return resolve(row); // Return existing hero data after update
-              }
+              if (err) return reject(err);
+              db.get(`SELECT * FROM heroes WHERE tokenId = ?`, [tokenId], (err, updatedRow) => {
+                if (err) return reject(err);
+                return resolve(updatedRow);
+              });
             }
           );
         } else {
-          return resolve(row); // Return existing hero data if nothing changed
+          return resolve(row); // No updates needed
         }
       }
     });
   });
 };
+
 
 
   

@@ -825,13 +825,13 @@ app.get('/api/dead-heroes/:walletAddress', (req, res) => {
 });
 
 // Endpoint to get hero names where currentHolderWallet = walletAddress and aliveStatus = "alive"
-app.get('/api/alive-heroes/:walletAddress', (req, res) => {
-  const walletAddress = req.params.walletAddress;
+app.get('/api/alive-heroes/:discordId', (req, res) => {
+  const discordId = req.params.discordId;
 
   // SQL query to get only heroName with currentHolderWallet = walletAddress and aliveStatus = "alive"
-  const sql = `SELECT heroName FROM heroes WHERE currentHolderWallet = ? AND aliveStatus = "alive"`;
+  const sql = `SELECT heroName FROM heroes WHERE currentHolderDiscordId = ? AND aliveStatus = "alive"`;
 
-  db.all(sql, [walletAddress], (err, rows) => {
+  db.all(sql, [discordId], (err, rows) => {
     if (err) {
       res.status(500).json({ error: err.message });
       return;
@@ -842,7 +842,7 @@ app.get('/api/alive-heroes/:walletAddress', (req, res) => {
 
     // Send the result as JSON
     res.json({
-      walletAddress: walletAddress,
+      discordId: discordId,
       aliveHeroes: heroNames
     });
   });

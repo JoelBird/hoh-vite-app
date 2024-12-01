@@ -20,6 +20,7 @@ import { useTransaction } from "../TransactionContext";
 import { useActiveAccount } from "thirdweb/react";
 import { useHGLDBalance } from "../hooks/useHGLDBalance";
 import useHGLDTransfer from "../hooks/useHGLDTransfer";
+import { useUser } from "../UserContext";
 
 interface Props {
   openModal: (modalName: string) => void;
@@ -31,6 +32,7 @@ function ModalWork({ openModal, isOpen, onClose }: Props) {
   const { updateTransactionData } = useTransaction();
   const activeAccount = useActiveAccount();
   const address = activeAccount?.address;
+  const { user, setUser } = useUser();
   const { balance, isError } = useHGLDBalance();
   const { transferHGLD, isLoading } = useHGLDTransfer();
 
@@ -69,7 +71,7 @@ function ModalWork({ openModal, isOpen, onClose }: Props) {
   useEffect(() => {
     if (isOpen && address) {
       axios
-        .get(`${process.env.REACT_APP_API_URL}/api/alive-heroes/${address}`)
+        .get(`${process.env.REACT_APP_API_URL}/api/alive-heroes/${user?.id}`)
         .then((response) => {
           setAliveHeroes(response.data.aliveHeroes);
         })

@@ -252,11 +252,6 @@ function ModalMilitary({ openModal, isOpen, onClose }: Props) {
           // Destructure the response data
           const { heroId, interactionId, interactionStatus } = response.data;
 
-          console.log("Property interaction added successfully");
-          console.log("Hero ID:", heroId);
-          console.log("Interaction ID:", interactionId);
-          console.log("Interaction Status:", interactionStatus);
-
           // Update the shared state with the new transaction info
           updateTransactionData(heroId, interactionStatus, interactionId);
         } catch (error) {

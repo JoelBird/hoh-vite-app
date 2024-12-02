@@ -20,6 +20,7 @@ import { useTransaction } from "../TransactionContext";
 import { useActiveAccount } from "thirdweb/react";
 import { useHGLDBalance } from "../hooks/useHGLDBalance";
 import useHGLDTransfer from "../hooks/useHGLDTransfer";
+import { useUser } from "../UserContext";
 
 interface Props {
   openModal: (modalName: string) => void;
@@ -27,15 +28,20 @@ interface Props {
   onClose: () => void;
 }
 
-function ModalRevive({ openModal, isOpen, onClose }: Props) {
+interface Hero {
+  heroName: string;
+}
+
+function ModalStake({ openModal, isOpen, onClose }: Props) {
   const { updateTransactionData } = useTransaction();
   const activeAccount = useActiveAccount();
   const address = activeAccount?.address;
+  const { user, setUser } = useUser();
   const { balance, isError } = useHGLDBalance();
   const { transferHGLD, isLoading } = useHGLDTransfer();
 
   const toast = useToast(); // Initialize toast notifications
-  const [deadHeroes, setDeadHeroes] = useState<string[]>([]);
+  const [aliveHeroes, setAliveHeroes] = useState<string[]>([]);
   const [selectedHero, setSelectedHero] = useState<string | null>(null);
 
   const [propertyDuration, setPropertyDuration] = useState<string>();
@@ -57,17 +63,23 @@ function ModalRevive({ openModal, isOpen, onClose }: Props) {
   const [heroHolderDiscordName, setHeroHolderDiscordName] = useState<string>();
   const [heroHolderDiscordId, setHeroHolderDiscordId] = useState<string>();
   const [heroInteractionStatus, setHeroInteractionStatus] = useState<string>();
+  console.log(user);
 
-  // Fetch dead heroes
+  // Fetch alive heroes
   useEffect(() => {
     if (isOpen && address) {
       axios
-        .get(`${process.env.REACT_APP_API_URL}/api/dead-heroes/${address}`)
+        .get<{ aliveHeroes: Hero[] }>(
+          `${process.env.REACT_APP_API_URL}/api/alive-heroes/${user?.id}`
+        )
         .then((response) => {
-          setDeadHeroes(response.data.deadHeroes);
+          const heroNames = response.data.aliveHeroes.map(
+            (hero) => hero.heroName
+          );
+          setAliveHeroes(heroNames);
         })
         .catch((error) => {
-          console.error("Error fetching dead heroes:", error);
+          console.error("Error fetching alive heroes:", error);
         });
     }
   }, [isOpen, address]);
@@ -100,7 +112,7 @@ function ModalRevive({ openModal, isOpen, onClose }: Props) {
         .get(`${process.env.REACT_APP_API_URL}/api/getPropertyByNumber`, {
           params: {
             propertyNumber: propertyNumberNextToUse,
-            propertyType: "Housing",
+            propertyType: "Hospitality",
           },
         })
         .then((response) => {
@@ -148,19 +160,7 @@ function ModalRevive({ openModal, isOpen, onClose }: Props) {
     if (!selectedHero) {
       toast({
         title: "No hero selected.",
-        description: "Please select a hero to revive.",
-        status: "error",
-        duration: 3000,
-        isClosable: true,
-      });
-      return;
-    }
-
-    // Check if hero is active
-    if (heroInteractionStatus == "true") {
-      toast({
-        title: `${heroName} is active`, // Use template literals to include heroName
-        description: "This hero is busy and cannot Train right now",
+        description: "Please select a hero to stake.",
         status: "error",
         duration: 3000,
         isClosable: true,
@@ -194,46 +194,53 @@ function ModalRevive({ openModal, isOpen, onClose }: Props) {
       });
       onClose();
 
-      // Only proceed with the `addPropertyInteraction` transaction if the HGLD transfer was successful
       if (result.title.includes("Successful")) {
-        console.log("In succesful revive");
+        toast({
+          title: `${selectedHero} is now Staked!`,
+          description:
+            "You will receive 10 $HGLD every 24hrs this NFT remains in your wallet",
+          status: "info",
+          duration: 6000,
+          isClosable: true,
+        });
+
+        try {
+          const response = await axios.post(
+            `${process.env.REACT_APP_API_URL}/api/stakeHero`,
+            {
+              heroName: heroName,
+              walletAddress: address,
+            }
+          );
+        } catch (error) {
+          console.error("Error Staking Hero:", error);
+        }
+
         try {
           const response = await axios.post(
             `${process.env.REACT_APP_API_URL}/addPropertyInteraction`,
             {
               propertyName,
               propertyTokenId,
-              propertyType: "Housing",
+              propertyType: "Hospitality",
               propertyGold: propertyGold,
-              interactionDuration: "10",
-              interactionConcluded: "false",
+              interactionDuration: "0",
+              interactionConcluded: "true",
               propertyHolderWalletAddress: propertyHolderWalletAddress,
               propertyHolderDiscordName: propertyHolderDiscordName,
               heroName,
               heroTokenId,
-              heroWillReceive: "Revive",
+              heroWillReceive: "Staking",
               heroHolderWalletAddress: address,
               heroHolderDiscordName: heroHolderDiscordName,
             }
           );
-
-          // Destructure the response data to get transaction information
-          const { heroId, interactionId, interactionStatus } = response.data;
-
-          // Update the shared state with the new transaction info
-          updateTransactionData(heroId, interactionStatus, interactionId);
         } catch (error) {
           console.error("Error adding property interaction:", error);
         }
       }
     }
   };
-
-  function convertSecondsToHoursMinutes(seconds: number) {
-    const hours = Math.floor(seconds / 3600); // Convert seconds to hours
-    const minutes = Math.floor((seconds % 3600) / 60); // Get the remaining minutes
-    return `${hours} hours and ${minutes} minutes`;
-  }
 
   return (
     <>
@@ -252,7 +259,7 @@ function ModalRevive({ openModal, isOpen, onClose }: Props) {
           borderColor="orange.400"
         >
           <ModalHeader fontSize="3xl" fontWeight="bold" color="orange.300">
-            Revive a Knight/Druid
+            Stake a Knight/Druid
           </ModalHeader>
           <ModalCloseButton color="white" />
           <ModalBody>
@@ -261,16 +268,23 @@ function ModalRevive({ openModal, isOpen, onClose }: Props) {
               <Text as="span" fontWeight="bold" color="orange.300">
                 {propertyHolderDiscordName || "unknown"}
               </Text>{" "}
-              to revive a fallen Druid/Knight.
+              to stake a Druid/Knight.
             </Text>
-            <Text>Revive cost: {propertyGold} $HGLD</Text>{" "}
-            <Text>
-              Revival Time:{" "}
-              {convertSecondsToHoursMinutes(Number(propertyDuration))}
+            <Text fontSize="sm">
+              👉 You will be sent 10 $HGLD every day that your staked hero
+              remains in your wallet
+            </Text>{" "}
+            <Text fontSize="sm">
+              👉 Staking a hero does not remove it from your wallet
+            </Text>{" "}
+            <br />
+            <Text>Staking cost: </Text>{" "}
+            <Text as="span" fontWeight="bold" color="orange.300">
+              {propertyGold} $HGLD
             </Text>{" "}
             <Image
               src={propertyImage}
-              alt="Revive Image"
+              alt="Stake Image"
               borderRadius="md"
               my={4}
               mx="auto"
@@ -282,7 +296,7 @@ function ModalRevive({ openModal, isOpen, onClose }: Props) {
             <Divider my={3} />
             {/* Dynamically populate the select options with dead heroes */}
             <Select
-              placeholder="Select a fallen Hero to Revive"
+              placeholder="Select a hero to stake"
               mt={4}
               bg="gray.700"
               color="white"
@@ -291,8 +305,8 @@ function ModalRevive({ openModal, isOpen, onClose }: Props) {
               _focus={{ borderColor: "orange.500" }}
               onChange={handleHeroSelection} // Bind the onChange handler
             >
-              {deadHeroes.length > 0 ? (
-                deadHeroes.map((heroName, index) => (
+              {aliveHeroes.length > 0 ? (
+                aliveHeroes.map((heroName, index) => (
                   <option
                     key={index}
                     value={heroName}
@@ -306,7 +320,7 @@ function ModalRevive({ openModal, isOpen, onClose }: Props) {
                   value=""
                   style={{ color: "white", backgroundColor: "gray.700" }}
                 >
-                  No dead heroes found
+                  No alive heroes found
                 </option>
               )}
             </Select>
@@ -329,4 +343,4 @@ function ModalRevive({ openModal, isOpen, onClose }: Props) {
   );
 }
 
-export default ModalRevive;
+export default ModalStake;

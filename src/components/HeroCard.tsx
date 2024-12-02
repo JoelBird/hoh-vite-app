@@ -35,6 +35,8 @@ const HeroCard = ({
   const [countdown, setCountdown] = useState<string>("");
   const [showModal, setShowModal] = useState(false);
 
+  console.log(stakedStatus);
+
   // Fetch property interaction details if interaction is active
   useEffect(() => {
     if (interactionStatus === "true" && interactionId) {

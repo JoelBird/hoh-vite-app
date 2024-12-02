@@ -223,7 +223,6 @@ function ModalWork({ openModal, isOpen, onClose }: Props) {
 
       const { heroId, interactionId, interactionStatus } = response.data;
 
-      console.log("Property interaction added successfully");
       updateTransactionData(heroId, interactionStatus, interactionId);
     } catch (error) {
       console.error("Error adding property interaction:", error);

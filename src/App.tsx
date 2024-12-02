@@ -6,6 +6,7 @@ import NavBar from "./components/NavBar";
 import NftDisplay from "./components/NftDisplay";
 import NftDisplaySkeleton from "./components/NftDisplaySkeleton";
 import { useActiveAccount } from "thirdweb/react";
+import { useUser } from "./UserContext";
 
 interface Token {
   id: string;
@@ -34,9 +35,7 @@ interface Member {
 function App() {
   const activeAccount = useActiveAccount();
   const address = activeAccount?.address;
-  const [user, setUser] = useState<{ id: string; username: string } | null>( //DISCORD USER
-    null
-  );
+  const { user, setUser } = useUser();
   // const [nfts, setNfts] = useState<Token[]>([]);
   const [collection, setCollection] = useState<string>("");
   const [collectionAddress, setCollectionAddress] = useState<string>("");

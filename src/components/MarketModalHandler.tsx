@@ -4,6 +4,7 @@ import ModalRevive from "./ModalRevive";
 import ModalMilitary from "./ModalMilitary";
 import ModalWork from "./ModalWork";
 import ModalSpell from "./ModalSpell";
+import ModalStake from "./ModalStake";
 
 import { useDisclosure } from "@chakra-ui/react";
 import { Button } from "@chakra-ui/react";
@@ -43,6 +44,9 @@ function MarketModalHandler() {
       )}
       {activeModal === "spell" && (
         <ModalSpell openModal={openModal} isOpen={isOpen} onClose={onClose} />
+      )}
+      {activeModal === "stake" && (
+        <ModalStake openModal={openModal} isOpen={isOpen} onClose={onClose} />
       )}
     </div>
   );

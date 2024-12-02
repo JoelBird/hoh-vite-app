@@ -159,7 +159,6 @@ function ModalSpell({ openModal, isOpen, onClose }: Props) {
       duration: 3000,
       isClosable: true,
     });
-
     onClose();
 
     if (result.title.includes("Successful")) {
@@ -179,37 +178,32 @@ function ModalSpell({ openModal, isOpen, onClose }: Props) {
             walletAddress: address,
           }
         );
-        console.log("Spell added successfully:", response.data);
       } catch (error) {
         console.error("Error adding spell:", error);
       }
-    }
 
-    try {
-      const response = await axios.post(
-        `${process.env.REACT_APP_API_URL}/addPropertyInteraction`,
-        {
-          propertyName,
-          propertyTokenId,
-          propertyType: "Retail",
-          propertyGold: propertyGold,
-          interactionDuration: propertyDuration,
-          interactionConcluded: "true",
-          propertyHolderWalletAddress: propertyHolderWallet,
-          propertyHolderDiscordName: propertyHolderDiscordName,
-          heroName,
-          heroTokenId,
-          heroWillReceive: "Spell",
-          heroHolderWalletAddress: address,
-          heroHolderDiscordName: heroHolderDiscordName,
-        }
-      );
-
-      const { heroId, interactionId, interactionStatus } = response.data;
-
-      updateTransactionData(heroId, interactionStatus, interactionId);
-    } catch (error) {
-      console.error("Error adding property interaction:", error);
+      try {
+        const response = await axios.post(
+          `${process.env.REACT_APP_API_URL}/addPropertyInteraction`,
+          {
+            propertyName,
+            propertyTokenId,
+            propertyType: "Retail",
+            propertyGold: propertyGold,
+            interactionDuration: propertyDuration,
+            interactionConcluded: "true",
+            propertyHolderWalletAddress: propertyHolderWallet,
+            propertyHolderDiscordName: propertyHolderDiscordName,
+            heroName,
+            heroTokenId,
+            heroWillReceive: "Spell",
+            heroHolderWalletAddress: address,
+            heroHolderDiscordName: heroHolderDiscordName,
+          }
+        );
+      } catch (error) {
+        console.error("Error adding property interaction:", error);
+      }
     }
   };
 

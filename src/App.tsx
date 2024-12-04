@@ -6,6 +6,7 @@ import NavBar from "./components/NavBar";
 import NftDisplay from "./components/NftDisplay";
 import NftDisplaySkeleton from "./components/NftDisplaySkeleton";
 import { useActiveAccount } from "thirdweb/react";
+import { useDisconnect, useActiveWallet } from "thirdweb/react";
 import { useUser } from "./UserContext";
 
 interface Token {

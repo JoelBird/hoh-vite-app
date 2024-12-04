@@ -141,7 +141,15 @@ function ModalMarket({ openModal, isOpen, onClose }: Props) {
       </ModalBody>
       <Divider my={3} />
       <Box>
-        <Button colorScheme="pink" width="100%" size="lg" onClick={onClose}>
+        <Button
+          colorScheme="pink"
+          width="100%"
+          size="lg"
+          onClick={() => {
+            onClose();
+            openModal("shares");
+          }}
+        >
           📈 Purchase Shares
         </Button>
       </Box>

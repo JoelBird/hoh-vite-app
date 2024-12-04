@@ -53,6 +53,156 @@ const db = new sqlite3.Database(dbPath, sqlite3.OPEN_READWRITE | sqlite3.OPEN_CR
   console.log('Connected to SQLite database');
 });
 
+// Run the cron job every 24 hours
+// cron.schedule('0 0 * * *', () => {
+
+
+// Run the cron job every minute
+// cron.schedule('* * * * *', () => {
+
+  // Run the cron job every 5 minutes
+  cron.schedule('*/5 * * * *', () => {
+  try {
+    // Step 1: Fetch all members
+    db.all(`SELECT * FROM members`, async (err, members) => {
+      if (err) {
+        console.error("Error fetching members:", err);
+        return;
+      }
+
+      const collections = [
+        {
+          collection: "knight",
+          address: "0xD2deFe14811BEC6332C6ae8CcE85a858b3A80B56",
+          chain: "eth",
+        },
+        {
+          collection: "druid",
+          address: "0xAe65887F23558699978566664CC7dC0ccd67C0f8",
+          chain: "polygon",
+        },
+      ];
+
+      // Iterate over each member
+      for (const member of members) {
+        const wallets = JSON.parse(member.wallets || "[]");
+        const moralisTokenIds = [];
+        const rewardsByWallet = {};
+
+        // Step 2: Fetch NFTs for each wallet
+        for (const walletAddress of wallets) {
+          for (const collection of collections) {
+            let cursor = null;
+            let page = 0;
+            const maxPages = 10;
+
+            while (page < maxPages) {
+              try {
+                const response = await axios.get(
+                  `https://deep-index.moralis.io/api/v2/${walletAddress}/nft`,
+                  {
+                    headers: {
+                      accept: "application/json",
+                      "X-API-Key": process.env.MORALIS_API_KEY,
+                    },
+                    params: {
+                      chain: collection.chain,
+                      format: "decimal",
+                      cursor: cursor || undefined,
+                      media_items: false,
+                    },
+                  }
+                );
+
+                const { result, cursor: nextCursor } = response.data;
+
+                // Filter and collect token IDs for the specific collection
+                result
+                  .filter(
+                    (nft) =>
+                      nft.token_address.toLowerCase() ===
+                      collection.address.toLowerCase()
+                  )
+                  .forEach((nft) => moralisTokenIds.push(nft.token_id));
+
+                cursor = nextCursor;
+                if (!cursor) break;
+                page++;
+              } catch (error) {
+                console.error(
+                  `Error fetching NFTs for wallet ${walletAddress}:`,
+                  error
+                );
+                break;
+              }
+            }
+          }
+        }
+
+        // Step 3: Fetch staked heroes for all wallets from the database
+        const stakedTokenIds = [];
+        for (const walletAddress of wallets) {
+          const stakedHeroes = await new Promise((resolve, reject) => {
+            db.all(
+              `SELECT tokenId FROM heroes WHERE currentHolderWallet = ? AND stakedStatus = "staked"`,
+              [walletAddress],
+              (err, rows) => {
+                if (err) return reject(err);
+                resolve(rows.map((row) => row.tokenId));
+              }
+            );
+          });
+          stakedTokenIds.push(...stakedHeroes);
+        }
+
+        // Step 4: Compare the two lists
+        const tokenIdsToUnstake = stakedTokenIds.filter(
+          (tokenId) => !moralisTokenIds.includes(tokenId)
+        );
+        const tokenIdsToReward = stakedTokenIds.filter((tokenId) =>
+          moralisTokenIds.includes(tokenId)
+        );
+
+        // Step 5: Update unstaked tokens
+        for (const tokenId of tokenIdsToUnstake) {
+          db.run(
+            `UPDATE heroes SET stakedStatus = "unstaked" WHERE tokenId = ?`,
+            [tokenId],
+            (err) => {
+              if (err)
+                console.error(`Failed to update tokenId ${tokenId}:`, err);
+            }
+          );
+        }
+
+        // Step 6: Calculate rewards for each wallet
+        for (const walletAddress of wallets) {
+          const rewardCount = tokenIdsToReward.filter(
+            (tokenId) => moralisTokenIds.includes(tokenId)
+          ).length;
+
+          if (rewardCount > 0) {
+            rewardsByWallet[walletAddress] =
+              (rewardsByWallet[walletAddress] || 0) + rewardCount * 10; // 10 tokens per NFT
+          }
+        }
+
+        // Step 7: Send rewards
+        for (const [walletAddress, totalReward] of Object.entries(
+          rewardsByWallet
+        )) {
+          await sendHGLD(walletAddress, totalReward);
+        }
+      }
+
+      console.log("Cron job for stake check completed successfully.");
+    });
+  } catch (error) {
+    console.error("Error processing staked heroes:", error);
+  }
+});
+
+
 // Run the cron job every 5 minutes
 cron.schedule('*/5 * * * *', () => {
   const currentTime = Math.floor(Date.now() / 1000); // current time in Unix seconds
@@ -296,9 +446,6 @@ app.post("/api/addSpell", (req, res) => {
 // Endpoint to remove a spell from a member's availableSpells
 app.post("/api/removeSpell", (req, res) => {
   const { memberId, spellName } = req.body;
-  console.log('removeing spell')
-  console.log(memberId)
-  console.log(spellName)
 
   if (!memberId || !spellName) {
     return res.status(400).json({ error: "memberId and spellName are required" });
@@ -544,7 +691,72 @@ app.post("/api/update-hero-trait", async (req, res) => {
 });
 
 
+// Endpoint to update goldSentToGovernment
+app.post("/api/update-gold", (req, res) => {
+  const { discordId, hgldValue } = req.body;
 
+  if (!discordId || !hgldValue) {
+    return res
+      .status(400)
+      .json({ error: "discordId and hgldValue are required." });
+  }
+
+  // Fetch the current goldSentToGovernment for the given discordId
+  db.get(
+    `SELECT goldSentToGovernment FROM members WHERE discordId = ?`,
+    [discordId],
+    (err, row) => {
+      if (err) {
+        console.error("Error fetching goldSentToGovernment:", err);
+        return res.status(500).json({ error: "Database error" });
+      }
+
+      if (!row) {
+        return res.status(404).json({ error: "Member not found" });
+      }
+
+      // Parse the current goldSentToGovernment and add hgldValue
+      const currentGold = parseFloat(row.goldSentToGovernment || 0);
+      const updatedGold = currentGold + parseFloat(hgldValue);
+
+      // Update the goldSentToGovernment in the database
+      db.run(
+        `UPDATE members SET goldSentToGovernment = ? WHERE discordId = ?`,
+        [updatedGold.toString(), discordId],
+        (updateErr) => {
+          if (updateErr) {
+            console.error("Error updating goldSentToGovernment:", updateErr);
+            return res
+              .status(500)
+              .json({ error: "Failed to update goldSentToGovernment" });
+          }
+
+          res.json({
+            message: "Gold updated successfully",
+            discordId,
+            updatedGold,
+          });
+        }
+      );
+    }
+  );
+});
+
+// Endpoint to calculate and return the total goldSentToGovernment
+app.get('/api/total-gold-sent', (req, res) => {
+  const sql = `SELECT SUM(CAST(goldSentToGovernment AS INTEGER)) AS totalGold FROM members`;
+
+  db.get(sql, (err, row) => {
+    if (err) {
+      console.error('Error calculating total gold:', err);
+      res.status(500).json({ error: 'Database error' });
+      return;
+    }
+
+    const totalGold = row?.totalGold || 0;
+    res.json({ totalGold });
+  });
+});
 
 
 app.get("/api/getRow", (req, res) => {
@@ -692,43 +904,52 @@ app.post('/addPropertyInteraction', (req, res) => {
           return res.status(500).json({ error: 'Failed to insert data' });
         }
 
-        // Update the hero's interactionStatus and interactionId in the heroes table
-        db.run(
-          `UPDATE heroes 
-           SET interactionStatus = 'true', 
-               interactionId = ? 
-           WHERE tokenId = ?`,
-          [interactionId, heroTokenId],
-          function (updateErr) {
-            if (updateErr) {
-              return res.status(500).json({ error: 'Failed to update hero interaction status' });
-            }
+      db.run(
+        `UPDATE properties
+          SET totalTransactions = totalTransactions + 1,
+            holderTotalTransactions = holderTotalTransactions + 1,
+            totalGoldEarned = totalGoldEarned + ?,
+            holderTotalGoldEarned = holderTotalGoldEarned + ?
+        WHERE tokenId = ?`,
+        [propertyGold, propertyGold, propertyTokenId],
+        function (propertiesUpdateErr) {
+          if (propertiesUpdateErr) {
+            res.status(500).json({ error: "Failed to update properties table" });
+            return;
+          }
 
-            // Update the properties table
+          // Conditionally update the heroes table
+          if (heroWillReceive !== "Spell" && heroWillReceive !== "Staking") {
             db.run(
-              `UPDATE properties
-               SET totalTransactions = totalTransactions + 1,
-                   holderTotalTransactions = holderTotalTransactions + 1,
-                   totalGoldEarned = totalGoldEarned + ?,
-                   holderTotalGoldEarned = holderTotalGoldEarned + ?
-               WHERE tokenId = ?`,
-              [propertyGold, propertyGold, propertyTokenId],
-              function (propertiesUpdateErr) {
-                if (propertiesUpdateErr) {
-                  return res.status(500).json({ error: 'Failed to update properties table' });
+              `UPDATE heroes 
+              SET interactionStatus = 'true', 
+                  interactionId = ? 
+              WHERE tokenId = ?`,
+              [interactionId, heroTokenId],
+              function (updateErr) {
+                if (updateErr) {
+                  res.status(500).json({ error: "Failed to update hero interaction status" });
+                  return;
                 }
 
-                // Respond with success and return interaction data
+                // Respond after both updates are complete
                 res.status(200).json({
-                  message: 'Property interaction added successfully and hero interaction updated',
+                  message: "Property interaction added successfully and hero interaction updated",
                   heroId: heroTokenId,
                   interactionId,
-                  interactionStatus: 'true',
+                  interactionStatus: "true",
                 });
               }
             );
+          } else {
+            // Respond when only the properties table is updated
+            res.status(200).json({
+              message: "Property interaction added successfully",
+              interactionId,
+            });
           }
-        );
+        }
+      );
       }
     );
   });
@@ -876,6 +1097,26 @@ app.get('/api/alive-heroes/:discordId', (req, res) => {
     });
   });
 });
+
+
+app.get('/api/unstaked-heroes/:discordId', (req, res) => {
+  const discordId = req.params.discordId;
+
+  // SQL query to get all data for heroes with currentHolderDiscordId and aliveStatus = "alive"
+  const sql = `SELECT * FROM heroes WHERE currentHolderDiscordId = ? AND stakedStatus = "unstaked"`;
+
+  db.all(sql, [discordId], (err, rows) => {
+    if (err) {
+      res.status(500).json({ error: err.message });
+      return;
+    }
+
+    res.json({
+      unstakedHeroes: rows, // Send the entire row data
+    });
+  });
+});
+
 
 
 
@@ -1127,9 +1368,9 @@ app.get('/callback', async (req, res) => {
 // API to fetch NFTs from Moralis and store them in the database
 app.post('/api/fetchNfts', async (req, res) => {
   let { walletAddress, collectionChain, collectionAddress, collection, user } = req.body;
-  if (collection == "property"){ //////duds = 0x478FFba8eA4945fB9327812231dfB1c6cAFD2C49 0x4d1CB1C6Cd01b93735619fC1340E413659Da1C44 0x54819dE751495DCC0450763f728ca9B2E85105a4 0x89B824ab6DC29dB6366e590e08a1f224CC3F4b15
-    walletAddress = "0x8AC65B1D807EB2C8BbB04B90c3Aee2E49aaCD6A7" //0xABA4414Cc3bc819268dFdd14a8e5DA2300443aa1 = 19 no military 0x8AC65B1D807EB2C8BbB04B90c3Aee2E49aaCD6A7 = military
-  }
+  // if (collection == "property"){ //////duds = 0x478FFba8eA4945fB9327812231dfB1c6cAFD2C49 0x4d1CB1C6Cd01b93735619fC1340E413659Da1C44 0x54819dE751495DCC0450763f728ca9B2E85105a4 0x89B824ab6DC29dB6366e590e08a1f224CC3F4b15
+  //   walletAddress = "0xABA4414Cc3bc819268dFdd14a8e5DA2300443aa1" //0xABA4414Cc3bc819268dFdd14a8e5DA2300443aa1 = 19 no military 0x8AC65B1D807EB2C8BbB04B90c3Aee2E49aaCD6A7 = military
+  // }
 
   const resolveIPFSLinkHero = (imageLink) => {
     if (imageLink && imageLink.startsWith("ipfs://")) {
@@ -1343,9 +1584,7 @@ const storeHero = async (tokenId, metadata, heroClass, walletAddress, user) => {
       for (const nft of result.filter(nft => nft.token_address.toLowerCase() === collectionAddress.toLowerCase())) {
 
         let metadata
-        metadata = JSON.parse(nft.metadata); //json string to javascript object - THIS IS REQUIRED
-
-        
+        metadata = JSON.parse(nft.metadata); //json string to javascript object - THIS IS REQUIRED        
     
         if (collection === "property") {
           // console.log(' --- nft below ---')

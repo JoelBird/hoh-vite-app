@@ -11,6 +11,8 @@ import DiscordCallback from "./components/DiscordCallback";
 import theme from "./theme";
 import "./index.css";
 import { TransactionProvider } from "../src/TransactionContext";
+import { AliveStatusProvider } from "../src/AliveStatusContext";
+import { StakedStatusProvider } from "../src/StakedStatusContext";
 import { UserProvider } from "../src/UserContext";
 import { ThirdwebProvider } from "thirdweb/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -25,13 +27,17 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />
           <UserProvider>
             <TransactionProvider>
-              <Router>
-                <Routes>
-                  <Route path="/" element={<App />} />
-                  <Route path="/App" element={<App />} />
-                  <Route path="/callback" element={<DiscordCallback />} />
-                </Routes>
-              </Router>
+              <AliveStatusProvider>
+                <StakedStatusProvider>
+                  <Router>
+                    <Routes>
+                      <Route path="/" element={<App />} />
+                      <Route path="/App" element={<App />} />
+                      <Route path="/callback" element={<DiscordCallback />} />
+                    </Routes>
+                  </Router>
+                </StakedStatusProvider>
+              </AliveStatusProvider>
             </TransactionProvider>
           </UserProvider>
         </ChakraProvider>

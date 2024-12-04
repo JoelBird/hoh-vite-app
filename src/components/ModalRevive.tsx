@@ -17,6 +17,7 @@ import {
 } from "@chakra-ui/react";
 import axios from "axios";
 import { useTransaction } from "../TransactionContext";
+import { useAliveStatus } from "../AliveStatusContext";
 import { useActiveAccount } from "thirdweb/react";
 import { useHGLDBalance } from "../hooks/useHGLDBalance";
 import useHGLDTransfer from "../hooks/useHGLDTransfer";
@@ -29,6 +30,7 @@ interface Props {
 
 function ModalRevive({ openModal, isOpen, onClose }: Props) {
   const { updateTransactionData } = useTransaction();
+  const { aliveStatusData, updateAliveStatus } = useAliveStatus();
   const activeAccount = useActiveAccount();
   const address = activeAccount?.address;
   const { balance, isError } = useHGLDBalance();
@@ -196,7 +198,6 @@ function ModalRevive({ openModal, isOpen, onClose }: Props) {
 
       // Only proceed with the `addPropertyInteraction` transaction if the HGLD transfer was successful
       if (result.title.includes("Successful")) {
-        console.log("In succesful revive");
         try {
           const response = await axios.post(
             `${process.env.REACT_APP_API_URL}/addPropertyInteraction`,
@@ -217,11 +218,13 @@ function ModalRevive({ openModal, isOpen, onClose }: Props) {
             }
           );
 
-          // Destructure the response data to get transaction information
-          const { heroId, interactionId, interactionStatus } = response.data;
-
-          // Update the shared state with the new transaction info
-          updateTransactionData(heroId, interactionStatus, interactionId);
+          // if (heroTokenId) {
+          //   updateAliveStatus(heroTokenId, "alive");
+          // } else {
+          //   console.error(
+          //     "heroTokenId is undefined, cannot update alive status."
+          //   );
+          // }
         } catch (error) {
           console.error("Error adding property interaction:", error);
         }

@@ -5,17 +5,32 @@ import ModalMilitary from "./ModalMilitary";
 import ModalWork from "./ModalWork";
 import ModalSpell from "./ModalSpell";
 import ModalStake from "./ModalStake";
-
-import { useDisclosure } from "@chakra-ui/react";
-import { Button } from "@chakra-ui/react";
+import ModalShares from "./ModalShares";
+import { useUser } from "../UserContext";
+import { useActiveAccount } from "thirdweb/react";
+import { useDisclosure, useToast, Button } from "@chakra-ui/react";
 
 function MarketModalHandler() {
   const [activeModal, setActiveModal] = useState<string | null>(null); // Initially no modal
   const { isOpen, onOpen, onClose } = useDisclosure(); // Handle modal open/close
+  const { user } = useUser();
+  const activeAccount = useActiveAccount();
+  const address = activeAccount?.address;
+  const toast = useToast(); // Initialize toast notifications
 
   const openModal = (modalName: string | null) => {
-    setActiveModal(modalName);
-    onOpen(); // Open the modal whenever the modal is set
+    if (address && user) {
+      setActiveModal(modalName);
+      onOpen(); // Open the modal whenever the modal is set
+    } else {
+      toast({
+        title: "Action required",
+        description: "Please connect your wallet and sign into Discord.",
+        status: "warning",
+        duration: 3000,
+        isClosable: true,
+      });
+    }
   };
 
   return (
@@ -32,13 +47,13 @@ function MarketModalHandler() {
       {activeModal === "revive" && (
         <ModalRevive openModal={openModal} isOpen={isOpen} onClose={onClose} />
       )}
-      {/* {activeModal === "military" && (
+      {activeModal === "military" && (
         <ModalMilitary
           openModal={openModal}
           isOpen={isOpen}
           onClose={onClose}
         />
-      )} */}
+      )}
       {activeModal === "work" && (
         <ModalWork openModal={openModal} isOpen={isOpen} onClose={onClose} />
       )}
@@ -47,6 +62,9 @@ function MarketModalHandler() {
       )}
       {activeModal === "stake" && (
         <ModalStake openModal={openModal} isOpen={isOpen} onClose={onClose} />
+      )}
+      {activeModal === "shares" && (
+        <ModalShares openModal={openModal} isOpen={isOpen} onClose={onClose} />
       )}
     </div>
   );

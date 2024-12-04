@@ -17,6 +17,7 @@ import {
 } from "@chakra-ui/react";
 import axios from "axios";
 import { useTransaction } from "../TransactionContext";
+import { useStakedStatus } from "../StakedStatusContext";
 import { useActiveAccount } from "thirdweb/react";
 import { useHGLDBalance } from "../hooks/useHGLDBalance";
 import useHGLDTransfer from "../hooks/useHGLDTransfer";
@@ -34,6 +35,7 @@ interface Hero {
 
 function ModalStake({ openModal, isOpen, onClose }: Props) {
   const { updateTransactionData } = useTransaction();
+  const { stakedStatusData, updateStakedStatus } = useStakedStatus();
   const activeAccount = useActiveAccount();
   const address = activeAccount?.address;
   const { user, setUser } = useUser();
@@ -41,7 +43,7 @@ function ModalStake({ openModal, isOpen, onClose }: Props) {
   const { transferHGLD, isLoading } = useHGLDTransfer();
 
   const toast = useToast(); // Initialize toast notifications
-  const [aliveHeroes, setAliveHeroes] = useState<string[]>([]);
+  const [unstakedHeroes, setUnstakedHeroes] = useState<string[]>([]);
   const [selectedHero, setSelectedHero] = useState<string | null>(null);
 
   const [propertyDuration, setPropertyDuration] = useState<string>();
@@ -63,23 +65,21 @@ function ModalStake({ openModal, isOpen, onClose }: Props) {
   const [heroHolderDiscordName, setHeroHolderDiscordName] = useState<string>();
   const [heroHolderDiscordId, setHeroHolderDiscordId] = useState<string>();
   const [heroInteractionStatus, setHeroInteractionStatus] = useState<string>();
-  console.log(user);
 
-  // Fetch alive heroes
   useEffect(() => {
     if (isOpen && address) {
       axios
-        .get<{ aliveHeroes: Hero[] }>(
-          `${process.env.REACT_APP_API_URL}/api/alive-heroes/${user?.id}`
+        .get<{ unstakedHeroes: Hero[] }>(
+          `${process.env.REACT_APP_API_URL}/api/unstaked-heroes/${user?.id}`
         )
         .then((response) => {
-          const heroNames = response.data.aliveHeroes.map(
+          const heroNames = response.data.unstakedHeroes.map(
             (hero) => hero.heroName
           );
-          setAliveHeroes(heroNames);
+          setUnstakedHeroes(heroNames);
         })
         .catch((error) => {
-          console.error("Error fetching alive heroes:", error);
+          console.error("Error fetching unstaked heroes:", error);
         });
     }
   }, [isOpen, address]);
@@ -168,6 +168,18 @@ function ModalStake({ openModal, isOpen, onClose }: Props) {
       return;
     }
 
+    // Check if hero is active
+    if (heroInteractionStatus == "true") {
+      toast({
+        title: `${heroName} is active`, // Use template literals to include heroName
+        description: "This hero is busy and cannot Train right now",
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+      });
+      return;
+    }
+
     // Check if user has enough HGLD
     if (balance && Number(balance) < Number(propertyGold)) {
       toast({
@@ -235,6 +247,14 @@ function ModalStake({ openModal, isOpen, onClose }: Props) {
               heroHolderDiscordName: heroHolderDiscordName,
             }
           );
+
+          if (heroTokenId) {
+            updateStakedStatus(heroTokenId, "staked");
+          } else {
+            console.error(
+              "heroTokenId is undefined, cannot update staked status."
+            );
+          }
         } catch (error) {
           console.error("Error adding property interaction:", error);
         }
@@ -305,8 +325,8 @@ function ModalStake({ openModal, isOpen, onClose }: Props) {
               _focus={{ borderColor: "orange.500" }}
               onChange={handleHeroSelection} // Bind the onChange handler
             >
-              {aliveHeroes.length > 0 ? (
-                aliveHeroes.map((heroName, index) => (
+              {unstakedHeroes.length > 0 ? (
+                unstakedHeroes.map((heroName, index) => (
                   <option
                     key={index}
                     value={heroName}
@@ -320,7 +340,7 @@ function ModalStake({ openModal, isOpen, onClose }: Props) {
                   value=""
                   style={{ color: "white", backgroundColor: "gray.700" }}
                 >
-                  No alive heroes found
+                  No unstaked heroes found
                 </option>
               )}
             </Select>

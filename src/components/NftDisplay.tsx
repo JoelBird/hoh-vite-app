@@ -4,6 +4,8 @@ import NftDisplaySkeleton from "./NftDisplaySkeleton";
 import HeroCard from "./HeroCard";
 import PropertyCard from "./PropertyCard";
 import { useTransaction } from "../TransactionContext";
+import { useStakedStatus } from "../StakedStatusContext";
+import { useAliveStatus } from "../AliveStatusContext";
 
 interface NFT {
   tokenId: string;
@@ -73,6 +75,8 @@ const NFTDisplay: React.FC<NFTDisplayProps> = ({
   if (error) return <p>Error: {error}</p>;
 
   const { transactionData } = useTransaction();
+  // const { aliveStatusData } = useAliveStatus();
+  const { stakedStatusData } = useStakedStatus();
 
   if (nfts.length === 0) {
     return (
@@ -104,7 +108,9 @@ const NFTDisplay: React.FC<NFTDisplayProps> = ({
             tokenId={nft.tokenId}
             name={nft.name}
             image={nft.image}
-            stakedStatus={nft.stakedStatus}
+            stakedStatus={
+              stakedStatusData[nft.tokenId]?.stakedStatus || nft.stakedStatus
+            }
             aliveStatus={nft.aliveStatus}
             interactionStatus={
               transactionData[nft.tokenId]?.interactionStatus ||

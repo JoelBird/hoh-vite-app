@@ -27,6 +27,7 @@ import DiscordLogin from "./DiscordLogin";
 import MarketModalHandler from "./MarketModalHandler";
 import Spells from "./Spells";
 import InteractionsModal from "./InteractionsModal";
+import SharesModal from "./SharesModal";
 
 interface NavBarProps {
   user: { id: string; username: string; avatar: string } | null;
@@ -51,7 +52,9 @@ const NavBar: React.FC<NavBarProps> = ({
 }) => {
   const [isHoveringDiscord, setIsHoveringDiscord] = useState(false);
   const [activeCollection, setActiveCollection] = useState<string>("");
-  const [showModal, setShowModal] = useState(false);
+  const [showInteractionsModal, setShowInteractionsModal] = useState(false);
+  const [showSharesModal, setShowSharesModal] = useState(false);
+
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const handleLogout = () => {
@@ -150,14 +153,26 @@ const NavBar: React.FC<NavBarProps> = ({
         <HStack spacing="20px">
           <Spells user={user} />
           <MarketModalHandler />
-          <Button colorScheme="teal" onClick={() => setShowModal(true)}>
-            View Interactions
+          <Button
+            colorScheme="teal"
+            onClick={() => setShowInteractionsModal(true)}
+          >
+            Interactions
           </Button>
-          {showModal && (
+          {showInteractionsModal && (
             <InteractionsModal
               tokenId="false"
               collection={activeCollection}
-              onClose={() => setShowModal(false)}
+              onClose={() => setShowInteractionsModal(false)}
+            />
+          )}
+          <Button colorScheme="teal" onClick={() => setShowSharesModal(true)}>
+            Shares
+          </Button>
+          {showSharesModal && (
+            <SharesModal
+              tokenId="false"
+              onClose={() => setShowSharesModal(false)}
             />
           )}
           <Menu>
@@ -270,8 +285,17 @@ const NavBar: React.FC<NavBarProps> = ({
             <VStack spacing="20px" align="start">
               <Spells user={user} />
               <MarketModalHandler />
-              <Button colorScheme="teal" onClick={() => setShowModal(true)}>
-                View Interactions
+              <Button
+                colorScheme="teal"
+                onClick={() => setShowInteractionsModal(true)}
+              >
+                Interactions
+              </Button>
+              <Button
+                colorScheme="teal"
+                onClick={() => setShowSharesModal(true)}
+              >
+                Shares
               </Button>
               <Menu>
                 <MenuButton

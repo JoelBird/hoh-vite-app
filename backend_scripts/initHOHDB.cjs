@@ -1,17 +1,6 @@
 const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database('HOH.db');
 
-// Member data for insertion
-const memberData = {
-  discordId: "960601733556482108",
-  discordName: "rayjon_openproj",
-  wins: "4",
-  losses: "0",
-  wallets: ["0xb5105c731c5F3ec29eE4E84C7e0D45e8Ef43B300"],
-  heroOptionsPosition: "1",
-  goldSentToGovernment: "0",
-  availableSpells: [""],
-};
 
 const propertyValuesData = {
   heroGoldEarnedPerInteraction: 100,
@@ -93,34 +82,8 @@ db.serialize(() => {
     heroOptionsPosition TEXT,
     goldSentToGovernment TEXT,
     availableSpells TEXT
-  )`, () => {
-    const stmt = db.prepare(
-      `INSERT OR REPLACE INTO members (
-        discordId, discordName, wins, losses, wallets,
-        heroOptionsPosition, goldSentToGovernment, availableSpells
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`
-    );
-    stmt.run(
-      memberData.discordId,
-      memberData.discordName,
-      memberData.wins,
-      memberData.losses,
-      JSON.stringify(memberData.wallets),
-      memberData.heroOptionsPosition,
-      memberData.goldSentToGovernment,
-      JSON.stringify(memberData.availableSpells),
-      (err) => {
-        if (err) {
-          console.error("Error inserting member data:", err);
-        } else {
-          console.log("Member data inserted successfully");
-        }
-      }
-    );
-    stmt.finalize();
-  });
-
-
+  )`);
+  
   
   // Create 'properties' table
   db.run(`CREATE TABLE IF NOT EXISTS properties (

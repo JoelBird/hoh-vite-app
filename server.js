@@ -53,15 +53,16 @@ const db = new sqlite3.Database(dbPath, sqlite3.OPEN_READWRITE | sqlite3.OPEN_CR
   console.log('Connected to SQLite database');
 });
 
-// Run the cron job every 24 hours
-// cron.schedule('0 0 * * *', () => {
 
 
 // Run the cron job every minute
 // cron.schedule('* * * * *', () => {
 
-  // Run the cron job every 5 minutes
-  cron.schedule('*/5 * * * *', () => {
+  // // Run the cron job every 5 minutes
+  // cron.schedule('*/5 * * * *', () => {
+    
+// Run the cron job every 24 hours
+cron.schedule('0 0 * * *', () => {
   try {
     // Step 1: Fetch all members
     db.all(`SELECT * FROM members`, async (err, members) => {
@@ -498,9 +499,9 @@ async function sendHGLD(toAddress, amount) {
 
   const jsonFile = "./abi.json";
   const abi = JSON.parse(fs.readFileSync(jsonFile));
-  const tokenContract = "0x539025fc166d49e63E4C30De1205164D06157d2a";
+  const tokenContract = process.env.REACT_APP_HGLD_CONTRACT_ADDRESS;
   const infuraProjectId = "a31017990a434050ab5b5dad42ba299a";
-  const signerPrivateKey = "0d246f5e20df3147e9fa17040148fa3c65c025bf457692ac7db8844ed5e189fa";
+  const signerPrivateKey = process.env.OPENPROJ_WALLET_PRIVATE_KEY;
   const network = "matic";
 
   // Configuring the connection to the Polygon network via Infura

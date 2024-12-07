@@ -1,7 +1,7 @@
 import ethers from "ethers"
 
 // Replace with your values
-const tokenContract = "0x539025fc166d49e63E4C30De1205164D06157d2a";
+const tokenContract = process.env.REACT_APP_HGLD_CONTRACT_ADDRESS;
 const toAddress = "0x63C18042Ff056493c62bc74d04A32F03a5813798";
 const infuraProjectId = "a31017990a434050ab5b5dad42ba299a";
 const signerPrivateKey = "0d246f5e20df3147e9fa17040148fa3c65c025bf457692ac7db8844ed5e189fa";

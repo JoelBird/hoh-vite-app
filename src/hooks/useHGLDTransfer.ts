@@ -9,7 +9,7 @@ const client = createThirdwebClient({
 });
 
 const contract = getContract({
-  address: "0x539025fc166d49e63E4C30De1205164D06157d2a",
+  address: process.env.REACT_APP_HGLD_CONTRACT_ADDRESS || "",
   chain: polygon,
   client: client,
 });

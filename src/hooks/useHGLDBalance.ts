@@ -6,7 +6,7 @@ const client = createThirdwebClient({
   clientId: "28448746a7bbfa29707def6052b3eced",
 });
 
-const tokenAddress = "0x539025fc166d49e63E4C30De1205164D06157d2a";
+const tokenAddress = process.env.REACT_APP_HGLD_CONTRACT_ADDRESS;
 
 // Custom hook to get the HGLD balance
 export const useHGLDBalance = () => {

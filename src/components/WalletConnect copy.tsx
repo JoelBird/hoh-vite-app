@@ -21,11 +21,6 @@ const WalletConnect: React.FC = () => {
     createWallet("io.zerion.wallet"),
   ];
 
-  console.log(
-    "HGLD Contract Address:",
-    process.env.REACT_APP_HGLD_CONTRACT_ADDRESS
-  );
-
   //Bug to be fixed: 2 discord accounts could connect the same wallets and redeem double stake HGLD
 
   return (

@@ -24,7 +24,7 @@ async function sendTransaction() {
   try {
 
     // Define the transaction data
-    const data = contract.interface.encodeFunctionData("transfer", [toAddress, ethers.utils.parseUnits("1.0", 18)]);
+    const data = contract.interface.encodeFunctionData("transfer", [toAddress, ethers.utils.parseUnits("100.0", 18)]);
 
     // Estimate the gas limit for the transaction
     const gasLimit = await provider.estimateGas({

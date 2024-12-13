@@ -493,62 +493,143 @@ app.post("/api/removeSpell", (req, res) => {
   );
 });
 
-
-
+//The token you are working with uses 9 decimals
 async function sendHGLD(toAddress, amount) {
-
   const jsonFile = "./abi.json";
   const abi = JSON.parse(fs.readFileSync(jsonFile));
-  const tokenContract = process.env.REACT_APP_HGLD_CONTRACT_ADDRESS;
+
+  const tokenContract = "0x87a73CfdAddc4de32dA5A8528CcCD9eBf2B19593";
   const infuraProjectId = "a31017990a434050ab5b5dad42ba299a";
-  const signerPrivateKey = process.env.OPENPROJ_WALLET_PRIVATE_KEY;
+  const signerPrivateKey = "0d246f5e20df3147e9fa17040148fa3c65c025bf457692ac7db8844ed5e189fa";
   const network = "matic";
 
-  // Configuring the connection to the Polygon network via Infura
-  const provider = new ethers.providers.InfuraProvider(
-    network,
-    infuraProjectId
-  );
-
-  const contract = new ethers.Contract(tokenContract, abi, provider);
+  const provider = new ethers.providers.InfuraProvider(network, infuraProjectId);
   const signer = new ethers.Wallet(signerPrivateKey, provider);
+  const contract = new ethers.Contract(tokenContract, abi, signer);
 
   try {
-    // Define the transaction data
-    const data = contract.interface.encodeFunctionData("transfer", [toAddress, ethers.utils.parseUnits(amount.toString(), 18)]);
+    // Log signer address
+    // console.log("Signer Address:", signer.address);
 
-    // Estimate the gas limit for the transaction
-    const gasLimit = await provider.estimateGas({
-      from: signer.address,
-      to: tokenContract,
-      data: data,
-    });
+    // Fetch and log raw balance
+    const rawBalance = await contract.balanceOf(signer.address);
+    // console.log("Raw Token Balance (wei):", rawBalance.toString());
 
-    // console.log("Estimated Gas Limit:", gasLimit.toString());
+    // Fetch and log token decimals
+    const decimals = await contract.decimals();
+    // console.log("Token Decimals:", decimals);
+
+    // Format balance
+    const balance = ethers.utils.formatUnits(rawBalance, decimals);
+    // console.log("Formatted Token Balance:", balance);
+
+    const parsedAmount = ethers.utils.parseUnits(amount.toString(), decimals);
+
+    if (rawBalance.lt(parsedAmount)) {
+      throw new Error("Insufficient token balance.");
+    }
+
+    // Encode transfer transaction
+    const tx = await contract.populateTransaction.transfer(toAddress, parsedAmount);
+
+    // Estimate gas or set manual gas limit
+    let gasLimit;
+    try {
+      gasLimit = await provider.estimateGas({
+        from: signer.address,
+        to: tokenContract,
+        data: tx.data,
+      });
+      // console.log("Estimated Gas Limit:", gasLimit.toString());
+    } catch (error) {
+      console.warn("Gas estimation failed. Using manual gas limit.");
+      gasLimit = ethers.BigNumber.from("300000"); // Manual gas limit
+    }
 
     // Send the transaction
-    const tx = await signer.sendTransaction({
+    const transaction = await signer.sendTransaction({
       to: tokenContract,
-      data: data,
-      gasLimit: gasLimit,
-      maxPriorityFeePerGas: ethers.utils.parseUnits("100", "gwei"), // Fixed priority fee
-      maxFeePerGas: ethers.utils.parseUnits("100", "gwei"), // Fixed max fee
+      data: tx.data,
+      gasLimit,
+      maxPriorityFeePerGas: ethers.utils.parseUnits("50", "gwei"), // Lower gas fees
+      maxFeePerGas: ethers.utils.parseUnits("100", "gwei"), // Max fee
       nonce: await signer.getTransactionCount(),
-      chainId: 137, // Polygon mainnet
+      chainId: 137,
     });
 
     console.log("Mining transaction...");
-    console.log(`https://polygonscan.com/tx/${tx.hash}`);
+    console.log(`Transaction Hash: https://polygonscan.com/tx/${transaction.hash}`);
 
-    // Waiting for the transaction to be mined
-    const receipt = await tx.wait();
-    console.log(`Mined in block ${receipt.blockNumber}`);
-    return(receipt.transactionHash)
+    // Wait for confirmation
+    const receipt = await transaction.wait();
+    if (receipt.status === 0) {
+      throw new Error("Transaction failed. Check the contract logic or state.");
+    }
+
+    console.log(`Transaction mined in block ${receipt.blockNumber}`);
+    return receipt.transactionHash;
   } catch (error) {
     console.error("Error sending transaction:", error);
     throw new Error(error.message || "Transaction failed");
   }
 }
+
+
+// For previous HGLD token that uses 18 decimals (conventional for erc20 tokens)
+// async function sendHGLD(toAddress, amount) {
+
+//   const jsonFile = "./abi.json";
+//   const abi = JSON.parse(fs.readFileSync(jsonFile));
+//   const tokenContract = process.env.REACT_APP_HGLD_CONTRACT_ADDRESS;
+//   const infuraProjectId = "a31017990a434050ab5b5dad42ba299a";
+//   const signerPrivateKey = process.env.OPENPROJ_WALLET_PRIVATE_KEY;
+//   const network = "matic";
+
+//   // Configuring the connection to the Polygon network via Infura
+//   const provider = new ethers.providers.InfuraProvider(
+//     network,
+//     infuraProjectId
+//   );
+
+//   const contract = new ethers.Contract(tokenContract, abi, provider);
+//   const signer = new ethers.Wallet(signerPrivateKey, provider);
+
+//   try {
+//     // Define the transaction data
+//     const data = contract.interface.encodeFunctionData("transfer", [toAddress, ethers.utils.parseUnits(amount.toString(), 18)]);
+
+//     // Estimate the gas limit for the transaction
+//     const gasLimit = await provider.estimateGas({
+//       from: signer.address,
+//       to: tokenContract,
+//       data: data,
+//     });
+
+//     // console.log("Estimated Gas Limit:", gasLimit.toString());
+
+//     // Send the transaction
+//     const tx = await signer.sendTransaction({
+//       to: tokenContract,
+//       data: data,
+//       gasLimit: gasLimit,
+//       maxPriorityFeePerGas: ethers.utils.parseUnits("100", "gwei"), // Fixed priority fee
+//       maxFeePerGas: ethers.utils.parseUnits("100", "gwei"), // Fixed max fee
+//       nonce: await signer.getTransactionCount(),
+//       chainId: 137, // Polygon mainnet
+//     });
+
+//     console.log("Mining transaction...");
+//     console.log(`https://polygonscan.com/tx/${tx.hash}`);
+
+//     // Waiting for the transaction to be mined
+//     const receipt = await tx.wait();
+//     console.log(`Mined in block ${receipt.blockNumber}`);
+//     return(receipt.transactionHash)
+//   } catch (error) {
+//     console.error("Error sending transaction:", error);
+//     throw new Error(error.message || "Transaction failed");
+//   }
+// }
 
 
 

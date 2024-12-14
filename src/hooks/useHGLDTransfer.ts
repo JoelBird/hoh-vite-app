@@ -25,7 +25,8 @@ const useHGLDTransfer = () => {
 
   const transferHGLD = async (toAddress: string, amount: string): Promise<TransferResult> => {
     setIsLoading(true);
-    const bigIntAmount = BigInt(parseInt(amount) * 10 ** 18);
+    const tokenDecimals = 9; // Replace this with the actual token's decimals
+    const bigIntAmount = BigInt(parseFloat(amount) * 10 ** tokenDecimals);
     try {
       const transaction = prepareContractCall({
         contract,

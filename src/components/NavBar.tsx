@@ -147,76 +147,30 @@ const NavBar: React.FC<NavBarProps> = ({
           ) : (
             <DiscordLogin />
           )}
+          <Button
+            variant="outline"
+            borderColor="yellow.400"
+            color="yellow.400"
+            bg="gray.800"
+            _hover={{ bg: "yellow.400", color: "gray.800" }}
+            onClick={() =>
+              window.open(
+                "https://www.dexview.com/polygon/0x87a73CfdAddc4de32dA5A8528CcCD9eBf2B19593",
+                "_blank"
+              )
+            }
+          >
+            Buy HGLD
+          </Button>
         </HStack>
 
         {/* Right Section */}
-        <HStack spacing="20px">
-          <Spells user={user} />
-          <MarketModalHandler />
-          <Button
-            colorScheme="teal"
-            onClick={() => setShowInteractionsModal(true)}
-          >
-            Interactions
-          </Button>
-          {showInteractionsModal && (
-            <InteractionsModal
-              tokenId="false"
-              collection={activeCollection}
-              onClose={() => setShowInteractionsModal(false)}
-            />
-          )}
-          <Button colorScheme="teal" onClick={() => setShowSharesModal(true)}>
-            Shares
-          </Button>
-          {showSharesModal && (
-            <SharesModal
-              tokenId="false"
-              onClose={() => setShowSharesModal(false)}
-            />
-          )}
-          <Menu>
-            <MenuButton
-              as={Button}
-              rightIcon={<ChevronDownIcon />}
-              colorScheme="gray"
-            >
-              Select Collection
-            </MenuButton>
-            <MenuList>
-              {collections.map((col) => (
-                <MenuItem
-                  key={col.collection}
-                  onClick={() =>
-                    handleButtonClick(col.collection, col.address, col.chain)
-                  }
-                  bg={activeCollection === col.collection ? "gray" : "gray.700"}
-                >
-                  {col.collection}
-                </MenuItem>
-              ))}
-            </MenuList>
-          </Menu>
-          <ChakraLink
-            href="https://discord.gg/heroes-of-hiraeth-1000171866960433212"
-            isExternal
-          >
-            <IconButton
-              icon={<FaDiscord />}
-              aria-label="Discord"
-              variant="outline"
-              size="lg"
-            />
-          </ChakraLink>
-          <ChakraLink href="https://x.com/heroeshiraeth" isExternal>
-            <IconButton
-              icon={<FaTwitter />}
-              aria-label="Twitter"
-              variant="outline"
-              size="lg"
-            />
-          </ChakraLink>
-        </HStack>
+        <IconButton
+          icon={<HamburgerIcon />}
+          aria-label="Menu"
+          onClick={onOpen}
+          variant="outline"
+        />
       </HStack>
 
       {/* Mobile View */}
@@ -255,6 +209,21 @@ const NavBar: React.FC<NavBarProps> = ({
           ) : (
             <DiscordLogin />
           )}
+          <Button
+            variant="outline"
+            borderColor="yellow.400"
+            color="yellow.400"
+            bg="gray.800"
+            _hover={{ bg: "yellow.400", color: "gray.800" }}
+            onClick={() =>
+              window.open(
+                "https://www.dexview.com/polygon/0x87a73CfdAddc4de32dA5A8528CcCD9eBf2B19593",
+                "_blank"
+              )
+            }
+          >
+            Buy HGLD
+          </Button>
         </HStack>
         <IconButton
           icon={<HamburgerIcon />}
@@ -264,7 +233,7 @@ const NavBar: React.FC<NavBarProps> = ({
         />
       </HStack>
 
-      {/* Transparent Hamburger Menu */}
+      {/* Transparent Hamburger Menu (Visible on All Screens) */}
       <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
         <DrawerOverlay
           style={{
@@ -291,12 +260,25 @@ const NavBar: React.FC<NavBarProps> = ({
               >
                 Interactions
               </Button>
+              {showInteractionsModal && (
+                <InteractionsModal
+                  tokenId="false"
+                  collection={activeCollection}
+                  onClose={() => setShowInteractionsModal(false)}
+                />
+              )}
               <Button
                 colorScheme="teal"
                 onClick={() => setShowSharesModal(true)}
               >
                 Shares
               </Button>
+              {showSharesModal && (
+                <SharesModal
+                  tokenId="false"
+                  onClose={() => setShowSharesModal(false)}
+                />
+              )}
               <Menu>
                 <MenuButton
                   as={Button}

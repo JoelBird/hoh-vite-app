@@ -159,7 +159,9 @@ const InteractionsModal: React.FC<Props> = ({
                 <Tr>
                   <Th color="#63E6E0">Interaction ID</Th>
                   <Th color="#63E6E0">Property</Th>
+                  <Th color="#63E6E0">Property Holder</Th>
                   <Th color="#63E6E0">Hero</Th>
+                  <Th color="#63E6E0">Hero Holder</Th>
                   <Th color="#63E6E0">Hero Earns</Th>
                   <Th color="#63E6E0">Property Earns</Th>
                   <Th color="#63E6E0">Countdown</Th>
@@ -170,7 +172,9 @@ const InteractionsModal: React.FC<Props> = ({
                   <Tr key={interaction.interactionId}>
                     <Td>{interaction.interactionId}</Td>
                     <Td>{interaction.propertyName}</Td>
+                    <Td>{interaction.propertyHolderDiscordName}</Td>
                     <Td>{interaction.heroName}</Td>
+                    <Td>{interaction.heroHolderDiscordName}</Td>
                     <Td>{interaction.heroWillReceive}</Td>
                     <Td>{interaction.propertyGoldEarned}</Td>
                     <Td>{countdowns[index]}</Td>

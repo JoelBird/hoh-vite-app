@@ -1483,6 +1483,10 @@ const storeProperty = async (tokenId, metadata, walletAddress, user) => {
         console.error("Error checking property in database:", err);
         return reject(err);
       }
+
+      console.log(`Attempting to Store property\n tokenId: ${tokenId}\nUser: ${user.username}\nWallet Address: ${walletAddress}\nmetadata:\n${metadata}`);
+
+
       const propertyType = metadata['attributes']?.find(attr => attr.trait_type === 'Property Type')?.value || 'Unknown';
 
       if (!row) {

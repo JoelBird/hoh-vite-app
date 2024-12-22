@@ -1,0 +1,2 @@
+for some reason metadata and other keys are missing when using moralis or alchemy to fetch nfts of wallet address, I found that moralis does
+have a working get_nft_metadata that. I made server_alchemy.js. I integrated it into storeProperty but had errors so reverted and applied the collection param to moralis that I saw from alchemy

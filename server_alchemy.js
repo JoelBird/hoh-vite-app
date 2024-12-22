@@ -1444,18 +1444,25 @@ app.get('/callback', async (req, res) => {
 });
 
 
-
+const deepLog = (obj, indent = 0) => {
+  const spacing = ' '.repeat(indent * 2);
+  for (const key in obj) {
+      if (typeof obj[key] === 'object' && obj[key] !== null) {
+          console.log(`${spacing}${key}:`);
+          deepLog(obj[key], indent + 1); // Recursively log nested objects
+      } else {
+          console.log(`${spacing}${key}: ${obj[key]}`);
+      }
+  }
+};
 
 
 // API to fetch NFTs from Moralis and store them in the database
 app.post('/api/fetchNfts', async (req, res) => {
-  let { walletAddress, collectionChain, collectionAddress, collection, user } = req.body;
-  // if (collection == "property"){ //////duds = 0x478FFba8eA4945fB9327812231dfB1c6cAFD2C49 0x4d1CB1C6Cd01b93735619fC1340E413659Da1C44 0x54819dE751495DCC0450763f728ca9B2E85105a4 0x89B824ab6DC29dB6366e590e08a1f224CC3F4b15
-  //   walletAddress = "0xABA4414Cc3bc819268dFdd14a8e5DA2300443aa1" //0xABA4414Cc3bc819268dFdd14a8e5DA2300443aa1 = 19 no military 0x8AC65B1D807EB2C8BbB04B90c3Aee2E49aaCD6A7 = military
-  // }
-  walletAddress = "0x2c077c051fdbadc8388427e3ad30059e050b5f8f"
-
-  
+  let { walletAddress, collectionNetwork, collectionAddress, collection, user } = req.body;
+  if (collection == "property"){ //////duds = 0x478FFba8eA4945fB9327812231dfB1c6cAFD2C49 0x4d1CB1C6Cd01b93735619fC1340E413659Da1C44 0x54819dE751495DCC0450763f728ca9B2E85105a4 0x89B824ab6DC29dB6366e590e08a1f224CC3F4b15
+    walletAddress = "0xABA4414Cc3bc819268dFdd14a8e5DA2300443aa1" //0xABA4414Cc3bc819268dFdd14a8e5DA2300443aa1 = 19 no military 0x8AC65B1D807EB2C8BbB04B90c3Aee2E49aaCD6A7 = military
+  }
 
   const resolveIPFSLinkHero = (imageLink) => {
     if (imageLink && imageLink.startsWith("ipfs://")) {
@@ -1479,18 +1486,18 @@ app.post('/api/fetchNfts', async (req, res) => {
 // We added 'await' to database operations (db.get, db.run) to avoid race conditions
 // when accessing and updating the 'properties' table. This ensures that propertyNumber 
 // and other values are calculated correctly before proceeding to the next property.
-const storeProperty = async (tokenId, metadata, walletAddress, user) => {
+const storeProperty = async (nft, walletAddress, user) => {
   return new Promise((resolve, reject) => {
-    db.get(`SELECT * FROM properties WHERE tokenId = ?`, [tokenId], async (err, row) => {
+    db.get(`SELECT * FROM properties WHERE tokenId = ?`, [nft.tokenId], async (err, row) => {
       if (err) {
         console.error("Error checking property in database:", err);
         return reject(err);
       }
 
-      console.log(`Attempting to Store property\ntokenId: ${tokenId}\nUser: ${user.username}\nWallet Address: ${walletAddress}\nmetadata:\n${metadata}`);
+      console.log(`Attempting to Store property\n tokenId: ${nft.tokenId}\nUser: ${user.username}\nWallet Address: ${walletAddress}\nmetadata:\n${nft.raw.metadata}`);
 
 
-      const propertyType = metadata['attributes']?.find(attr => attr.trait_type === 'Property Type')?.value || 'Unknown';
+      const propertyType = nft.raw.metadata['attributes']?.find(attr => attr.trait_type === 'Property Type')?.value || 'Unknown';
 
       if (!row) {
         // Count how many properties of the same type already exist
@@ -1510,15 +1517,15 @@ const storeProperty = async (tokenId, metadata, walletAddress, user) => {
         db.run(
           `INSERT INTO properties (tokenId, contractAddress, currentHolderWallet, currentHolderDiscordName, currentHolderDiscordId, propertyNumber, propertyName, propertyType, imageLink, totalGoldEarned, holderTotalGoldEarned, totalTransactions, holderTotalTransactions) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
           [
-            tokenId,
+            nft.tokenId,
             collectionAddress,
             walletAddress,
             user.username,
             user.id,
             propertyNumber,
-            metadata.name,
+            nft.raw.metadata.name,
             propertyType,
-            resolveIPFSLinkProperty(metadata.image),
+            nft.image.cachedUrl,
             0,
             0,
             0,
@@ -1529,10 +1536,10 @@ const storeProperty = async (tokenId, metadata, walletAddress, user) => {
               console.error("Error inserting property:", err);
               return reject(err);
             }
-            console.log(`Property ${metadata.name} added to the database.`);
+            console.log(`Property ${nft.raw.metadata.name} added to the database.`);
             
             // Fetch the newly inserted row
-            db.get(`SELECT * FROM properties WHERE tokenId = ?`, [tokenId], (err, newRow) => {
+            db.get(`SELECT * FROM properties WHERE tokenId = ?`, [nft.tokenId], (err, newRow) => {
               if (err) {
                 console.error("Error fetching new property:", err);
                 return reject(err);
@@ -1553,13 +1560,13 @@ const storeProperty = async (tokenId, metadata, walletAddress, user) => {
                  holderTotalGoldEarned = ?,
                  holderTotalTransactions = ?
              WHERE tokenId = ?`,
-            [walletAddress, user.username, user.id, "0", "0", tokenId],
+            [walletAddress, user.username, user.id, "0", "0", nft.tokenId],
             (err) => {
               if (err) {
                 console.error("Error updating property holder:", err);
                 return reject(err);
               }
-              console.log(`Updated property ${tokenId} holder to ${walletAddress}.`);
+              console.log(`Updated property ${nft.tokenId} holder to ${walletAddress}.`);
               return resolve(row); // Return updated property data
             }
           );
@@ -1573,24 +1580,24 @@ const storeProperty = async (tokenId, metadata, walletAddress, user) => {
 
 
 
-const storeHero = async (tokenId, metadata, heroClass, walletAddress, user) => {
+const storeHero = async (nft, heroClass, walletAddress, user) => {
   return new Promise((resolve, reject) => {
-    db.get(`SELECT * FROM heroes WHERE tokenId = ?`, [tokenId], async (err, row) => {
+    db.get(`SELECT * FROM heroes WHERE tokenId = ?`, [nft.tokenId], async (err, row) => {
       if (err) {
         console.error("Error checking hero in database:", err);
         return reject(err);
       }
 
-      const attackAttribute = metadata.attributes.find(attr => attr.trait_type === "Attack")?.value;
-      const defenceAttribute = metadata.attributes.find(attr => attr.trait_type === "Defence")?.value;
+      const attackAttribute =  nft.raw.metadata.attributes.find(attr => attr.trait_type === "Attack")?.value;
+      const defenceAttribute =  nft.raw.metadata.attributes.find(attr => attr.trait_type === "Defence")?.value;
 
       if (!row) {
         db.run(
           `INSERT INTO heroes (tokenId, contractAddress, heroName, heroClass, heroAttack, heroDefence, stakedStatus, aliveStatus, interactionStatus, interactionId, currentHolderWallet, currentHolderDiscordName, currentHolderDiscordId, imageLink, totalGoldEarned, holderTotalGoldEarned, totalWins, holderWins, totalLosses, holderLosses) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-          [tokenId, collectionAddress, metadata.name, heroClass, attackAttribute, defenceAttribute, "unstaked", "alive", "false", "none", walletAddress, user.username, user.id, resolveIPFSLinkHero(metadata.image), "0", "0", "0", "0", "0", "0"],
+          [nft.tokenId, collectionAddress, nft.raw.metadata.name, heroClass, attackAttribute, defenceAttribute, "unstaked", "alive", "false", "none", walletAddress, user.username, user.id, nft.image.cachedUrl, "0", "0", "0", "0", "0", "0"],
           (err) => {
             if (err) return reject(err);
-            db.get(`SELECT * FROM heroes WHERE tokenId = ?`, [tokenId], (err, newRow) => {
+            db.get(`SELECT * FROM heroes WHERE tokenId = ?`, [nft.tokenId], (err, newRow) => {
               if (err) return reject(err);
               return resolve(newRow);
             });
@@ -1625,10 +1632,10 @@ const storeHero = async (tokenId, metadata, heroClass, walletAddress, user) => {
         if (updates.length > 0) {
           db.run(
             `UPDATE heroes SET ${updates.join(", ")} WHERE tokenId = ?`,
-            [...updateValues, tokenId],
+            [...updateValues, nft.tokenId],
             (err) => {
               if (err) return reject(err);
-              db.get(`SELECT * FROM heroes WHERE tokenId = ?`, [tokenId], (err, updatedRow) => {
+              db.get(`SELECT * FROM heroes WHERE tokenId = ?`, [nft.tokenId], (err, updatedRow) => {
                 if (err) return reject(err);
                 return resolve(updatedRow);
               });
@@ -1642,91 +1649,74 @@ const storeHero = async (tokenId, metadata, heroClass, walletAddress, user) => {
   });
 };
 
+    const apiKey = process.env.ALCHEMY_API_KEY; // Replace with your Alchemy API Key
+    const contractAddresses = [collectionAddress]; // Filter by this contract address
+    const url = `https://${collectionNetwork}.g.alchemy.com/nft/v3/${apiKey}/getNFTsForOwner`;
 
-
-  
-    let cursor = null;
-    let page = 0;
-    const maxPages = 10; // Limit to avoid endless loops
-    let nfts = [];
-
-    // Fetch NFTs for the single wallet address
-    while (page < maxPages) {
-      const response = await axios.get(
-        `https://deep-index.moralis.io/api/v2/${walletAddress}/nft`,
-        {
-          headers: {
-            accept: "application/json",
-            "X-API-Key": process.env.MORALIS_API_KEY,
-          },
-          params: {
-            chain: collectionChain,
-            format: "decimal",
-            cursor: cursor || undefined,
-            media_items: false,
-            tokenAddresses: [
-              walletAddress
-            ],
-          },
+ 
+    const response = await fetch(`${url}?owner=${walletAddress}&contractAddresses[]=${contractAddresses[0]}&withMetadata=true`, {
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json'
         }
-      );
-      const { result, cursor: nextCursor } = response.data;
+      });
 
-      //Iterate through each nft and push to list for response
-      for (const nft of result.filter(nft => nft.token_address.toLowerCase() === collectionAddress.toLowerCase())) {
-        // console.log(nft)
-        if (!nft?.metadata) {
-          console.log(`Skipping NFT with Token ID: ${nft.token_id} because metadata does not exist.`);
-          continue;
-        }
+    // if (!response.ok) {
+    //     throw new Error(`HTTP error! status: ${response.status}`);
+    // }
 
-        let metadata
-        metadata = JSON.parse(nft.metadata); //json string to javascript object - THIS IS REQUIRED        
-    
-        if (collection === "property") {
-          // console.log(' --- nft below ---')
-          // console.log(nft)
+    const data = await response.json();
+    const nfts = data.ownedNfts
+    // console.log(nfts)
+   
+    //Iterate through each nft and push to list for response
+    for (const nft of nfts) {
 
-          const propertyData = await storeProperty(nft.token_id, metadata, walletAddress, user);
-          // console.log('----- propertyData -----')
-          // console.log(propertyData)
-          nfts.push({
-            tokenId: propertyData.tokenId,
-            name: propertyData.propertyName,
-            image: resolveIPFSLinkProperty(propertyData.imageLink),
-            propertyName: propertyData.name,
-            propertyType: propertyData.propertyType,
-            holderTotalGoldEarned: propertyData.holderTotalGoldEarned,
-            holderTotalTransactions: propertyData.holderTotalTransactions,
-          });
-        } else if (collection === "druid" || collection === "knight") {
-          
-          const heroClass = collection === "druid" ? "druid" : "knight";
-          // Store hero or check if already exists
-         
-          const heroData = await storeHero(nft.token_id, metadata, heroClass, walletAddress, user);
-          // console.log('---- heroData -----')
-          // console.log(heroData)
-          nfts.push({
-            tokenId: heroData.tokenId,
-            name: heroData.heroName,
-            image: resolveIPFSLinkHero(heroData.imageLink),
-            stakedStatus: heroData.stakedStatus,
-            aliveStatus: heroData.aliveStatus,
-            interactionStatus: heroData.interactionStatus,
-            interactionId: heroData.interactionId
-          });
-        }
+      console.log(' --- deeplog nft below ---')
+      deepLog(nft);
+
+      if (!nft?.raw?.metadata) {
+        console.log(`Skipping NFT with Token ID: ${nft.tokenId} because metadata does not exist.`);
+        continue;
       }
-      
-      
-      if (!nextCursor) break;
-      cursor = nextCursor;
-      page++;
-    }
+      if (!nft?.tokenId) {
+        console.log(`Skipping NFT with Token ID: ${nft.tokenId} because tokenId does not exist.`);
+        continue;
+      }
 
-    res.json(nfts);
-  
+      if (collection === "property") {
+
+        const propertyData = await storeProperty(nft, walletAddress, user);
+        console.log('----- propertyData -----')
+        console.log(propertyData)
+        nfts.push({
+          tokenId: propertyData.tokenId,
+          name: propertyData.propertyName,
+          image: propertyData.imageLink,
+          propertyName: propertyData.name,
+          propertyType: propertyData.propertyType,
+          holderTotalGoldEarned: propertyData.holderTotalGoldEarned,
+          holderTotalTransactions: propertyData.holderTotalTransactions,
+        });
+      } else if (collection === "druid" || collection === "knight") {
+        
+        const heroClass = collection === "druid" ? "druid" : "knight";
+        // Store hero or check if already exists
+        
+        const heroData = await storeHero(nft, heroClass, walletAddress, user);
+        console.log('---- heroData -----')
+        console.log(heroData)
+        nfts.push({
+          tokenId: heroData.tokenId,
+          name: heroData.heroName,
+          image: heroData.imageLink,
+          stakedStatus: heroData.stakedStatus,
+          aliveStatus: heroData.aliveStatus,
+          interactionStatus: heroData.interactionStatus,
+          interactionId: heroData.interactionId
+        });
+      }
+    }
 });
 
 // Endpoint to get all rows from the propertyInteractions table

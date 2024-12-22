@@ -3,11 +3,14 @@ const db = new sqlite3.Database('HOH.db');
 
 
 const propertyValuesData = {
-  housingDuration: 86400,
-  housingGold: 1000,
+  heroGoldEarnedPerInteraction: 100,
+  PropertyGoldEarnedPerInteraction: 100,
+  propertyInteractionDuration: 21600,
+  housingDuration: 21600,
+  housingGold: 100,
   housingNumberLastUsed: 0,
   retailDuration: 0,
-  retailGold: 1000 ,
+  retailGold: 100,
   retailNumberLastUsed: 0,
   retailAvailableSpells: {
     "lightningBolt": {
@@ -29,18 +32,17 @@ const propertyValuesData = {
       spellRarity: "common"
     },
   },
-  militaryDuration: 259200,
-  militaryGold: 1000,
+  militaryDuration: 21600,
+  militaryGold: 100,
   militaryNumberLastUsed: 0,
   hospitalityGold: 100,
   hospitalityNumberLastUsed: 0,
-  agricultureDuration: 64800,
-  agricultureGold: 50,
+  agricultureDuration: 21600,
+  agricultureGold: 100,
   agricultureNumberLastUsed: 0,
-  productionDuration: 64800,
-  productionGold: 50,
+  productionDuration: 21600,
+  productionGold: 100,
   productionNumberLastUsed: 0,
-  governmentGold: 500,
   governmentNumberLastUsed: 0,
 };
 
@@ -142,15 +144,14 @@ db.serialize(() => {
     productionDuration INTEGER,
     productionGold INTEGER,
     productionNumberLastUsed INTEGER,
-    governmentGold INTEGER,
     governmentNumberLastUsed INTEGER
   )`, () => {
     const stmt = db.prepare(
       `INSERT OR REPLACE INTO propertyValues (
         heroGoldEarnedPerInteraction, PropertyGoldEarnedPerInteraction, propertyInteractionDuration, housingDuration, housingGold,
         housingNumberLastUsed, retailDuration, retailGold, retailNumberLastUsed, retailAvailableSpells, militaryDuration, militaryGold, militaryNumberLastUsed,
-        hospitalityGold, hospitalityNumberLastUsed, agricultureDuration, agricultureGold, agricultureNumberLastUsed, productionDuration, productionGold, productionNumberLastUsed, governmentGold, governmentNumberLastUsed
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
+        hospitalityGold, hospitalityNumberLastUsed, agricultureDuration, agricultureGold, agricultureNumberLastUsed, productionDuration, productionGold, productionNumberLastUsed, governmentNumberLastUsed
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
     );
     stmt.run(
       propertyValuesData.heroGoldEarnedPerInteraction,
@@ -174,7 +175,6 @@ db.serialize(() => {
       propertyValuesData.productionDuration,
       propertyValuesData.productionGold,
       propertyValuesData.productionNumberLastUsed,
-      propertyValuesData.governmentGold,
       propertyValuesData.governmentNumberLastUsed,
       (err) => {
         if (err) {

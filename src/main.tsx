@@ -10,10 +10,12 @@ import DiscordLogin from "./components/DiscordLogin";
 import DiscordCallback from "./components/DiscordCallback";
 import theme from "./theme";
 import "./index.css";
-import { TransactionProvider } from "../src/TransactionContext";
-import { AliveStatusProvider } from "../src/AliveStatusContext";
-import { StakedStatusProvider } from "../src/StakedStatusContext";
-import { UserProvider } from "../src/UserContext";
+import { TransactionProvider } from "./contexts/TransactionContext";
+import { AliveStatusProvider } from "./contexts/AliveStatusContext";
+import { StakedStatusProvider } from "./contexts/StakedStatusContext";
+import { HasClaimedStakeProvider } from "./contexts/HasClaimedStakeContext";
+import { HasClaimedRentProvider } from "./contexts/HasClaimedRentContext";
+import { UserProvider } from "./contexts/UserContext";
 import { ThirdwebProvider } from "thirdweb/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
@@ -29,13 +31,20 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
             <TransactionProvider>
               <AliveStatusProvider>
                 <StakedStatusProvider>
-                  <Router>
-                    <Routes>
-                      <Route path="/" element={<App />} />
-                      <Route path="/App" element={<App />} />
-                      <Route path="/callback" element={<DiscordCallback />} />
-                    </Routes>
-                  </Router>
+                  <HasClaimedStakeProvider>
+                    <HasClaimedRentProvider>
+                      <Router>
+                        <Routes>
+                          <Route path="/" element={<App />} />
+                          <Route path="/App" element={<App />} />
+                          <Route
+                            path="/callback"
+                            element={<DiscordCallback />}
+                          />
+                        </Routes>
+                      </Router>
+                    </HasClaimedRentProvider>
+                  </HasClaimedStakeProvider>
                 </StakedStatusProvider>
               </AliveStatusProvider>
             </TransactionProvider>

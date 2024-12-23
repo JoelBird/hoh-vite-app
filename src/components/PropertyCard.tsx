@@ -1,14 +1,28 @@
 import { useState, useEffect } from "react";
-import { Box, Flex, Image, Text, Button, VStack } from "@chakra-ui/react";
+import axios from "axios";
+import {
+  Box,
+  Flex,
+  Image,
+  Text,
+  Button,
+  VStack,
+  useToast,
+} from "@chakra-ui/react";
 import InteractionsModal from "./InteractionsModal";
+import getTimeUntilSunday11pmUTC from "../functions/getTimeUntilSunday11pmUTC";
+import { useHasClaimedRent } from "../contexts/HasClaimedRentContext";
 
 interface PropertyCardProps {
   tokenId: string;
   name: string;
   image: string;
+  hasClaimedRent: string;
   holderTotalGoldEarned: number;
   holderTotalTransactions: number;
   propertyType: string;
+  propertyRentalValue: string;
+  propertyLevel: string;
   collection: string;
 }
 
@@ -17,12 +31,24 @@ const PropertyCard = ({
   tokenId,
   name,
   image,
+  hasClaimedRent,
   holderTotalGoldEarned,
   holderTotalTransactions,
   propertyType,
+  propertyRentalValue,
+  propertyLevel,
   collection,
 }: PropertyCardProps) => {
   const [showModal, setShowModal] = useState(false);
+  const { updateHasClaimedRent } = useHasClaimedRent();
+  const toast = useToast();
+
+  console.log("hasClaimedRent!!!!!");
+  console.log(hasClaimedRent);
+  console.log("propertyLevel!!!!!");
+  console.log(propertyLevel);
+  console.log("propertyRentalValue!!!!!");
+  console.log(propertyRentalValue);
 
   return (
     <Box
@@ -49,11 +75,9 @@ const PropertyCard = ({
           </Text>
         </Flex>
 
-        <Text
-          fontSize="sm"
-          color="gray.400"
-          mb={2}
-        >{`Token ID: ${tokenId}`}</Text>
+        <Text fontSize="sm" color="gray.400" mb={2}>
+          {`Token ID: ${tokenId}`}
+        </Text>
 
         <VStack align="start" spacing={1}>
           {propertyType === "Agriculture" ||
@@ -67,6 +91,12 @@ const PropertyCard = ({
               <Text fontSize="sm">
                 $HGLD Earned: <strong>{holderTotalGoldEarned}</strong>
               </Text>
+              <Text fontSize="sm">
+                Property Value: <strong>{propertyRentalValue}</strong>
+              </Text>
+              <Text fontSize="sm">
+                Property Level: <strong>{propertyLevel}</strong>
+              </Text>
             </>
           ) : (
             <>
@@ -76,10 +106,17 @@ const PropertyCard = ({
               <Text fontSize="sm">
                 $HGLD Earned: <strong>{holderTotalGoldEarned}</strong>
               </Text>
+              <Text fontSize="sm">
+                Property Value: <strong>{propertyRentalValue}</strong>
+              </Text>
+              <Text fontSize="sm">
+                Property Level: <strong>{propertyLevel}</strong>
+              </Text>
             </>
           )}
         </VStack>
 
+        {/* View Interactions Button */}
         <Button
           mt={4}
           width="100%"
@@ -90,6 +127,70 @@ const PropertyCard = ({
         >
           View Interactions
         </Button>
+
+        {/* Claim Rent Button */}
+        <Button
+          mt={2}
+          width="100%"
+          colorScheme={hasClaimedRent === "true" ? "gray" : "teal"}
+          variant="solid"
+          size="sm"
+          isDisabled={hasClaimedRent === "true"}
+          onClick={async () => {
+            if (hasClaimedRent === "false") {
+              try {
+                const response = await axios.post(
+                  `${process.env.REACT_APP_API_URL}/api/updateHasClaimedRent`,
+                  { tokenId },
+                  {
+                    headers: {
+                      "Content-Type": "application/json",
+                    },
+                  }
+                );
+
+                // Success Toast
+                toast({
+                  title: "Rent Claimed Successfully",
+                  description: `You will receive your Rent HGLD in ${getTimeUntilSunday11pmUTC()}`,
+                  status: "success",
+                  duration: 10000,
+                  isClosable: true,
+                });
+              } catch (error: any) {
+                console.error("Error updating hasClaimedRent:", error);
+
+                // Extract Error Message from Response
+                const errorMessage =
+                  error.response?.data?.message ||
+                  error.response?.data?.error ||
+                  error.message ||
+                  "An unknown error occurred";
+
+                toast({
+                  title: "Failed to Claim Rent",
+                  description: errorMessage,
+                  status: "error",
+                  duration: 5000,
+                  isClosable: true,
+                });
+              }
+
+              if (tokenId) {
+                console.log(`Updating hasClaimedRent for tokenId: ${tokenId}`);
+                updateHasClaimedRent(tokenId, "true");
+              } else {
+                console.error(
+                  "tokenId is undefined, cannot update hasClaimedRent."
+                );
+              }
+            }
+          }}
+        >
+          {hasClaimedRent === "true" ? "Rent claimed" : "Claim Rent"}
+        </Button>
+
+        {/* Modal */}
         {showModal && (
           <InteractionsModal
             tokenId={tokenId}

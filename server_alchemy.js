@@ -111,6 +111,9 @@ cron.schedule('0 0 * * *', () => {
                       format: "decimal",
                       cursor: cursor || undefined,
                       media_items: false,
+                      tokenAddresses: [
+                        collectionAddress
+                      ],
                     },
                   }
                 );
@@ -640,7 +643,7 @@ app.post('/api/send-hgld', async (req, res) => {
   const apiKey = req.headers['x-api-key'];
 
   // Validate the API key inline within the endpoint
-  if (apiKey !== process.env.SERVER_API_KEY) {
+  if (apiKey !== process.env.REACT_APP_API_KEY) {
     return res.status(403).json({ error: 'Forbidden: Invalid API key' });
   }
 

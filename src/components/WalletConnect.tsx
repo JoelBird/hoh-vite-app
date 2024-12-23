@@ -30,7 +30,7 @@ const WalletConnect: React.FC = () => {
 
   return (
     <ConnectButton
-      autoConnect={false}
+      autoConnect={true}
       wallets={wallets}
       connectModal={{
         size: "compact",
@@ -44,7 +44,6 @@ const WalletConnect: React.FC = () => {
         },
       }}
       onConnect={(wallet) => {
-        console.log("Connected!!!");
         const account = wallet.getAccount();
         const connectedAddress = account?.address;
       }}

@@ -58,11 +58,12 @@ const db = new sqlite3.Database(dbPath, sqlite3.OPEN_READWRITE | sqlite3.OPEN_CR
 // Run the cron job every minute
 // cron.schedule('* * * * *', () => {
 
-  // // Run the cron job every 5 minutes
-  // cron.schedule('*/5 * * * *', () => {
-    
-// Run the cron job every 24 hours
-cron.schedule('0 0 * * *', () => {
+// // Run the cron job every 5 minutes
+// cron.schedule('*/5 * * * *', () => {
+  
+// Run the cron job 30 mins before midnight UTC - UTC at bottom of function
+// - Unstake Heroes -
+cron.schedule('30 23 * * *', () => {
   try {
     // Step 1: Fetch all members
     db.all(`SELECT * FROM members`, async (err, members) => {
@@ -88,7 +89,6 @@ cron.schedule('0 0 * * *', () => {
       for (const member of members) {
         const wallets = JSON.parse(member.wallets || "[]");
         const moralisTokenIds = [];
-        const rewardsByWallet = {};
 
         // Step 2: Fetch NFTs for each wallet
         for (const walletAddress of wallets) {
@@ -111,6 +111,9 @@ cron.schedule('0 0 * * *', () => {
                       format: "decimal",
                       cursor: cursor || undefined,
                       media_items: false,
+                      tokenAddresses: [
+                        collection.address
+                      ],
                     },
                   }
                 );
@@ -160,9 +163,6 @@ cron.schedule('0 0 * * *', () => {
         const tokenIdsToUnstake = stakedTokenIds.filter(
           (tokenId) => !moralisTokenIds.includes(tokenId)
         );
-        const tokenIdsToReward = stakedTokenIds.filter((tokenId) =>
-          moralisTokenIds.includes(tokenId)
-        );
 
         // Step 5: Update unstaked tokens
         for (const tokenId of tokenIdsToUnstake) {
@@ -175,25 +175,6 @@ cron.schedule('0 0 * * *', () => {
             }
           );
         }
-
-        // Step 6: Calculate rewards for each wallet
-        for (const walletAddress of wallets) {
-          const rewardCount = tokenIdsToReward.filter(
-            (tokenId) => moralisTokenIds.includes(tokenId)
-          ).length;
-
-          if (rewardCount > 0) {
-            rewardsByWallet[walletAddress] =
-              (rewardsByWallet[walletAddress] || 0) + rewardCount * 10; // 10 tokens per NFT
-          }
-        }
-
-        // Step 7: Send rewards
-        for (const [walletAddress, totalReward] of Object.entries(
-          rewardsByWallet
-        )) {
-          await sendHGLD(walletAddress, totalReward);
-        }
       }
 
       console.log("Cron job for stake check completed successfully.");
@@ -201,10 +182,171 @@ cron.schedule('0 0 * * *', () => {
   } catch (error) {
     console.error("Error processing staked heroes:", error);
   }
+}, {
+  scheduled: true,
+  timezone: "UTC"
 });
 
 
+// - Send staking Rewards - 
+// Schedule a task to run at midnight UTC every day
+cron.schedule('0 0 * * *', async () => {
+  console.log('Running Staking Rewards Distribution at Midnight UTC.');
+  try {
+    db.all(
+      `SELECT tokenId, currentHolderWallet 
+       FROM heroes 
+       WHERE stakedStatus = "staked" 
+       AND hasClaimedStake = "true"`,
+      async (err, heroes) => {
+        if (err) {
+          console.error("❌ Error fetching eligible heroes:", err);
+          return;
+        }
+
+        if (heroes.length === 0) {
+          console.log("ℹ️ No heroes eligible for rewards at this time.");
+          return;
+        }
+
+        const rewardsByWallet = {};
+
+        // Step 1: Calculate rewards per wallet
+        heroes.forEach(({ currentHolderWallet }) => {
+          rewardsByWallet[currentHolderWallet] =
+            (rewardsByWallet[currentHolderWallet] || 0) + 10; // 10 tokens per hero
+        });
+
+        // Step 2: Process rewards in a queue
+        async function processQueue(rewardsQueue) {
+          for (const [walletAddress, totalReward] of Object.entries(rewardsQueue)) {
+            try {
+              console.log(`🚀 Processing ${totalReward} HGLD for wallet: ${walletAddress}`);
+
+              const txHash = await sendHGLD(walletAddress, totalReward);
+              console.log(`✅ Successfully sent ${totalReward} HGLD to ${walletAddress}. Transaction: ${txHash}`);
+            } catch (error) {
+              console.error(`❌ Failed to send HGLD to ${walletAddress}:`, error.message);
+            }
+            // Optional: Add delay to prevent rate-limiting (2 seconds per transaction)
+            await new Promise(resolve => setTimeout(resolve, 2000));
+          }
+        }
+
+        await processQueue(rewardsByWallet);
+
+        // Step 3: Reset hasClaimedStake to "false"
+        const tokenIds = heroes.map((hero) => hero.tokenId);
+
+        db.run(
+          `UPDATE heroes SET hasClaimedStake = "false" WHERE tokenId IN (${tokenIds
+            .map(() => '?')
+            .join(',')})`,
+          tokenIds,
+          (err) => {
+            if (err) {
+              console.error("❌ Failed to reset hasClaimedStake for heroes:", err);
+            } else {
+              console.log("✅ Successfully reset hasClaimedStake for all processed heroes.");
+            }
+          }
+        );
+      }
+    );
+
+    console.log("🎯 Cron job for Staking Rewards completed successfully at Midnight UTC.");
+  } catch (error) {
+    console.error("❌ Error processing Staking Rewards:", error);
+  }
+}, {
+  scheduled: true,
+  timezone: "UTC"
+});
+
+
+
+// - Send Claimed Rent HGLD - 
+// Schedule a task to run at 11 PM UTC every Sunday
+cron.schedule('0 23 * * 0', async () => {
+  console.log('Running Rent Rewards Distribution at 11 PM UTC every Sunday.');
+
+  try {
+    db.all(
+      `SELECT tokenId, currentHolderWallet, propertyRentalValue 
+       FROM properties 
+       WHERE hasClaimedRent = "true"`,
+      async (err, properties) => {
+        if (err) {
+          console.error("Error fetching properties with claimed rent:", err);
+          return;
+        }
+
+        if (properties.length === 0) {
+          console.log("No properties eligible for rent rewards at this time.");
+          return;
+        }
+
+        const rewardsByWallet = {};
+
+        // Step 1: Calculate rewards per wallet
+        properties.forEach(({ currentHolderWallet, propertyRentalValue }) => {
+          const reward = parseFloat(propertyRentalValue) / 4; // Divide by 4 for weekly rent
+          rewardsByWallet[currentHolderWallet] =
+            (rewardsByWallet[currentHolderWallet] || 0) + reward;
+        });
+
+        // Step 2: Process rewards in a queue
+        async function processQueue(rewardsQueue) {
+          for (const [walletAddress, totalReward] of Object.entries(rewardsQueue)) {
+            try {
+              console.log(`Processing ${totalReward} HGLD for wallet: ${walletAddress}`);
+
+              const txHash = await sendHGLD(walletAddress, totalReward);
+              console.log(`✅ Successfully sent ${totalReward} HGLD to ${walletAddress}. Transaction: ${txHash}`);
+            } catch (error) {
+              console.error(`❌ Failed to send HGLD to ${walletAddress}:`, error.message);
+            }
+            // Optional: Add delay to prevent rate-limiting (2 seconds per transaction)
+            await new Promise(resolve => setTimeout(resolve, 2000));
+          }
+        }
+
+        await processQueue(rewardsByWallet);
+
+        // Step 3: Reset hasClaimedRent to "false" for processed properties
+        const tokenIds = properties.map((property) => property.tokenId);
+
+        db.run(
+          `UPDATE properties SET hasClaimedRent = "false" WHERE tokenId IN (${tokenIds
+            .map(() => '?')
+            .join(',')})`,
+          tokenIds,
+          (err) => {
+            if (err) {
+              console.error("❌ Failed to reset hasClaimedRent for properties:", err);
+            } else {
+              console.log("✅ Successfully reset hasClaimedRent for all processed properties.");
+            }
+          }
+        );
+      }
+    );
+
+    console.log("Cron job for Rent Rewards completed successfully.");
+  } catch (error) {
+    console.error("❌ Error processing Rent Rewards:", error);
+  }
+}, {
+  scheduled: true,
+  timezone: "UTC"
+});
+
+
+
+
+
 // Run the cron job every 5 minutes
+// - Concluding Interactions -
 cron.schedule('*/5 * * * *', () => {
   const currentTime = Math.floor(Date.now() / 1000); // current time in Unix seconds
   let updateSuccesful = true;
@@ -640,7 +782,7 @@ app.post('/api/send-hgld', async (req, res) => {
   const apiKey = req.headers['x-api-key'];
 
   // Validate the API key inline within the endpoint
-  if (apiKey !== process.env.SERVER_API_KEY) {
+  if (apiKey !== process.env.REACT_APP_API_KEY) {
     return res.status(403).json({ error: 'Forbidden: Invalid API key' });
   }
 
@@ -668,6 +810,86 @@ app.post('/api/send-hgld', async (req, res) => {
     });
   }
 });
+
+app.post('/api/updateHasClaimedStake', (req, res) => {
+  const { tokenId } = req.body;
+
+  // Validate the input
+  if (!tokenId) {
+    return res.status(400).json({ error: 'Missing tokenId parameter' });
+  }
+
+  const query = `
+    UPDATE heroes 
+    SET hasClaimedStake = 'true' 
+    WHERE tokenId = ?
+  `;
+
+  db.run(query, [tokenId], function (err) {
+    if (err) {
+      console.error('Error updating hasClaimedStake:', err.message);
+      return res.status(500).json({
+        success: false,
+        message: 'Failed to update hasClaimedStake',
+        error: err.message,
+      });
+    }
+
+    if (this.changes === 0) {
+      // No rows were updated (tokenId not found)
+      return res.status(404).json({
+        success: false,
+        message: `No hero found with tokenId: ${tokenId}`,
+      });
+    }
+
+    res.json({
+      success: true,
+      message: `hasClaimedStake updated to 'true' for tokenId: ${tokenId}`,
+    });
+  });
+});
+
+
+app.post('/api/updateHasClaimedRent', (req, res) => {
+  const { tokenId } = req.body;
+
+  // Validate the input
+  if (!tokenId) {
+    return res.status(400).json({ error: 'Missing tokenId parameter' });
+  }
+
+  const query = `
+    UPDATE properties 
+    SET hasClaimedRent = 'true' 
+    WHERE tokenId = ?
+  `;
+
+  db.run(query, [tokenId], function (err) {
+    if (err) {
+      console.error('Error updating hasClaimedRent:', err.message);
+      return res.status(500).json({
+        success: false,
+        message: 'Failed to update hasClaimedRent',
+        error: err.message,
+      });
+    }
+
+    if (this.changes === 0) {
+      // No rows were updated (tokenId not found)
+      return res.status(404).json({
+        success: false,
+        message: `No property found with tokenId: ${tokenId}`,
+      });
+    }
+
+    res.json({
+      success: true,
+      message: `hasClaimedRent updated to 'true' for tokenId: ${tokenId}`,
+    });
+  });
+});
+
 
 async function updateHeroTrait(heroName, selectedTrainingTrait) {
   console.log(heroName);
@@ -1451,9 +1673,9 @@ app.get('/callback', async (req, res) => {
 app.post('/api/fetchNfts', async (req, res) => {
   let { walletAddress, collectionChain, collectionAddress, collection, user } = req.body;
   // if (collection == "property"){ //////duds = 0x478FFba8eA4945fB9327812231dfB1c6cAFD2C49 0x4d1CB1C6Cd01b93735619fC1340E413659Da1C44 0x54819dE751495DCC0450763f728ca9B2E85105a4 0x89B824ab6DC29dB6366e590e08a1f224CC3F4b15
-  //   walletAddress = "0xABA4414Cc3bc819268dFdd14a8e5DA2300443aa1" //0xABA4414Cc3bc819268dFdd14a8e5DA2300443aa1 = 19 no military 0x8AC65B1D807EB2C8BbB04B90c3Aee2E49aaCD6A7 = military
+  //   walletAddress = "0xABA4414Cc3bc819268dFdd14a8e5DA2300443aa1" //0xABA4414Cc3bc819268dFdd14a8e5DA2300443aa1 = 19 no military 0x8AC65B1D807EB2C8BbB04B90c3Aee2E49aaCD6A7 = military 0x478ffba8ea4945fb9327812231dfb1c6cafd2c49 = Hospitality | 11
   // }
-  walletAddress = "0x2c077c051fdbadc8388427e3ad30059e050b5f8f"
+  // walletAddress = "0x4d1CB1C6Cd01b93735619fC1340E413659Da1C44"
 
   
 
@@ -1487,10 +1709,15 @@ const storeProperty = async (tokenId, metadata, walletAddress, user) => {
         return reject(err);
       }
 
+      console.log(metadata)
+
       console.log(`Attempting to Store property\ntokenId: ${tokenId}\nUser: ${user.username}\nWallet Address: ${walletAddress}\nmetadata:\n${metadata}`);
 
 
       const propertyType = metadata['attributes']?.find(attr => attr.trait_type === 'Property Type')?.value || 'Unknown';
+      const propertyRentalValue = metadata['attributes']?.find(attr => attr.trait_type === 'Rental Value')?.value || 'Unknown';
+      const propertyLevel = metadata['attributes']?.find(attr => attr.trait_type === 'Level')?.value || 'Unknown';
+
 
       if (!row) {
         // Count how many properties of the same type already exist
@@ -1508,7 +1735,7 @@ const storeProperty = async (tokenId, metadata, walletAddress, user) => {
 
         // Insert the new property
         db.run(
-          `INSERT INTO properties (tokenId, contractAddress, currentHolderWallet, currentHolderDiscordName, currentHolderDiscordId, propertyNumber, propertyName, propertyType, imageLink, totalGoldEarned, holderTotalGoldEarned, totalTransactions, holderTotalTransactions) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+          `INSERT INTO properties (tokenId, contractAddress, currentHolderWallet, currentHolderDiscordName, currentHolderDiscordId, propertyNumber, propertyName, propertyType, propertyRentalValue, propertyLevel, imageLink, totalGoldEarned, holderTotalGoldEarned, totalTransactions, holderTotalTransactions, hasClaimedRent) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
           [
             tokenId,
             collectionAddress,
@@ -1518,11 +1745,14 @@ const storeProperty = async (tokenId, metadata, walletAddress, user) => {
             propertyNumber,
             metadata.name,
             propertyType,
+            propertyRentalValue,
+            propertyLevel,
             resolveIPFSLinkProperty(metadata.image),
             0,
             0,
             0,
             0,
+            "false",
           ],
           (err) => {
             if (err) {
@@ -1586,8 +1816,8 @@ const storeHero = async (tokenId, metadata, heroClass, walletAddress, user) => {
 
       if (!row) {
         db.run(
-          `INSERT INTO heroes (tokenId, contractAddress, heroName, heroClass, heroAttack, heroDefence, stakedStatus, aliveStatus, interactionStatus, interactionId, currentHolderWallet, currentHolderDiscordName, currentHolderDiscordId, imageLink, totalGoldEarned, holderTotalGoldEarned, totalWins, holderWins, totalLosses, holderLosses) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-          [tokenId, collectionAddress, metadata.name, heroClass, attackAttribute, defenceAttribute, "unstaked", "alive", "false", "none", walletAddress, user.username, user.id, resolveIPFSLinkHero(metadata.image), "0", "0", "0", "0", "0", "0"],
+          `INSERT INTO heroes (tokenId, contractAddress, heroName, heroClass, heroAttack, heroDefence, stakedStatus, hasClaimedStake, aliveStatus, interactionStatus, interactionId, currentHolderWallet, currentHolderDiscordName, currentHolderDiscordId, imageLink, totalGoldEarned, holderTotalGoldEarned, totalWins, holderWins, totalLosses, holderLosses) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+          [tokenId, collectionAddress, metadata.name, heroClass, attackAttribute, defenceAttribute, "unstaked", "false", "alive", "false", "none", walletAddress, user.username, user.id, resolveIPFSLinkHero(metadata.image), "0", "0", "0", "0", "0", "0"],
           (err) => {
             if (err) return reject(err);
             db.get(`SELECT * FROM heroes WHERE tokenId = ?`, [tokenId], (err, newRow) => {
@@ -1642,9 +1872,6 @@ const storeHero = async (tokenId, metadata, heroClass, walletAddress, user) => {
   });
 };
 
-
-
-  
     let cursor = null;
     let page = 0;
     const maxPages = 10; // Limit to avoid endless loops
@@ -1665,7 +1892,7 @@ const storeHero = async (tokenId, metadata, heroClass, walletAddress, user) => {
             cursor: cursor || undefined,
             media_items: false,
             tokenAddresses: [
-              walletAddress
+              collectionAddress
             ],
           },
         }
@@ -1696,8 +1923,11 @@ const storeHero = async (tokenId, metadata, heroClass, walletAddress, user) => {
             image: resolveIPFSLinkProperty(propertyData.imageLink),
             propertyName: propertyData.name,
             propertyType: propertyData.propertyType,
+            propertyRentalValue: propertyData.propertyRentalValue,
+            propertyLevel: propertyData.propertyLevel,
             holderTotalGoldEarned: propertyData.holderTotalGoldEarned,
             holderTotalTransactions: propertyData.holderTotalTransactions,
+            hasClaimedRent: propertyData.hasClaimedRent,
           });
         } else if (collection === "druid" || collection === "knight") {
           
@@ -1712,6 +1942,7 @@ const storeHero = async (tokenId, metadata, heroClass, walletAddress, user) => {
             name: heroData.heroName,
             image: resolveIPFSLinkHero(heroData.imageLink),
             stakedStatus: heroData.stakedStatus,
+            hasClaimedStake: heroData.hasClaimedStake,
             aliveStatus: heroData.aliveStatus,
             interactionStatus: heroData.interactionStatus,
             interactionId: heroData.interactionId

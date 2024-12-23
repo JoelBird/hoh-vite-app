@@ -7,7 +7,7 @@ import NftDisplay from "./components/NftDisplay";
 import NftDisplaySkeleton from "./components/NftDisplaySkeleton";
 import { useActiveAccount } from "thirdweb/react";
 import { useDisconnect, useActiveWallet } from "thirdweb/react";
-import { useUser } from "./UserContext";
+import { useUser } from "./contexts/UserContext";
 
 interface Token {
   id: string;

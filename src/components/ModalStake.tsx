@@ -16,12 +16,12 @@ import {
   useToast, // Import toast from Chakra
 } from "@chakra-ui/react";
 import axios from "axios";
-import { useTransaction } from "../TransactionContext";
-import { useStakedStatus } from "../StakedStatusContext";
+import { useTransaction } from "../contexts/TransactionContext";
+import { useStakedStatus } from "../contexts/StakedStatusContext";
 import { useActiveAccount } from "thirdweb/react";
 import { useHGLDBalance } from "../hooks/useHGLDBalance";
 import useHGLDTransfer from "../hooks/useHGLDTransfer";
-import { useUser } from "../UserContext";
+import { useUser } from "../contexts/UserContext";
 
 interface Props {
   openModal: (modalName: string) => void;
@@ -46,7 +46,7 @@ function ModalStake({ openModal, isOpen, onClose }: Props) {
   const [unstakedHeroes, setUnstakedHeroes] = useState<string[]>([]);
   const [selectedHero, setSelectedHero] = useState<string | null>(null);
 
-  const [propertyDuration, setPropertyDuration] = useState<string>();
+  const [stakingGoldReward, setStakingGoldReward] = useState<string>();
   const [propertyGold, setPropertyGold] = useState<string>();
   const [propertyNumberNextToUse, setPropertyNumberNextToUse] =
     useState<string>();
@@ -65,6 +65,8 @@ function ModalStake({ openModal, isOpen, onClose }: Props) {
   const [heroHolderDiscordName, setHeroHolderDiscordName] = useState<string>();
   const [heroHolderDiscordId, setHeroHolderDiscordId] = useState<string>();
   const [heroInteractionStatus, setHeroInteractionStatus] = useState<string>();
+
+  const gold = "5";
 
   useEffect(() => {
     if (isOpen && address) {
@@ -95,9 +97,11 @@ function ModalStake({ openModal, isOpen, onClose }: Props) {
           },
         })
         .then((response) => {
-          setPropertyDuration(response.data.housingDuration);
-          setPropertyGold(response.data.housingGold);
-          setPropertyNumberNextToUse(response.data.housingNumberLastUsed + 1);
+          setStakingGoldReward(response.data.stakingGoldReward);
+          setPropertyGold(response.data.hospitalityGold);
+          setPropertyNumberNextToUse(
+            response.data.hospitalityNumberLastUsed + 1
+          );
         })
         .catch((error) => {
           console.error("Error fetching property values:", error);
@@ -168,18 +172,6 @@ function ModalStake({ openModal, isOpen, onClose }: Props) {
       return;
     }
 
-    // Check if hero is active
-    if (heroInteractionStatus == "true") {
-      toast({
-        title: `${heroName} is active`, // Use template literals to include heroName
-        description: "This hero is busy and cannot Train right now",
-        status: "error",
-        duration: 3000,
-        isClosable: true,
-      });
-      return;
-    }
-
     // Check if user has enough HGLD
     if (balance && Number(balance) < Number(propertyGold)) {
       toast({
@@ -193,7 +185,7 @@ function ModalStake({ openModal, isOpen, onClose }: Props) {
     } else {
       const result = await transferHGLD(
         propertyHolderWalletAddress || "",
-        propertyGold || ""
+        gold || ""
       );
 
       // Display a toast for the result of the HGLD transfer
@@ -209,8 +201,7 @@ function ModalStake({ openModal, isOpen, onClose }: Props) {
       if (result.title.includes("Successful")) {
         toast({
           title: `${selectedHero} is now Staked!`,
-          description:
-            "You will receive 10 $HGLD every 24hrs this NFT remains in your wallet",
+          description: `You can now claim ${stakingGoldReward} $HGLD every day this NFT remains in your wallet`,
           status: "info",
           duration: 6000,
           isClosable: true,
@@ -291,9 +282,9 @@ function ModalStake({ openModal, isOpen, onClose }: Props) {
               to stake a Druid/Knight.
             </Text>
             <Text fontSize="sm">
-              👉 You will be sent 10 $HGLD every day that your staked hero
-              remains in your wallet
-            </Text>{" "}
+              👉 You can claim {stakingGoldReward} $HGLD every day that your
+              staked hero remains in your wallet
+            </Text>
             <Text fontSize="sm">
               👉 Staking a hero does not remove it from your wallet
             </Text>{" "}

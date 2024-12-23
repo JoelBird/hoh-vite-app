@@ -3,19 +3,25 @@ import { SimpleGrid, useBreakpointValue, Box, Text } from "@chakra-ui/react";
 import NftDisplaySkeleton from "./NftDisplaySkeleton";
 import HeroCard from "./HeroCard";
 import PropertyCard from "./PropertyCard";
-import { useTransaction } from "../TransactionContext";
-import { useStakedStatus } from "../StakedStatusContext";
-import { useAliveStatus } from "../AliveStatusContext";
+import { useTransaction } from "../contexts/TransactionContext";
+import { useStakedStatus } from "../contexts/StakedStatusContext";
+import { useHasClaimedStake } from "../contexts/HasClaimedStakeContext";
+import { useHasClaimedRent } from "../contexts/HasClaimedRentContext";
+import { useAliveStatus } from "../contexts/AliveStatusContext";
 
 interface NFT {
   tokenId: string;
   name: string;
   image: string;
   stakedStatus: string;
+  hasClaimedStake: string;
+  hasClaimedRent: string;
   aliveStatus: string;
   interactionStatus: string;
   interactionId: string;
   propertyType: string;
+  propertyRentalValue: string;
+  propertyLevel: string;
   heroWillReceive: string;
 
   // Properties specific to Property NFTs
@@ -75,8 +81,10 @@ const NFTDisplay: React.FC<NFTDisplayProps> = ({
   if (error) return <p>Error: {error}</p>;
 
   const { transactionData } = useTransaction();
-  // const { aliveStatusData } = useAliveStatus();
+  const { aliveStatusData } = useAliveStatus();
   const { stakedStatusData } = useStakedStatus();
+  const { hasClaimedStakeData } = useHasClaimedStake();
+  const { hasClaimedRentData } = useHasClaimedRent();
 
   if (nfts.length === 0) {
     return (
@@ -97,9 +105,14 @@ const NFTDisplay: React.FC<NFTDisplayProps> = ({
             tokenId={nft.tokenId}
             name={nft.name}
             image={nft.image}
+            hasClaimedRent={
+              hasClaimedRentData[nft.tokenId]?.hasClaimed || nft.hasClaimedRent
+            }
             holderTotalGoldEarned={nft.holderTotalGoldEarned || 0}
             holderTotalTransactions={nft.holderTotalTransactions || 0}
             propertyType={nft.propertyType || ""}
+            propertyRentalValue={nft.propertyRentalValue || ""}
+            propertyLevel={nft.propertyLevel || ""}
             collection={collection}
           />
         ) : (
@@ -111,7 +124,13 @@ const NFTDisplay: React.FC<NFTDisplayProps> = ({
             stakedStatus={
               stakedStatusData[nft.tokenId]?.stakedStatus || nft.stakedStatus
             }
-            aliveStatus={nft.aliveStatus}
+            hasClaimedStake={
+              hasClaimedStakeData[nft.tokenId]?.hasClaimed ||
+              nft.hasClaimedStake
+            }
+            aliveStatus={
+              aliveStatusData[nft.tokenId]?.aliveStatus || nft.aliveStatus
+            }
             interactionStatus={
               transactionData[nft.tokenId]?.interactionStatus ||
               nft.interactionStatus

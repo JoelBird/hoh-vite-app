@@ -6,7 +6,7 @@ import ModalWork from "./ModalWork";
 import ModalSpell from "./ModalSpell";
 import ModalStake from "./ModalStake";
 import ModalShares from "./ModalShares";
-import { useUser } from "../UserContext";
+import { useUser } from "../contexts/UserContext";
 import { useActiveAccount } from "thirdweb/react";
 import { useDisclosure, useToast, Button } from "@chakra-ui/react";
 

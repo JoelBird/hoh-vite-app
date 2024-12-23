@@ -14,7 +14,7 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import axios from "axios";
-import { useTransaction } from "../TransactionContext";
+import { useTransaction } from "../contexts/TransactionContext";
 import { useActiveAccount } from "thirdweb/react";
 import { useHGLDBalance } from "../hooks/useHGLDBalance";
 import useHGLDTransfer from "../hooks/useHGLDTransfer";

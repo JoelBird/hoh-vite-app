@@ -32,8 +32,9 @@ const propertyValuesData = {
   militaryDuration: 259200,
   militaryGold: 1000,
   militaryNumberLastUsed: 0,
-  hospitalityGold: 100,
+  hospitalityGold: 200,
   hospitalityNumberLastUsed: 0,
+  stakingGoldReward: 10,
   agricultureDuration: 64800,
   agricultureGold: 50,
   agricultureNumberLastUsed: 0,
@@ -55,6 +56,7 @@ db.serialize(() => {
     heroAttack TEXT,
     heroDefence TEXT,
     stakedStatus TEXT,
+    hasClaimedStake TEXT,
     aliveStatus TEXT,
     interactionStatus TEXT,
     interactionId TEXT,
@@ -93,11 +95,14 @@ db.serialize(() => {
     propertyNumber TEXT,
     propertyName TEXT,
     propertyType TEXT,
+    propertyRentalValue TEXT,
+    propertyLevel TEXT,
     imageLink TEXT,
     totalGoldEarned TEXT,
     holderTotalGoldEarned TEXT,
     totalTransactions TEXT,
-    holderTotalTransactions TEXT
+    holderTotalTransactions TEXT,
+    hasClaimedRent TEXT
   )`);
 
   // Create 'propertyInteractions' table
@@ -121,9 +126,6 @@ db.serialize(() => {
 
   // Create 'propertyValues' table and insert data
   db.run(`CREATE TABLE IF NOT EXISTS propertyValues (
-    heroGoldEarnedPerInteraction INTEGER PRIMARY KEY,
-    PropertyGoldEarnedPerInteraction INTEGER,
-    propertyInteractionDuration INTEGER,
     housingDuration INTEGER,
     housingGold INTEGER,
     housingNumberLastUsed INTEGER,
@@ -136,6 +138,7 @@ db.serialize(() => {
     militaryNumberLastUsed INTEGER,
     hospitalityGold INTEGER,
     hospitalityNumberLastUsed INTEGER,
+    stakingGoldReward TEXT,
     agricultureDuration INTEGER,
     agricultureGold INTEGER,
     agricultureNumberLastUsed INTEGER,
@@ -147,15 +150,12 @@ db.serialize(() => {
   )`, () => {
     const stmt = db.prepare(
       `INSERT OR REPLACE INTO propertyValues (
-        heroGoldEarnedPerInteraction, PropertyGoldEarnedPerInteraction, propertyInteractionDuration, housingDuration, housingGold,
+        housingDuration, housingGold,
         housingNumberLastUsed, retailDuration, retailGold, retailNumberLastUsed, retailAvailableSpells, militaryDuration, militaryGold, militaryNumberLastUsed,
-        hospitalityGold, hospitalityNumberLastUsed, agricultureDuration, agricultureGold, agricultureNumberLastUsed, productionDuration, productionGold, productionNumberLastUsed, governmentGold, governmentNumberLastUsed
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
+        hospitalityGold, hospitalityNumberLastUsed, stakingGoldReward, agricultureDuration, agricultureGold, agricultureNumberLastUsed, productionDuration, productionGold, productionNumberLastUsed, governmentGold, governmentNumberLastUsed
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
     );
     stmt.run(
-      propertyValuesData.heroGoldEarnedPerInteraction,
-      propertyValuesData.PropertyGoldEarnedPerInteraction,
-      propertyValuesData.propertyInteractionDuration,
       propertyValuesData.housingDuration,
       propertyValuesData.housingGold,
       propertyValuesData.housingNumberLastUsed,
@@ -168,6 +168,7 @@ db.serialize(() => {
       propertyValuesData.militaryNumberLastUsed,
       propertyValuesData.hospitalityGold,
       propertyValuesData.hospitalityNumberLastUsed,
+      propertyValuesData.stakingGoldReward,
       propertyValuesData.agricultureDuration,
       propertyValuesData.agricultureGold,
       propertyValuesData.agricultureNumberLastUsed,

@@ -15,9 +15,9 @@ import {
   Input,
 } from "@chakra-ui/react";
 import axios from "axios";
-import { useTransaction } from "../TransactionContext";
+import { useTransaction } from "../contexts/TransactionContext";
 import { useActiveAccount } from "thirdweb/react";
-import { useUser } from "../UserContext";
+import { useUser } from "../contexts/UserContext";
 import { useHGLDBalance } from "../hooks/useHGLDBalance";
 import useHGLDTransfer from "../hooks/useHGLDTransfer";
 

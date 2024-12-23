@@ -16,8 +16,8 @@ import {
   useToast, // Import toast from Chakra
 } from "@chakra-ui/react";
 import axios from "axios";
-import { useTransaction } from "../TransactionContext";
-import { useAliveStatus } from "../AliveStatusContext";
+import { useTransaction } from "../contexts/TransactionContext";
+import { useAliveStatus } from "../contexts/AliveStatusContext";
 import { useActiveAccount } from "thirdweb/react";
 import { useHGLDBalance } from "../hooks/useHGLDBalance";
 import useHGLDTransfer from "../hooks/useHGLDTransfer";
@@ -218,13 +218,13 @@ function ModalRevive({ openModal, isOpen, onClose }: Props) {
             }
           );
 
-          // if (heroTokenId) {
-          //   updateAliveStatus(heroTokenId, "alive");
-          // } else {
-          //   console.error(
-          //     "heroTokenId is undefined, cannot update alive status."
-          //   );
-          // }
+          if (heroTokenId) {
+            updateAliveStatus(heroTokenId, "alive");
+          } else {
+            console.error(
+              "heroTokenId is undefined, cannot update alive status."
+            );
+          }
         } catch (error) {
           console.error("Error adding property interaction:", error);
         }

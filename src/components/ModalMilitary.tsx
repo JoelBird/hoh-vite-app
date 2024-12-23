@@ -16,11 +16,11 @@ import {
   useToast, // Import toast from Chakra
 } from "@chakra-ui/react";
 import axios from "axios";
-import { useTransaction } from "../TransactionContext";
+import { useTransaction } from "../contexts/TransactionContext";
 import { useActiveAccount } from "thirdweb/react";
 import { useHGLDBalance } from "../hooks/useHGLDBalance";
 import useHGLDTransfer from "../hooks/useHGLDTransfer";
-import { useUser } from "../UserContext";
+import { useUser } from "../contexts/UserContext";
 
 interface Props {
   openModal: (modalName: string) => void;

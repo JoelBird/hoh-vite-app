@@ -25,8 +25,8 @@ async function clearPendingTransactions() {
     value: ethers.utils.parseEther("0.0001"), // Small amount to use the nonce
     nonce: latestNonce,
     gasLimit: ethers.utils.hexlify(21000), // Basic gas limit for a simple transfer
-    maxPriorityFeePerGas: ethers.utils.parseUnits("100", "gwei"), // Increase if needed
-    maxFeePerGas: ethers.utils.parseUnits("100", "gwei"), // Increase if needed
+    maxPriorityFeePerGas: ethers.utils.parseUnits("200", "gwei"), // Increase if needed
+    maxFeePerGas: ethers.utils.parseUnits("200", "gwei"), // Increase if needed
     chainId: 137, // Polygon chain ID
   };
 

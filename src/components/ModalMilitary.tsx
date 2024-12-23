@@ -237,7 +237,7 @@ function ModalMilitary({ openModal, isOpen, onClose }: Props) {
               propertyTokenId,
               propertyType: "Military",
               propertyGold: propertyGold,
-              interactionDuration: "10",
+              interactionDuration: propertyDuration,
               interactionConcluded: "false",
               propertyHolderWalletAddress: propertyHolderWallet,
               propertyHolderDiscordName: propertyHolderDiscordName,

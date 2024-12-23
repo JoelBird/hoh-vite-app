@@ -206,7 +206,7 @@ function ModalRevive({ openModal, isOpen, onClose }: Props) {
               propertyTokenId,
               propertyType: "Housing",
               propertyGold: propertyGold,
-              interactionDuration: "10",
+              interactionDuration: propertyDuration,
               interactionConcluded: "false",
               propertyHolderWalletAddress: propertyHolderWalletAddress,
               propertyHolderDiscordName: propertyHolderDiscordName,

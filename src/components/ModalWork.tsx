@@ -209,7 +209,7 @@ function ModalWork({ openModal, isOpen, onClose }: Props) {
           propertyTokenId,
           propertyType: randomPropertyTypeUppercase,
           propertyGold,
-          interactionDuration: "60",
+          interactionDuration: propertyDuration,
           interactionConcluded: "false",
           propertyHolderWalletAddress,
           propertyHolderDiscordName,

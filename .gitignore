@@ -8,6 +8,7 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+backend_scripts/HOH.db
 HOH.db
 *.local
 

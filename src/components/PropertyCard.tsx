@@ -43,13 +43,6 @@ const PropertyCard = ({
   const { updateHasClaimedRent } = useHasClaimedRent();
   const toast = useToast();
 
-  console.log("hasClaimedRent!!!!!");
-  console.log(hasClaimedRent);
-  console.log("propertyLevel!!!!!");
-  console.log(propertyLevel);
-  console.log("propertyRentalValue!!!!!");
-  console.log(propertyRentalValue);
-
   return (
     <Box
       borderRadius="lg"

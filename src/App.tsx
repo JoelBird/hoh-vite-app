@@ -9,30 +9,6 @@ import { useActiveAccount } from "thirdweb/react";
 import { useDisconnect, useActiveWallet } from "thirdweb/react";
 import { useUser } from "./contexts/UserContext";
 
-interface Token {
-  id: string;
-  metadata: {
-    name: string;
-    symbol: string;
-    description: string;
-    seller_fee_basis_points: number;
-    image: string;
-    external_url: string;
-    attributes: any[];
-    properties: any;
-  };
-  staticUrl: string;
-}
-
-interface Member {
-  discordName: string;
-  discordId: string;
-  stargazeWallets: string[];
-  stakedPrettyvenomNfts: string[];
-  stakedKnightNfts: string[];
-  stakedSteamlandNfts: string[];
-}
-
 function App() {
   const activeAccount = useActiveAccount();
   const address = activeAccount?.address;

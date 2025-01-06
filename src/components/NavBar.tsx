@@ -79,16 +79,19 @@ const NavBar: React.FC<NavBarProps> = ({
   const collections = [
     {
       collection: "property",
+      collectionUppercase: "Properties",
       address: "0x99c6De8bc22adb0d6E59939FcB20443CD1606518",
       chain: "polygon",
     },
     {
       collection: "knight",
+      collectionUppercase: "Knights",
       address: "0xD2deFe14811BEC6332C6ae8CcE85a858b3A80B56",
       chain: "eth",
     },
     {
       collection: "druid",
+      collectionUppercase: "Druids",
       address: "0xAe65887F23558699978566664CC7dC0ccd67C0f8",
       chain: "polygon",
     },
@@ -290,7 +293,7 @@ const NavBar: React.FC<NavBarProps> = ({
                 <MenuList>
                   {collections.map((col) => (
                     <MenuItem
-                      key={col.collection}
+                      key={col.collectionUppercase}
                       onClick={() =>
                         handleButtonClick(
                           col.collection,
@@ -304,7 +307,7 @@ const NavBar: React.FC<NavBarProps> = ({
                           : "gray.700"
                       }
                     >
-                      {col.collection}
+                      {col.collectionUppercase}
                     </MenuItem>
                   ))}
                 </MenuList>
